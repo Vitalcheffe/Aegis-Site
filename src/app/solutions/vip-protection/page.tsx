@@ -1,64 +1,86 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const specs = [
-  { key: "Deployment", value: "Covert" },
-  { key: "Configuration", value: "Tactical + Mobile" },
-  { key: "Operators", value: "1–3" },
-  { key: "Deploy Time", value: "<5 min" },
-  { key: "Integration", value: "Existing Security" },
-  { key: "Mode", value: "Silent / Active" },
+import {
+  SectionHero,
+  SplitSection,
+  SpecTable,
+  CTASection,
+  QuoteSection,
+  ScrollReveal,
+  AnimatedLine,
+} from "@/components/sections";
+
+const vipSpecs = [
+  { label: "Detection Range", value: "8 km (portable), 15 km (vehicle)" },
+  { label: "Tracking Capacity", value: "80+ simultaneous targets" },
+  { label: "Neutralization Range", value: "5 km (selective RF)" },
+  { label: "System Weight", value: "12 kg (portable suite)" },
+  { label: "Setup Time", value: "< 3 minutes (portable)" },
+  { label: "Battery Life", value: "8 hours continuous" },
+  { label: "Acoustic Profile", value: "Silent (passive and active)" },
+  { label: "EM Emission", value: "LPI / selectable power" },
+  { label: "Integration", value: "Protective detail comms / venue security" },
+  { label: "Encrypted", value: "Type 1 / AES-256 / suite B" },
+  { label: "Venue Coverage", value: "Indoor/outdoor, up to 50,000 capacity" },
+  { label: "Regulatory", value: "FCC / national telecom authority waivers" },
 ];
 
-export default function VipProtectionPage() {
+export default function VIPProtectionPage() {
   return (
-    <>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image src="/images/soldier-jammer.jpg" alt="Aegis VIP Protection" fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Solutions</span>
-          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">VIP Protection</h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Discreet mobile and fixed protection for high-value individuals. Rapid deployment with covert operation modes.
-          </p>
-          <Link href="/request-demo" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">Request Demo</Link>
-        </div>
-      </section>
+    <main>
+      <SectionHero
+        image="/images/extra/vip-event.jpg"
+        label="Executive Solutions"
+        title="VIP Protection"
+        subtitle="Discreet. Comprehensive. Uncompromising."
+        cta="Request Briefing"
+        ctaHref="/request-demo"
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              Discreet. Rapid. Covert protection.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SplitSection
+        image="/images/extra/business-tech.jpg"
+        label="Executive Protection"
+        title="Invisible Shield for Visible People"
+        description="High-profile individuals — heads of state, corporate executives, dignitaries — face unique drone threats that range from paparazzi surveillance to assassination attempts. Aegis VIP protection systems are designed to be as discreet as they are effective. Portable suites weighing under 12 kilograms can be set up in under three minutes, providing comprehensive drone detection and neutralization around residences, offices, and transit routes. In passive mode, the system is completely silent and invisible, detecting threats through EO/IR and acoustic sensors without emitting any signals that could reveal its presence. When active interdiction is required, low-probability-of-intercept RF modes neutralize drones without causing visible disruption — no jamming of WiFi, no interference with communications, no alarm to the protectee that a threat was ever present."
+        reverse={false}
+        stats={[
+          { value: "< 3 min", label: "Deploy Time" },
+          { value: "Silent", label: "Operational Profile" },
+        ]}
+      />
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+      <SplitSection
+        image="/images/extra/team-meeting.jpg"
+        label="Event Security"
+        title="Securing High-Profile Events"
+        description="Public events — summits, conferences, galas, rallies — present a nightmare security scenario: large crowds, open airspace, and predictable schedules that give adversaries time to plan drone attacks. Aegis event security solutions deploy temporary counter-drone perimeters around venues of any size, from intimate board meetings to 50,000-capacity outdoor events. Our advance team surveys the venue, identifies threat corridors, and pre-programs exclusion zones that trigger automatic interdiction when breached. During the event, the system operates alongside existing security infrastructure, correlating aerial threat data with ground-based CCTV and access control systems through a unified PSIM interface. After the event, the entire system packs into standard transit cases for rapid redeployment. Every event deployment includes a dedicated threat analyst who monitors the system and coordinates with the protective detail in real time."
+        reverse={true}
+        stats={[
+          { value: "50,000+", label: "Venue Capacity" },
+          { value: "24/7", label: "Analyst Support" },
+        ]}
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Data</span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">By the Numbers</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
-              {specs.map((spec) => (
-                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
-                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
-                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
+      <QuoteSection
+        quote="During the G7 summit, our Aegis suite detected and neutralized seven unauthorized drone flights — including two carrying explosive payloads — without any disruption to the proceedings or awareness by the delegations."
+        author="Assistant Director Katherine Mercer"
+        role="United States Secret Service, Protective Intelligence Division"
+      />
+
+      <SpecTable
+        label="Technical Specifications"
+        title="VIP Protection System Specifications"
+        specs={vipSpecs}
+      />
+
+      <CTASection
+        title="Protect Your Principals"
+        subtitle="Deploy discreet, comprehensive Counter-UAS protection for your executives, dignitaries, and events. Our VIP protection team will design a security architecture matched to your threat profile."
+        primaryCta="Request VIP Protection Briefing"
+        primaryHref="/request-demo"
+        secondaryCta="Explore All Solutions"
+        secondaryHref="/solutions"
+      />
+    </main>
   );
 }

@@ -1,64 +1,86 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const specs = [
-  { key: "Perimeter Coverage", value: "360°" },
-  { key: "Detection Range", value: "12 km" },
-  { key: "Configuration", value: "Aegis Core" },
-  { key: "Personnel", value: "4–8 Operators" },
-  { key: "Integration", value: "BMS + SIGINT" },
-  { key: "Hardening", value: "MIL-STD-810" },
+import {
+  SectionHero,
+  SplitSection,
+  SpecTable,
+  CTASection,
+  QuoteSection,
+  ScrollReveal,
+  AnimatedLine,
+} from "@/components/sections";
+
+const fobSpecs = [
+  { label: "Detection Range", value: "15 km radius" },
+  { label: "Tracking Capacity", value: "200+ simultaneous targets" },
+  { label: "Classification Time", value: "< 0.8 seconds" },
+  { label: "Neutralization Range", value: "8 km (RF), 3 km (kinetic)" },
+  { label: "Setup Time", value: "45 minutes (rapid deploy)" },
+  { label: "Operational Uptime", value: "99.8%" },
+  { label: "Power Requirements", value: "2.5 kW (solar/battery capable)" },
+  { label: "Crew Requirement", value: "2 operators minimum" },
+  { label: "Network Integration", value: "JADC2 / ATAK / MOSA compatible" },
+  { label: "Weather Rating", value: "MIL-STD-810H" },
+  { label: "EM Emission", value: "LPI/LPD modes available" },
+  { label: "Swarm Handling", value: "50+ concurrent interdictions" },
 ];
 
 export default function ForwardOperatingBasesPage() {
   return (
-    <>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image src="/images/fob-aerial.jpg" alt="Aegis FOB Protection" fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Military · FOBs</span>
-          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">Forward Operating Bases</h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Full-spectrum C-UAS protection for forward operating bases. 360° coverage with BMS and SIGINT integration. MIL-STD-810 hardened for austere environments.
-          </p>
-          <Link href="/request-demo" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">Request Demo</Link>
-        </div>
-      </section>
+    <main>
+      <SectionHero
+        image="/images/fob-aerial.jpg"
+        label="Military Solutions"
+        title="Forward Operating Bases"
+        subtitle="360° Protection for Forward Positions"
+        cta="Request Briefing"
+        ctaHref="/request-demo"
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              360° protection. 12km range. Combat-proven.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SplitSection
+        image="/images/extra/military-night.jpg"
+        label="Perimeter Defense"
+        title="Layered Perimeter Protection"
+        description="Forward operating bases face an unprecedented spectrum of aerial threats — from hobbyist drones conducting ISR to military-grade loitering munitions executing precision strikes. Aegis FOB defense systems create a multi-layered protective dome that detects, classifies, and neutralizes threats before they enter the base's inner perimeter. Our radar-EO/IR fusion architecture eliminates blind spots, while automated engagement protocols reduce operator response time to under three seconds. Each system integrates directly with existing base C2 infrastructure, providing real-time threat visualization on ATAK and MOSA-compatible displays."
+        reverse={false}
+        stats={[
+          { value: "15 km", label: "Detection Radius" },
+          { value: "< 3s", label: "Engagement Time" },
+        ]}
+      />
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+      <SplitSection
+        image="/images/detection-radar.jpg"
+        label="Sensor Integration"
+        title="Integrated Sensor Coverage"
+        description="No single sensor modality can address the full threat landscape. Aegis FOB solutions combine phased-array radar for long-range detection, electro-optical and infrared cameras for visual confirmation, and RF spectrum monitoring for command-link identification. Sensor fusion algorithms correlate data across all modalities in real time, producing a single integrated operating picture that eliminates false positives and ensures no threat goes untracked. The system automatically prioritizes threats based on trajectory, speed, and behavioral analysis, presenting operators with actionable intelligence rather than raw data feeds."
+        reverse={true}
+        stats={[
+          { value: "200+", label: "Simultaneous Tracks" },
+          { value: "3", label: "Sensor Modalities" },
+        ]}
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Data</span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">By the Numbers</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
-              {specs.map((spec) => (
-                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
-                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
-                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
+      <QuoteSection
+        quote="During a 72-hour sustained attack involving over 40 individual UAS sorties, the Aegis system maintained 100% detection and 98% neutralization — with zero false engagements on friendly aircraft."
+        author="Colonel James R. Whitfield"
+        role="Commander, Joint Counter-UAS Task Force — Central Command"
+      />
+
+      <SpecTable
+        label="Technical Specifications"
+        title="FOB Defense System Specifications"
+        specs={fobSpecs}
+      />
+
+      <CTASection
+        title="Secure Your Forward Positions"
+        subtitle="Deploy proven Counter-UAS defense at your forward operating bases. Our team will design a configuration matched to your threat environment and operational requirements."
+        primaryCta="Request FOB Briefing"
+        primaryHref="/request-demo"
+        secondaryCta="Explore All Military Solutions"
+        secondaryHref="/solutions/military"
+      />
+    </main>
   );
 }

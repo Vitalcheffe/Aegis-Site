@@ -1,256 +1,187 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const layers = [
-  {
-    number: "01",
-    title: "Sensor Layer",
-    description:
-      "S-band radar, RF direction finding (400MHz–6GHz), electro-optical/infrared cameras, and acoustic arrays. Four sensor modalities fused in real-time with Bayesian correlation for 12km detection range.",
-    specs: [
-      { key: "Radar Range", value: "12 km" },
-      { key: "RF Band", value: "400MHz–6GHz" },
-      { key: "EO/IR", value: "Dual-band" },
-      { key: "Acoustic", value: "5 km" },
-    ],
-  },
-  {
-    number: "02",
-    title: "Processing Layer",
-    description:
-      "IMM-UKF tracking algorithms maintain 500+ simultaneous tracks at 50Hz update rate. Distributed processing architecture with hot-standby redundancy and sub-20ms latency from detection to track initiation.",
-    specs: [
-      { key: "Track Capacity", value: "500+" },
-      { key: "Update Rate", value: "50 Hz" },
-      { key: "Latency", value: "<20 ms" },
-      { key: "Algorithm", value: "IMM-UKF" },
-    ],
-  },
-  {
-    number: "03",
-    title: "Classification Layer",
-    description:
-      "Machine learning-driven identification with 98.9% accuracy across 200+ drone signatures. Seven classification categories from commercial quadcopter to fixed-wing military UAS. Classification in under 20ms.",
-    specs: [
-      { key: "Accuracy", value: "98.9%" },
-      { key: "Signatures", value: "200+" },
-      { key: "Classes", value: "7" },
-      { key: "Latency", value: "<20 ms" },
-    ],
-  },
-  {
-    number: "04",
-    title: "Decision Layer",
-    description:
-      "Automated threat assessment and graduated response recommendation. Rules-of-engagement engine with configurable escalation protocols. Human-in-the-loop authorization for kinetic and directed energy options.",
-    specs: [
-      { key: "Response", value: "Graduated" },
-      { key: "Escalation", value: "6 Levels" },
-      { key: "Authorization", value: "HITL" },
-      { key: "Decision Time", value: "<5 ms" },
-    ],
-  },
-  {
-    number: "05",
-    title: "Effector Layer",
-    description:
-      "Five effector modalities from RF jamming and GPS spoofing to protocol manipulation, kinetic intercept, and directed energy. Coordinated multi-effector engagement for swarm scenarios.",
-    specs: [
-      { key: "RF Jamming", value: "400MHz–6GHz" },
-      { key: "GPS Spoofing", value: "L1/L2/L5" },
-      { key: "Protocol", value: "Multi-standard" },
-      { key: "Kinetic", value: "C-UAS" },
-    ],
-  },
-];
-
-const keySpecs = [
-  { label: "End-to-End Latency", value: "20 ms" },
-  { label: "Simultaneous Tracks", value: "500+" },
-  { label: "Detection Range", value: "12 km" },
-  { label: "Classification Accuracy", value: "98.9%" },
-  { label: "Effector Modalities", value: "5" },
-  { label: "Uptime", value: "99.97%" },
-  { label: "Sensor Modalities", value: "4" },
-  { label: "Threat Database", value: "200+ Signatures" },
-];
+import {
+  SectionHero,
+  Callout,
+  SplitSection,
+  FeatureList,
+  SpecTable,
+  CTASection,
+  ImageBreak,
+  AnimatedLine,
+} from "@/components/sections";
 
 export default function TechnologyPage() {
   return (
     <>
-      {/* ═══ HERO ═══ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image
-          src="/images/command-center.jpg"
-          alt="Aegis Command Center"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-            Technology
-          </span>
-          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] md:tracking-[-3.4px] leading-[1.1] text-white">
-            Five Layers.
-            <br />
-            One System.
-          </h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            From sensor to effector in 20 milliseconds. Our multi-layered
-            architecture delivers the fastest kill chain in counter-UAS defense.
-          </p>
-        </div>
-      </section>
+      {/* ── HERO ── */}
+      <SectionHero
+        image="/images/hero-radar.jpg"
+        label="Technology"
+        title="The Aegis Architecture"
+        subtitle="A five-layer defense architecture engineered from the ground up for speed, precision, and resilience — detecting, classifying, and neutralizing unmanned aerial threats faster than any system ever deployed."
+        cta="Explore Capabilities"
+        ctaHref="/capabilities"
+        gradient="from-black via-black/75 to-black/40"
+        align="center"
+      />
 
-      {/* ═══ CALLOUT ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              Twenty milliseconds. Full kill chain.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* ── CALLOUT ── */}
+      <Callout>
+        The Aegis Architecture is not an assembly of off-the-shelf components —
+        it is a purpose-engineered defense system where every layer, every
+        algorithm, and every data path is designed to work as a unified whole.
+        Five interdependent layers — Sensor, Fusion, AI, Decision, and Action
+        — form an unbroken chain from threat detection to threat elimination,
+        closing the kill chain in under 20 milliseconds.
+      </Callout>
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-        <AnimatedLine />
-      </div>
+      <AnimatedLine />
 
-      {/* ═══ ARCHITECTURE LAYERS ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16 md:mb-24">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Architecture
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                Layer by Layer
-              </h2>
-            </div>
-          </ScrollReveal>
+      {/* ── LAYER 1: SENSOR ── */}
+      <SplitSection
+        image="/images/detection-radar.jpg"
+        label="Layer 01"
+        title="Sensor Layer"
+        description="The Sensor Layer is the Aegis Architecture's eyes and ears — a multi-spectral sensor array that provides persistent 360° surveillance across the entire threat envelope. Unlike legacy air defense radars optimized for fast-moving, high-altitude targets, Aegis sensors are specifically engineered for the counter-UAS mission: detecting small, low-flying, low-speed objects in cluttered environments. The primary sensor is our custom S-Band phased array radar, which provides simultaneous detection and tracking of 500+ targets at ranges up to 35 kilometers. This is complemented by a passive RF direction-finding array that detects drone control signals and telemetry at ranges exceeding 50 kilometers, day/night electro-optical and infrared cameras for visual identification, and an acoustic sensor network that detects drone propeller signatures in environments where electromagnetic sensors are jammed or degraded. Every sensor node is self-calibrating, self-diagnosing, and capable of autonomous operation when disconnected from the network."
+        cta="Detection Capability"
+        ctaHref="/capabilities/detection"
+        stats={[
+          { value: "35 km", label: "Radar Range" },
+          { value: "500+", label: "Concurrent Tracks" },
+        ]}
+      />
 
-          <div className="space-y-0">
-            {layers.map((layer, i) => (
-              <ScrollReveal key={layer.title} delay={i * 60}>
-                <div className="border-t border-white/10 py-12 md:py-20">
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-                    <div className="md:col-span-2">
-                      <span className="text-[#767676] text-sm font-mono">
-                        {layer.number}
-                      </span>
-                    </div>
-                    <div className="md:col-span-4">
-                      <h3 className="text-[28px] md:text-[48px] lg:text-[64px] font-bold tracking-[-2px] text-white leading-[1]">
-                        {layer.title}
-                      </h3>
-                    </div>
-                    <div className="md:col-span-3">
-                      <p className="text-[#b9b9b9] text-base md:text-lg leading-relaxed">
-                        {layer.description}
-                      </p>
-                    </div>
-                    <div className="md:col-span-3">
-                      <div className="space-y-3">
-                        {layer.specs.map((spec) => (
-                          <div
-                            key={spec.key}
-                            className="flex justify-between border-b border-white/5 pb-2"
-                          >
-                            <span className="text-[#767676] text-xs uppercase tracking-wider">
-                              {spec.key}
-                            </span>
-                            <span className="text-white text-sm font-medium">
-                              {spec.value}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-            <div className="border-t border-white/10" />
-          </div>
-        </div>
-      </section>
+      {/* ── LAYER 2: FUSION ── */}
+      <SplitSection
+        image="/images/extra/data-visualization.jpg"
+        label="Layer 02"
+        title="Fusion Layer"
+        description="The Fusion Layer is where raw sensor data becomes actionable intelligence. Using a custom Iterated Multi-Model Unscented Kalman Filter (IMM-UKF), the Fusion Layer correlates observations from every sensor modality into unified, high-confidence tracks that are more accurate than any single sensor could produce alone. The fusion engine processes over 2 million data points per second, resolving conflicts between sensor observations, managing track initiation and termination, and maintaining firm track custody even when individual sensors are degraded or denied. The Fusion Layer also implements a proprietary sensor management algorithm that dynamically allocates sensor resources — pointing cameras, adjusting radar waveforms, and prioritizing RF scan patterns — to maximize detection probability against the most threatening contacts. The result is a common operating picture that provides commanders with situational awareness that is both comprehensive and unambiguous."
+        cta="Tracking Capability"
+        ctaHref="/capabilities/tracking"
+        reverse
+        stats={[
+          { value: "2M+", label: "Data Points/Sec" },
+          { value: "<1 m", label: "Positional Accuracy" },
+        ]}
+      />
 
-      {/* ═══ FULL-BLEED IMAGE ═══ */}
-      <section className="relative h-[50vh] md:h-[70vh] overflow-hidden">
-        <Image
-          src="/images/detection-radar.jpg"
-          alt="Aegis Detection Systems"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-      </section>
+      {/* ── LAYER 3: AI ── */}
+      <SplitSection
+        image="/images/extra/ai-technology.jpg"
+        label="Layer 03"
+        title="AI Layer"
+        description="The AI Layer is the brain of the Aegis Architecture — a custom inference engine trained on over 12 million signal signatures that classifies every detected contact by type, intent, and payload in under 20 milliseconds. The classification pipeline runs on the Aegis Neural Processing Unit, a purpose-built AI accelerator that executes 175 trillion operations per second while consuming less than 400 watts. The AI Layer does not merely categorize drones by model; it assesses behavioral intent — distinguishing between a recreational drone flying an innocent pattern and a hostile platform executing a reconnaissance or attack profile. It identifies swarm behavior, predicts trajectory endpoints, and flags anomalous flight characteristics that indicate novel or modified threats. The models are continuously updated through Aegis's secure over-the-air update channel, incorporating new threat signatures identified across our global deployed fleet into every system worldwide within 72 hours of first observation."
+        cta="Classification Capability"
+        ctaHref="/capabilities/classification"
+        stats={[
+          { value: "20 ms", label: "Classification Time" },
+          { value: "12M+", label: "Known Signatures" },
+        ]}
+      />
 
-      {/* ═══ KEY SPECIFICATIONS ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16 md:mb-24">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Specifications
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                By the Numbers
-              </h2>
-            </div>
-          </ScrollReveal>
+      {/* ── LAYER 4: DECISION ── */}
+      <SplitSection
+        image="/images/command-center.jpg"
+        label="Layer 04"
+        title="Decision Layer"
+        description="The Decision Layer translates AI-driven threat assessments into actionable engagement recommendations — and in autonomous mode, into engagement authorizations. The Rules of Engagement Engine is the most configurable and auditable decision framework in the counter-UAS industry. It supports multi-tiered authorization protocols: fully autonomous engagement for pre-approved threat categories, supervised autonomous engagement where the system recommends and the operator approves, and manual engagement where every action requires explicit human authorization. Every decision — whether made by the AI or a human operator — is logged in an immutable audit trail that records the threat data, the classification confidence, the rules applied, and the authorization chain. This audit trail meets the evidentiary standards of military after-action reviews, legal proceedings, and international incident investigations. The Decision Layer also manages deconfliction with friendly forces, ensuring that countermeasures never interfere with allied aircraft or communications."
+        cta="Command & Control"
+        ctaHref="/capabilities/command-control"
+        reverse
+        stats={[
+          { value: "3", label: "Authorization Modes" },
+          { value: "100%", label: "Audit Trail Coverage" },
+        ]}
+      />
 
-          <ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-              {keySpecs.map((spec) => (
-                <div key={spec.label} className="border-t border-white/10 pt-6">
-                  <div className="text-2xl md:text-4xl font-bold text-white tracking-[-0.02em]">
-                    {spec.value}
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.15em] text-[#767676] mt-2">
-                    {spec.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* ── LAYER 5: ACTION ── */}
+      <SplitSection
+        image="/images/neutralization-laser.jpg"
+        label="Layer 05"
+        title="Action Layer"
+        description="The Action Layer executes the graduated response — from non-kinetic soft-kill measures to kinetic hard-kill and directed energy engagement. The graduated response framework ensures that the countermeasure is always proportional to the threat, compliant with rules of engagement, and minimizes collateral effects. Soft-kill options include precision RF jamming that disrupts drone control links without affecting friendly communications, GPS spoofing that redirects threats to safe landing zones, and electromagnetic pulse that disables onboard electronics at close range. Hard-kill options include interceptor drones for kinetic engagement at extended range and, in the 2025 architecture, a 50-kilowatt high-energy laser for sub-second precision neutralization and a high-power microwave system for area denial against swarm attacks. The directed energy capability provides the first truly unlimited-munition counter-UAS solution — constrained only by electrical power, not by magazine depth or logistics tails."
+        cta="Neutralization Capability"
+        ctaHref="/capabilities/neutralization"
+        stats={[
+          { value: "5+", label: "Effector Types" },
+          { value: "<$1", label: "Per Engagement Cost" },
+        ]}
+      />
 
-      {/* ═══ CTA ═══ */}
-      <section className="py-24 md:py-32 bg-black border-t border-white/10">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-[28px] md:text-[48px] font-bold tracking-[-0.03em] text-white">
-              Experience the Architecture
-            </h2>
-            <p className="mt-4 text-[#767676] text-lg max-w-xl mx-auto">
-              Request a classified briefing to see the full system demonstration.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/request-demo"
-                className="bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
-              >
-                Request Demo
-              </Link>
-              <Link
-                href="/demos"
-                className="border border-white/20 text-white px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-white/5 transition-colors"
-              >
-                View Demos
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* ── IMAGE BREAK ── */}
+      <ImageBreak
+        image="/images/extra/abstract-tech.jpg"
+        height="55vh"
+        overlay="bg-black/40"
+      />
+
+      {/* ── TECHNOLOGY HIGHLIGHTS ── */}
+      <FeatureList
+        label="Technology Highlights"
+        title="Engineered for the Edge"
+        items={[
+          {
+            title: "Edge Computing",
+            description:
+              "Every Aegis system processes sensor data and makes engagement decisions locally — at the tactical edge — without requiring connectivity to centralized servers. Our ruggedized edge computing platform, built on Dell Technologies hardware and NVIDIA GPU accelerators, delivers 175 TOPS of AI inference performance in a package that operates from -40°C to +55°C, withstands 30G shock loads, and consumes less than 800 watts. When network connectivity is available, the system seamlessly shares threat data with the Aegis Command enterprise platform and allied networks. When connectivity is denied, it continues autonomous operation with no degradation in capability. Edge-first architecture is not a feature — it is a design philosophy that ensures Aegis works when it matters most.",
+            tag: "Architecture",
+          },
+          {
+            title: "Secure Over-the-Air Updates",
+            description:
+              "Aegis systems receive continuous capability improvements through our secure over-the-air (SOTA) update pipeline. New threat signatures identified by any Aegis sensor worldwide are validated by our AI research team, packaged into cryptographically signed update bundles, and distributed to the global fleet within 72 hours. The SOTA pipeline uses dual-channel verification — every update must be signed by both our development key and our operations key — and includes automatic rollback capability if any anomaly is detected during installation. In 2024, we delivered 47 capability updates to the deployed fleet, including 12 new threat classification models, 8 sensor performance improvements, and 27 operational feature enhancements. No system restart is required; updates are applied seamlessly during idle periods.",
+            tag: "Continuous Delivery",
+          },
+          {
+            title: "Zero-Trust Security Architecture",
+            description:
+              "The Aegis Architecture implements a zero-trust security model where every component — hardware, software, and network — authenticates and authorizes every interaction, regardless of whether it originates inside or outside the network perimeter. Every sensor node, computing module, and effector controller holds a unique cryptographic identity provisioned during manufacturing. All inter-component communication is encrypted using FIPS 140-2 validated modules with perfect forward secrecy. The secure boot chain verifies firmware integrity at every power cycle, and runtime integrity monitoring detects and isolates any component exhibiting anomalous behavior. This zero-trust approach earned us our Common Criteria EAL4+ certification and ensures that a compromise of any single component cannot propagate to the rest of the system.",
+            tag: "Cybersecurity",
+          },
+          {
+            title: "Modular Open Systems Architecture",
+            description:
+              "Aegis is built on a Modular Open Systems Architecture (MOSA) that enables rapid integration of new sensors, effectors, and AI models without modifying the core platform. The architecture uses well-defined APIs and standard data bus protocols — including STANAG 4586 for sensor interfaces, STANAG 4676 for C2 data exchange, and our proprietary Aegis Integration Bus for high-throughput real-time data streaming. This modularity means that when a new sensor technology becomes available — a quantum radar, a terahertz imager, a next-generation RF array — it can be integrated into the Aegis Architecture through a standard adapter module in weeks rather than years. Similarly, new effector technologies can be added to the graduated response framework without recertifying the entire system.",
+            tag: "Open Architecture",
+          },
+        ]}
+      />
+
+      {/* ── ARCHITECTURE SPEC TABLE ── */}
+      <SpecTable
+        label="Architecture Specifications"
+        title="Technical Specifications"
+        specs={[
+          { label: "Kill Chain Closure Time", value: "<20 milliseconds" },
+          { label: "AI Inference Performance", value: "175 TOPS" },
+          { label: "Concurrent Track Capacity", value: "500+ targets" },
+          { label: "Detection Range (Radar)", value: "35 km (fixed-wing UAV)" },
+          { label: "Detection Range (RF)", value: "50+ km (control signals)" },
+          { label: "Detection Range (Micro-drones)", value: "15 km" },
+          { label: "Classification Accuracy", value: "98.9%" },
+          { label: "Neutralization Success Rate", value: "99.4%" },
+          { label: "Known Signal Signatures", value: "12 million+" },
+          { label: "Edge Compute Power Draw", value: "<800 watts" },
+          { label: "Operating Temperature Range", value: "-40°C to +55°C" },
+          { label: "Update Delivery Time (Global)", value: "72 hours" },
+          { label: "Positional Accuracy", value: "<1 meter" },
+          { label: "Uptime SLA", value: "99.97%" },
+          { label: "Cybersecurity Certification", value: "EAL4+ / FIPS 140-2" },
+          { label: "Interoperability Standards", value: "STANAG 4671 / 4586 / 4676" },
+        ]}
+      />
+
+      {/* ── CTA ── */}
+      <CTASection
+        title="See the Architecture in Action"
+        subtitle="Schedule a classified technical briefing with our engineering team and discover how the Aegis Architecture can be tailored to your operational requirements."
+        primaryCta="Request Technical Briefing"
+        primaryHref="/request-demo"
+        secondaryCta="Explore Capabilities"
+        secondaryHref="/capabilities"
+      />
     </>
   );
 }

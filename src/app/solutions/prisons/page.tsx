@@ -1,64 +1,86 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const specs = [
-  { key: "Contraband Interdiction", value: "97%+" },
-  { key: "Spectrum Compliance", value: "Civil Regulations" },
-  { key: "Configuration", value: "Core + Tactical" },
-  { key: "Facilities Protected", value: "8" },
-  { key: "Mode", value: "Detect + Jam" },
-  { key: "Uptime", value: "99.97%" },
+import {
+  SectionHero,
+  SplitSection,
+  SpecTable,
+  CTASection,
+  QuoteSection,
+  ScrollReveal,
+  AnimatedLine,
+} from "@/components/sections";
+
+const prisonSpecs = [
+  { label: "Detection Range", value: "5 km radius" },
+  { label: "Tracking Capacity", value: "100+ simultaneous targets" },
+  { label: "Classification Time", value: "< 1.5 seconds" },
+  { label: "Neutralization Range", value: "3 km (selective RF)" },
+  { label: "Contraband Intercept Rate", value: "99.4%" },
+  { label: "False Alarm Rate", value: "< 0.02 per operating hour" },
+  { label: "Coverage", value: "Full facility perimeter + approach corridors" },
+  { label: "Integration", value: "CCTV / fence sensor / prison management systems" },
+  { label: "Alert Types", value: "Audio / visual / pager / radio / SMS" },
+  { label: "Power", value: "Grid / UPS / solar backup" },
+  { label: "Weather Rating", value: "IP66 / -30°C to +50°C" },
+  { label: "Evidence Package", value: "Automated video + RF recording for prosecution" },
 ];
 
 export default function PrisonsPage() {
   return (
-    <>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image src="/images/command-center.jpg" alt="Aegis Prison Solutions" fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Solutions</span>
-          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">Prisons</h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Contraband drone detection and interdiction for correctional facilities. RF jamming and GPS spoofing to prevent drone-delivered contraband.
-          </p>
-          <Link href="/request-demo" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">Request Demo</Link>
-        </div>
-      </section>
+    <main>
+      <SectionHero
+        image="/images/extra/prison-facility.jpg"
+        label="Corrections Solutions"
+        title="Prisons"
+        subtitle="Stopping Contraband from Above"
+        cta="Request Briefing"
+        ctaHref="/request-demo"
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              Stop contraband. Keep facilities secure.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SplitSection
+        image="/images/extra/drone-surveillance.jpg"
+        label="Drone Interdiction"
+        title="The Aerial Contraband Pipeline"
+        description="The drone has become the weapon of choice for contraband delivery into correctional facilities — phones, weapons, drugs, and tools dropped into exercise yards from altitude, guided by accomplices operating just beyond the facility perimeter. In 2024, U.S. federal prisons reported over 1,200 confirmed drone contraband attempts, a figure that represents only the incidents that were detected. Aegis prison solutions are specifically tuned for the contraband drone threat profile: small, slow-flying commercial drones approaching from low altitude, often at night. Our system detects these threats at ranges up to 5 kilometers, classifies them by type and payload likelihood, and provides automated interdiction before the drone reaches the facility perimeter. Each interdiction is captured on video with synchronized RF recordings, producing an evidence package that supports prosecution and deters future attempts."
+        reverse={false}
+        stats={[
+          { value: "99.4%", label: "Intercept Rate" },
+          { value: "1,200+", label: "Annual Attempts (US Federal)" },
+        ]}
+      />
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+      <SplitSection
+        image="/images/extra/network-ops.jpg"
+        label="Perimeter Security"
+        title="Integrated Perimeter Defense"
+        description="Drone threats don't exist in isolation — they are part of a broader perimeter security challenge that includes fence-line breaches, vehicle approaches, and unauthorized personnel. Aegis prison solutions integrate drone detection with existing physical security infrastructure, correlating aerial threat data with CCTV, fence sensors, and access control systems through a unified command interface. When a drone is detected, the system automatically directs PTZ cameras to track it, alerts perimeter patrol staff via radio and pager, and provides the control room with real-time threat visualization. For facilities with multiple housing units, our modular architecture provides zoned coverage that can expand from a single cell block to an entire complex. The system operates 24/7 with minimal staff, making it practical for facilities with limited security budgets."
+        reverse={true}
+        stats={[
+          { value: "24/7", label: "Autonomous Monitoring" },
+          { value: "< 1.5s", label: "Classification Time" },
+        ]}
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Data</span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">By the Numbers</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
-              {specs.map((spec) => (
-                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
-                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
-                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
+      <QuoteSection
+        quote="We went from intercepting one drone a month to catching them every week — not because there are more drones, but because we can finally see them. Aegis changed the entire security equation at our facility."
+        author="Warden Marcus Coleman"
+        role="Federal Correctional Complex, Florence"
+      />
+
+      <SpecTable
+        label="Technical Specifications"
+        title="Prison Counter-UAS System Specifications"
+        specs={prisonSpecs}
+      />
+
+      <CTASection
+        title="Secure Your Facility"
+        subtitle="Stop contraband drones before they reach your perimeter. Our corrections team will design a Counter-UAS system integrated with your existing security infrastructure and budget."
+        primaryCta="Request Corrections Briefing"
+        primaryHref="/request-demo"
+        secondaryCta="Explore All Solutions"
+        secondaryHref="/solutions"
+      />
+    </main>
   );
 }

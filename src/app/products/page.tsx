@@ -1,257 +1,121 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const products = [
-  {
-    slug: "aegis-core",
-    title: "Aegis Core",
-    subtitle: "Fixed-Site Command System",
-    description:
-      "Full-spectrum counter-UAS command system for fixed installations. 500+ simultaneous tracks at 50Hz update rate with 20ms end-to-end latency. Integrates all five sensor modalities and five effector types with human-in-the-loop authorization.",
-    specs: [
-      { key: "Track Capacity", value: "500+" },
-      { key: "Update Rate", value: "50 Hz" },
-      { key: "End-to-End Latency", value: "20 ms" },
-      { key: "Detection Range", value: "12 km" },
-      { key: "Sensor Modalities", value: "4" },
-      { key: "Effector Types", value: "5" },
-      { key: "Classification Accuracy", value: "98.9%" },
-      { key: "Uptime", value: "99.97%" },
-    ],
-    image: "/images/command-center.jpg",
-    href: "/products/aegis-core",
-  },
-  {
-    slug: "aegis-tactical",
-    title: "Aegis Tactical",
-    subtitle: "Vehicle-Mounted System",
-    description:
-      "Mobile counter-UAS system for tactical operations. 200+ simultaneous tracks at 25Hz with rapid deployment capability. Vehicle-mounted with integrated sensor mast and effector array. Full kill chain in a single platform.",
-    specs: [
-      { key: "Track Capacity", value: "200+" },
-      { key: "Update Rate", value: "25 Hz" },
-      { key: "End-to-End Latency", value: "40 ms" },
-      { key: "Detection Range", value: "8 km" },
-      { key: "Sensor Modalities", value: "3" },
-      { key: "Effector Types", value: "4" },
-      { key: "Classification Accuracy", value: "97.2%" },
-      { key: "Deploy Time", value: "<15 min" },
-    ],
-    image: "/images/products-aegis-tactical.jpg",
-    href: "/products/aegis-tactical",
-  },
-  {
-    slug: "aegis-mobile",
-    title: "Aegis Mobile",
-    subtitle: "Man-Packable System",
-    description:
-      "Lightweight man-packable counter-UAS system for dismounted operations. 50+ tracks with RF direction finding and jamming. Designed for individual operator use in austere environments. Battery-powered with 8-hour runtime.",
-    specs: [
-      { key: "Track Capacity", value: "50+" },
-      { key: "Update Rate", value: "10 Hz" },
-      { key: "End-to-End Latency", value: "80 ms" },
-      { key: "Detection Range", value: "4 km" },
-      { key: "Sensor Modalities", value: "1 (RF DF)" },
-      { key: "Effector Types", value: "2" },
-      { key: "Weight", value: "12 kg" },
-      { key: "Battery", value: "8 hours" },
-    ],
-    image: "/images/soldier-jammer.jpg",
-    href: "/products/aegis-mobile",
-  },
-];
+import {
+  SectionHero,
+  Callout,
+  FeatureList,
+  CTASection,
+  ImageBreak,
+  StatsSection,
+} from "@/components/sections";
 
 export default function ProductsPage() {
   return (
     <>
-      {/* ═══ HERO ═══ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image
-          src="/images/drone-threat.jpg"
-          alt="Aegis Products"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
+      <SectionHero
+        image="/images/drone-threat.jpg"
+        label="Platforms"
+        title="Built for Every Mission"
+        subtitle="Eight purpose-engineered counter-UAS platforms. From fixed strategic installations to individual soldier protection — every threat vector covered."
+        cta="Explore Platforms"
+        ctaHref="#platforms"
+      />
+
+      <Callout>
+        The Aegis platform family represents the most comprehensive counter-UAS
+        capability ever assembled — a unified architecture spanning detection,
+        tracking, classification, and neutralization across every operational
+        domain.
+      </Callout>
+
+      <StatsSection
+        label="Platform Family"
+        stats={[
+          { value: "8", label: "Platforms" },
+          { value: "500+", label: "Max Targets" },
+          { value: "20ms", label: "Classification" },
+          { value: "12km", label: "Detection Range" },
+          { value: "360°", label: "Coverage" },
+        ]}
+      />
+
+      <ImageBreak image="/images/extra/military-operations.jpg" height="50vh" />
+
+      <div id="platforms">
+        <FeatureList
+          label="Platform Family"
+          title="Every Mission. Every Domain."
+          items={[
+            {
+              title: "Aegis Core",
+              description:
+                "The flagship fixed-site Counter-UAS platform. Simultaneously tracks 500+ targets with 50Hz update rate and 20ms AI classification. The world's most capable C-UAS system — designed for strategic installations, military bases, and critical infrastructure protection.",
+              href: "/products/aegis-core",
+              tag: "500+ Targets · 50Hz · 20ms",
+            },
+            {
+              title: "Aegis Tactical",
+              description:
+                "Rapid-deploy mobile counter-UAS platform for forward operating bases and expeditionary missions. Tracks 200+ targets with 25Hz update rate. Vehicle-mountable with full operational capability in under 30 minutes from arrival.",
+              href: "/products/aegis-tactical",
+              tag: "200+ Targets · 25Hz · Mobile",
+            },
+            {
+              title: "Aegis Mobile",
+              description:
+                "Man-packable RF direction-finding system for individual soldier and small unit protection. Tracks 50+ targets with precision RF DF and jamming capability. Lightweight, battery-powered, and operational in under 5 minutes.",
+              href: "/products/aegis-mobile",
+              tag: "50+ Targets · RF DF · Man-Packable",
+            },
+            {
+              title: "Aegis Shield",
+              description:
+                "Passive defense system with 360° coverage and zero electromagnetic emissions. Detects and classifies UAS threats using acoustic, thermal, and visual sensors without revealing defensive positions. Ideal for covert operations and VIP protection.",
+              href: "/products/aegis-shield",
+              tag: "Passive Defense · 360° · Zero Emissions",
+            },
+            {
+              title: "Aegis SkyWatch",
+              description:
+                "Long-range air surveillance platform providing persistent wide-area UAS detection and tracking. Extends the defensive perimeter to 50km+ with elevated sensor arrays and multi-domain awareness for strategic air sovereignty.",
+              href: "/products/aegis-skywatch",
+              tag: "Air Surveillance · Long-Range · Persistent",
+            },
+            {
+              title: "Aegis Command",
+              description:
+                "Unified battle management and C2 system for coordinating multi-platform counter-UAS operations. Integrates kill chain automation, multi-domain coordination, and real-time situational awareness across all Aegis platforms and third-party systems.",
+              href: "/products/aegis-command",
+              tag: "Battle Management · C2 · Kill Chain",
+            },
+            {
+              title: "Aegis Sentinel",
+              description:
+                "Autonomous sentry system with AI-driven threat assessment and autonomous engagement capabilities. Provides 24/7 persistent vigilance with minimal human oversight — autonomous detect-track-classify-neutralize cycles in under 15 seconds.",
+              href: "/products/aegis-sentinel",
+              tag: "Autonomous · AI-Driven · Sentry",
+            },
+            {
+              title: "Aegis Integrator",
+              description:
+                "Multi-system integration platform connecting disparate C-UAS sensors, effectors, and command systems through an API-first architecture. Supports multi-vendor interoperability, legacy system bridging, and STANAG compliance for coalition operations.",
+              href: "/products/aegis-integrator",
+              tag: "Integration · API-First · Multi-Vendor",
+            },
+          ]}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-            Platforms
-          </span>
-          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] md:tracking-[-3.4px] leading-[1.1] text-white">
-            Built for Every
-            <br />
-            Mission Profile
-          </h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Three platforms. One architecture. From fixed-site command centers to
-            man-packable units — the same 20ms kill chain.
-          </p>
-        </div>
-      </section>
+      </div>
 
-      {/* ═══ PRODUCT LIST ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          {products.map((product, i) => (
-            <div key={product.slug}>
-              <AnimatedLine />
-              <div className="py-16 md:py-24">
-                <ScrollReveal>
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12 md:mb-16">
-                    <div className="md:col-span-7">
-                      <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                        {product.subtitle}
-                      </span>
-                      <Link href={product.href}>
-                        <h2 className="mt-3 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] text-white hover:text-white/90 transition-colors leading-[0.9]">
-                          {product.title}
-                        </h2>
-                      </Link>
-                    </div>
-                    <div className="md:col-span-5 md:pt-12">
-                      <p className="text-[#b9b9b9] text-base md:text-lg leading-relaxed mb-8">
-                        {product.description}
-                      </p>
-                      <Link
-                        href={product.href}
-                        className="inline-block text-[10px] uppercase tracking-[0.15em] text-white border-b border-white/30 pb-1 hover:border-white transition-colors"
-                      >
-                        Explore →
-                      </Link>
-                    </div>
-                  </div>
-                </ScrollReveal>
+      <ImageBreak image="/images/extra/fighter-jet.jpg" height="60vh" />
 
-                <ScrollReveal delay={200}>
-                  <div className="relative h-[40vh] md:h-[60vh] overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  </div>
-                </ScrollReveal>
-
-                <ScrollReveal delay={300}>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-                    {product.specs.slice(0, 4).map((spec) => (
-                      <div
-                        key={spec.key}
-                        className="border-t border-white/10 pt-4"
-                      >
-                        <div className="text-white text-xl md:text-2xl font-bold tracking-[-0.02em]">
-                          {spec.value}
-                        </div>
-                        <div className="text-[10px] uppercase tracking-[0.15em] text-[#767676] mt-1">
-                          {spec.key}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollReveal>
-              </div>
-            </div>
-          ))}
-          <AnimatedLine />
-        </div>
-      </section>
-
-      {/* ═══ COMPARISON ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16 md:mb-24">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Compare
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                Platform Comparison
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[640px]">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="text-left py-4 pr-4 text-[10px] uppercase tracking-[0.15em] text-[#767676] font-normal">
-                      Specification
-                    </th>
-                    {products.map((p) => (
-                      <th
-                        key={p.slug}
-                        className="text-left py-4 px-4 text-white text-sm font-medium"
-                      >
-                        {p.title}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    {
-                      label: "Track Capacity",
-                      values: ["500+", "200+", "50+"],
-                    },
-                    {
-                      label: "Update Rate",
-                      values: ["50 Hz", "25 Hz", "10 Hz"],
-                    },
-                    {
-                      label: "Latency",
-                      values: ["20 ms", "40 ms", "80 ms"],
-                    },
-                    {
-                      label: "Detection Range",
-                      values: ["12 km", "8 km", "4 km"],
-                    },
-                    {
-                      label: "Sensor Modalities",
-                      values: ["4", "3", "1"],
-                    },
-                    {
-                      label: "Effector Types",
-                      values: ["5", "4", "2"],
-                    },
-                    {
-                      label: "Classification Accuracy",
-                      values: ["98.9%", "97.2%", "94.5%"],
-                    },
-                    {
-                      label: "Deployment",
-                      values: ["Fixed", "Vehicle", "Man-pack"],
-                    },
-                  ].map((row) => (
-                    <tr
-                      key={row.label}
-                      className="border-b border-white/5 hover:bg-white/[0.02] transition-colors"
-                    >
-                      <td className="py-4 pr-4 text-[#767676] text-sm">
-                        {row.label}
-                      </td>
-                      {row.values.map((val, i) => (
-                        <td
-                          key={i}
-                          className="py-4 px-4 text-white text-sm font-medium"
-                        >
-                          {val}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to Deploy"
+        subtitle="Every Aegis platform is combat-proven, NATO-interoperable, and available for classified briefings."
+        primaryCta="Request a Briefing"
+        primaryHref="/request-demo"
+        secondaryCta="Compare Platforms"
+        secondaryHref="/products"
+      />
     </>
   );
 }

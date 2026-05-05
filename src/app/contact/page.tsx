@@ -1,154 +1,278 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+import { useState, FormEvent } from "react";
+import {
+  SectionHero,
+  Callout,
+  SplitSection,
+  CTASection,
+  ScrollReveal,
+  AnimatedLine,
+} from "@/components/sections";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    subject: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   return (
     <>
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <Image src="/images/command-center.jpg" alt="Contact Aegis" fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Contact</span>
-          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] md:tracking-[-3.4px] leading-[1.1] text-white">
-            Get in Touch
-          </h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Schedule a classified briefing, request a demonstration, or connect with our defense team.
-          </p>
-        </div>
-      </section>
+      <SectionHero
+        image="/images/command-center.jpg"
+        label="Connect"
+        title="Contact"
+        subtitle="Get in Touch"
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-20">
-            {/* Form */}
-            <div className="md:col-span-7">
-              <ScrollReveal>
-                {submitted ? (
-                  <div className="border border-[#2b5945]/30 bg-[#2b5945]/5 p-12 text-center">
-                    <h3 className="text-white text-2xl font-bold mb-4">Request Received</h3>
-                    <p className="text-[#b9b9b9] leading-relaxed">
-                      Our defense team will review your inquiry and respond within 2 business days. Classified briefings require verification of credentials.
-                    </p>
-                  </div>
-                ) : (
-                  <form
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      setSubmitted(true);
-                    }}
-                    className="space-y-6"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">First Name</label>
-                        <input
-                          type="text"
-                          required
-                          className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">Last Name</label>
-                        <input
-                          type="text"
-                          required
-                          className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">Organization</label>
-                      <input
-                        type="text"
-                        required
-                        className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">Email</label>
-                      <input
-                        type="email"
-                        required
-                        className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">Inquiry Type</label>
-                      <select className="w-full bg-black border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors">
-                        <option value="">Select...</option>
-                        <option value="demo">Request Demo</option>
-                        <option value="briefing">Classified Briefing</option>
-                        <option value="procurement">Procurement</option>
-                        <option value="partnership">Partnership</option>
-                        <option value="careers">Careers</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">Message</label>
-                      <textarea
-                        rows={5}
-                        className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors resize-none"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
+      <Callout>
+        Whether you represent a government agency, military organization, or
+        critical infrastructure operator — our team is ready to discuss your
+        counter-UAS defense requirements.
+      </Callout>
+
+      <AnimatedLine />
+
+      {/* Contact Form Section */}
+      <section className="py-28 md:py-44 bg-black">
+        <div className="max-w-[56rem] mx-auto px-6 md:px-12 lg:px-20">
+          <ScrollReveal>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 block mb-4">
+              Reach Out
+            </span>
+            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-[-0.03em] text-white mb-12">
+              Send Us a Message
+            </h2>
+          </ScrollReveal>
+
+          {submitted ? (
+            <ScrollReveal>
+              <div className="border border-white/20 p-12 text-center">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Message Received
+                </h3>
+                <p className="text-[#b9b9b9] text-lg leading-relaxed">
+                  Thank you for contacting Aegis Defense Systems. Our team will
+                  review your inquiry and respond within 24-48 business hours.
+                  For urgent matters, please call our headquarters directly.
+                </p>
+              </div>
+            </ScrollReveal>
+          ) : (
+            <ScrollReveal>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
                     >
-                      Submit Inquiry
-                    </button>
-                  </form>
-                )}
-              </ScrollReveal>
-            </div>
-
-            {/* Contact Info */}
-            <div className="md:col-span-5">
-              <ScrollReveal delay={200}>
-                <div className="space-y-10">
-                  <div>
-                    <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Headquarters</span>
-                    <p className="text-white mt-2 text-base leading-relaxed">
-                      Aegis Defense Systems, Inc.<br />
-                      1200 Defense Corridor<br />
-                      Arlington, VA 22202<br />
-                      United States
-                    </p>
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20"
+                      placeholder="Your full name"
+                    />
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">EMEA Office</span>
-                    <p className="text-white mt-2 text-base leading-relaxed">
-                      Aegis Defense Systems Ltd.<br />
-                      85 Queen Victoria Street<br />
-                      London, EC4V 4AB<br />
-                      United Kingdom
-                    </p>
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Contact</span>
-                    <p className="text-white mt-2 text-base leading-relaxed">
-                      defense@aegissystems.com<br />
-                      +1 (703) 555-0199
-                    </p>
-                  </div>
-                  <div className="border-t border-white/10 pt-8">
-                    <p className="text-[#555555] text-[11px] leading-relaxed">
-                      All communications are subject to ITAR restrictions. Do not include classified information in web form submissions. For classified inquiries, contact your Aegis security officer.
-                    </p>
+                    <label
+                      htmlFor="email"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20"
+                      placeholder="your@email.com"
+                    />
                   </div>
                 </div>
-              </ScrollReveal>
-            </div>
-          </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label
+                      htmlFor="organization"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Organization
+                    </label>
+                    <input
+                      type="text"
+                      id="organization"
+                      name="organization"
+                      value={formData.organization}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20"
+                      placeholder="Your organization"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="subject"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Subject *
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      required
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full bg-black border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors appearance-none cursor-pointer"
+                    >
+                      <option value="" disabled>
+                        Select a subject
+                      </option>
+                      <option value="general">General Inquiry</option>
+                      <option value="products">Product Information</option>
+                      <option value="demo">Request a Demo</option>
+                      <option value="support">Technical Support</option>
+                      <option value="partnership">Partnership Opportunity</option>
+                      <option value="compliance">Compliance / Legal</option>
+                      <option value="media">Media / Press</option>
+                      <option value="careers">Careers</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                  >
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20 resize-none"
+                    placeholder="Describe your inquiry or requirements. Please do not include classified information in this form."
+                  />
+                </div>
+
+                <div className="pt-4">
+                  <p className="text-[#767676] text-xs leading-relaxed mb-6">
+                    By submitting this form, you acknowledge that your information
+                    will be handled in accordance with our{" "}
+                    <a
+                      href="/legal/privacy"
+                      className="text-white/70 underline hover:text-white transition-colors"
+                    >
+                      Privacy Policy
+                    </a>
+                    . Do not include classified or ITAR-controlled information in
+                    this form.
+                  </p>
+                  <button
+                    type="submit"
+                    className="bg-white text-black px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] hover:bg-[#e0e0e0] transition-all duration-300 cursor-pointer"
+                  >
+                    Submit Message
+                  </button>
+                </div>
+              </form>
+            </ScrollReveal>
+          )}
         </div>
       </section>
+
+      <AnimatedLine />
+
+      {/* Office Locations */}
+      <SplitSection
+        image="/images/extra/city-skyline-night.jpg"
+        label="Global Presence"
+        title="Washington DC Headquarters"
+        description="Our primary headquarters and operations center, located in the heart of the national security corridor. The Washington DC office houses our executive leadership, program management, trade compliance, and government relations teams. This facility maintains SCIF accreditation for processing classified information up to the Top Secret level."
+        reverse={false}
+        stats={[
+          { value: "200+", label: "DC-Based Personnel" },
+          { value: "TS/SCI", label: "Facility Clearance" },
+          { value: "24/7", label: "Operations Center" },
+        ]}
+      />
+
+      <SplitSection
+        image="/images/extra/business-tech.jpg"
+        label="EMEA Region"
+        title="London Office"
+        description="Our European, Middle East, and Africa regional headquarters in London supports NATO member states, Five Eyes partners, and allied nations across the EMEA region. The London team provides localized support for system deployments, training, and maintenance, as well as coordination with UK Ministry of Defence and allied defense procurement agencies."
+        reverse={true}
+        stats={[
+          { value: "50+", label: "EMEA Personnel" },
+          { value: "NATO", label: "Partner Alignment" },
+          { value: "15+", label: "EMEA Deployments" },
+        ]}
+      />
+
+      <SplitSection
+        image="/images/extra/vip-event.jpg"
+        label="Middle East"
+        title="Abu Dhabi Office"
+        description="Our Abu Dhabi office serves as the regional hub for the Gulf Cooperation Council (GCC) nations and broader Middle East region. This office supports Foreign Military Sales cases, direct commercial sales, and system deployments for critical infrastructure protection across the region. The team coordinates closely with UAE armed forces and regional defense partners."
+        reverse={false}
+        stats={[
+          { value: "30+", label: "Regional Personnel" },
+          { value: "GCC", label: "Regional Focus" },
+          { value: "10+", label: "Active Programs" },
+        ]}
+      />
+
+      <SplitSection
+        image="/images/extra/modern-office.jpg"
+        label="Asia Pacific"
+        title="Singapore Office"
+        description="Our Asia-Pacific regional office in Singapore supports defense partnerships across the Indo-Pacific theater. The Singapore team works with allied and partner nations to address the growing UAS threat in the region, supporting both government and critical infrastructure protection programs throughout Southeast Asia and Oceania."
+        reverse={true}
+        stats={[
+          { value: "25+", label: "APAC Personnel" },
+          { value: "INDO-PAC", label: "Theater Coverage" },
+          { value: "8+", label: "Regional Programs" },
+        ]}
+      />
+
+      <CTASection
+        title="Ready to Connect?"
+        subtitle="Schedule a consultation with our defense solutions team to discuss your counter-UAS requirements."
+        primaryCta="Request a Demo"
+        primaryHref="/request-demo"
+        secondaryCta="Explore Solutions"
+        secondaryHref="/solutions"
+      />
     </>
   );
 }

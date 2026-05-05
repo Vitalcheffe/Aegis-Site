@@ -1,64 +1,86 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const specs = [
-  { key: "Coverage", value: "360° Maritime" },
-  { key: "Detection Range", value: "12 km" },
-  { key: "Configuration", value: "Core (Naval)" },
-  { key: "Stabilization", value: "Gyro-Compensated" },
-  { key: "Corrosion", value: "MIL-DTL-5541" },
-  { key: "Sea State", value: "Operational SS5" },
+import {
+  SectionHero,
+  SplitSection,
+  SpecTable,
+  CTASection,
+  QuoteSection,
+  ScrollReveal,
+  AnimatedLine,
+} from "@/components/sections";
+
+const navalSpecs = [
+  { label: "Detection Range", value: "20 km (sea-level)" },
+  { label: "Tracking Capacity", value: "300+ simultaneous targets" },
+  { label: "Stabilization", value: "6-axis gyro-stabilized platform" },
+  { label: "Sea State Rating", value: "Operational through Sea State 6" },
+  { label: "Neutralization Range", value: "10 km (RF), 5 km (directed energy)" },
+  { label: "Swarm Interdiction", value: "75+ concurrent neutralizations" },
+  { label: "Integration", value: "AEGIS Combat System / NATO Link 16 / SeaWeb" },
+  { label: "Ship Classes", value: "Frigate, Destroyer, Carrier, Littoral" },
+  { label: "EMCON Modes", value: "Silent watch / LPI / Active" },
+  { label: "Power Draw", value: "4.5 kW (ship power)" },
+  { label: "Crew", value: "1 operator (semi-autonomous)" },
+  { label: "Corrosion Rating", value: "MIL-DTL-5541 Type III" },
 ];
 
 export default function NavalPage() {
   return (
-    <>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image src="/images/satellite.jpg" alt="Aegis Naval Solutions" fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Military · Naval</span>
-          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">Naval Vessels</h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Gyro-compensated Aegis Core for naval deployment. 360° maritime coverage with MIL-DTL-5541 corrosion protection. Operational through Sea State 5.
-          </p>
-          <Link href="/request-demo" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">Request Demo</Link>
-        </div>
-      </section>
+    <main>
+      <SectionHero
+        image="/images/extra/navy-ship.jpg"
+        label="Military Solutions"
+        title="Naval"
+        subtitle="Maritime Counter-UAS Defense"
+        cta="Request Naval Briefing"
+        ctaHref="/request-demo"
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              Sea-proven. Gyro-stabilized. 360° coverage.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SplitSection
+        image="/images/extra/warship-sea.jpg"
+        label="Shipboard Defense"
+        title="Protecting the Fleet at Sea"
+        description="Modern naval vessels face a rapidly evolving drone threat — from explosive-laden surface drones to aerial UAS conducting targeting for anti-ship missiles. Aegis naval Counter-UAS systems are purpose-built for the maritime environment, with gyro-stabilized sensor platforms that maintain track accuracy through heavy rolls and pitch. Our phased-array radar and EO/IR suites cut through sea clutter to identify low-flying threats that conventional naval radar misses. Integrated directly with shipboard combat management systems, Aegis provides automated threat handoff and engagement authorization, keeping the crew focused on the broader maritime fight while counter-drone operations run semi-autonomously."
+        reverse={false}
+        stats={[
+          { value: "Sea State 6", label: "Operational Limit" },
+          { value: "20 km", label: "Detection Range" },
+        ]}
+      />
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+      <SplitSection
+        image="/images/extra/military-helicopter.jpg"
+        label="Swarm Defense"
+        title="Defeating Coordinated Swarm Attacks"
+        description="The age of the drone swarm has arrived at sea. Adversaries can now launch dozens of coordinated UAS from shore-based or maritime platforms, overwhelming traditional point-defense systems through sheer numbers and simultaneous attack vectors. Aegis naval systems employ wideband RF denial to disrupt swarm command-and-control links across multiple frequency bands simultaneously. When RF interdiction alone is insufficient, our layered approach transitions to directional energy and kinetic options, prioritizing the highest-threat elements while maintaining coverage against follow-on attacks. The system's autonomous engagement logic can simultaneously neutralize over 75 individual drones in a single swarm event."
+        reverse={true}
+        stats={[
+          { value: "75+", label: "Concurrent Interdictions" },
+          { value: "< 2s", label: "Swarm Response" },
+        ]}
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Data</span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">By the Numbers</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
-              {specs.map((spec) => (
-                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
-                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
-                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
+      <QuoteSection
+        quote="In the Red Sea engagement, Aegis was the only system that maintained track through the electronic warfare environment. It gave us the firing solution when everything else was blinded."
+        author="Rear Admiral Sarah K. Vasquez"
+        role="Commander, Carrier Strike Group Seven"
+      />
+
+      <SpecTable
+        label="Technical Specifications"
+        title="Naval Counter-UAS System Specifications"
+        specs={navalSpecs}
+      />
+
+      <CTASection
+        title="Defend Your Fleet"
+        subtitle="Equip your vessels with maritime-proven Counter-UAS capabilities. Our naval solutions team will design a shipboard configuration for your class and operational profile."
+        primaryCta="Request Naval Briefing"
+        primaryHref="/request-demo"
+        secondaryCta="Explore All Military Solutions"
+        secondaryHref="/solutions/military"
+      />
+    </main>
   );
 }

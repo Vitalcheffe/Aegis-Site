@@ -1,216 +1,299 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+import { useState, FormEvent } from "react";
+import {
+  SectionHero,
+  Callout,
+  CTASection,
+  ScrollReveal,
+  AnimatedLine,
+} from "@/components/sections";
 
 export default function RequestDemoPage() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    organization: "",
+    jobTitle: "",
+    country: "",
+    classificationLevel: "",
+    interestArea: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image
-          src="/images/hero-radar.jpg"
-          alt="Request Aegis Demo"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-            Get Started
-          </span>
-          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] md:tracking-[-3.4px] leading-[1.1] text-white">
-            Request a Demo
-          </h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Schedule a classified briefing with our defense team. Live
-            demonstrations available for qualified organizations.
-          </p>
-        </div>
-      </section>
+      <SectionHero
+        image="/images/hero-radar.jpg"
+        label="Experience"
+        title="Request a Demo"
+        subtitle="See Aegis in Action"
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-20">
-            {/* Form */}
-            <div className="md:col-span-7">
-              <ScrollReveal>
-                {submitted ? (
-                  <div className="border border-[#2b5945]/30 bg-[#2b5945]/5 p-12 text-center">
-                    <h3 className="text-white text-2xl font-bold mb-4">
-                      Demo Request Received
-                    </h3>
-                    <p className="text-[#b9b9b9] leading-relaxed mb-6">
-                      Our defense team will review your request and contact you
-                      within 2 business days to schedule a demonstration.
-                      Classified briefings require verification of credentials
-                      and appropriate security clearance.
-                    </p>
-                    <Link
-                      href="/"
-                      className="inline-block bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
-                    >
-                      Return Home
-                    </Link>
-                  </div>
-                ) : (
-                  <form
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      setSubmitted(true);
-                    }}
-                    className="space-y-6"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">
-                          First Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">
-                          Last Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">
-                        Organization *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">
-                        Official Email *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">
-                        Country *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">
-                        Demo Type
-                      </label>
-                      <select className="w-full bg-black border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors">
-                        <option value="">Select...</option>
-                        <option value="virtual">Virtual Demonstration</option>
-                        <option value="onsite">On-Site Demonstration</option>
-                        <option value="classified">Classified Briefing</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="text-[10px] uppercase tracking-[0.15em] text-[#767676] block mb-2">
-                        Additional Information
-                      </label>
-                      <textarea
-                        rows={4}
-                        className="w-full bg-transparent border border-[#222222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#2b5945] transition-colors resize-none"
-                        placeholder="Describe your operational requirements..."
-                      />
-                    </div>
-                    <div className="border-t border-white/10 pt-6">
-                      <p className="text-[#555555] text-[11px] leading-relaxed mb-6">
-                        By submitting this form, you confirm that you are
-                        authorized to receive ITAR-controlled technical data.
-                        Demo requests from embargoed countries will not be
-                        processed.
-                      </p>
-                      <button
-                        type="submit"
-                        className="bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
-                      >
-                        Submit Demo Request
-                      </button>
-                    </div>
-                  </form>
-                )}
-              </ScrollReveal>
-            </div>
+      <Callout>
+        Schedule a classified briefing with our defense solutions team to
+        experience the full capabilities of the Aegis counter-UAS platform in a
+        controlled operational environment.
+      </Callout>
 
-            {/* Side Info */}
-            <div className="md:col-span-5">
-              <ScrollReveal delay={200}>
-                <div className="space-y-10">
+      <AnimatedLine />
+
+      {/* Demo Request Form */}
+      <section className="py-28 md:py-44 bg-black">
+        <div className="max-w-[56rem] mx-auto px-6 md:px-12 lg:px-20">
+          <ScrollReveal>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 block mb-4">
+              Schedule a Briefing
+            </span>
+            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-[-0.03em] text-white mb-4">
+              Demo Request Form
+            </h2>
+            <p className="text-[#767676] text-base leading-relaxed mb-12">
+              Complete the form below to request a demonstration of Aegis
+              counter-UAS capabilities. All submissions are reviewed by our
+              security team and processed in accordance with ITAR and applicable
+              export control regulations.
+            </p>
+          </ScrollReveal>
+
+          {submitted ? (
+            <ScrollReveal>
+              <div className="border border-white/20 p-12 text-center">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Demo Request Submitted
+                </h3>
+                <p className="text-[#b9b9b9] text-lg leading-relaxed">
+                  Thank you for your interest in Aegis Defense Systems. Your demo
+                  request has been received and will be reviewed by our team. A
+                  representative will contact you within 2-3 business days to
+                  discuss scheduling and access requirements.
+                </p>
+                <p className="text-[#767676] text-sm mt-6">
+                  Reference ID: ADS-DR-
+                  {Math.random().toString(36).substring(2, 8).toUpperCase()}
+                </p>
+              </div>
+            </ScrollReveal>
+          ) : (
+            <ScrollReveal>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                      What to Expect
-                    </span>
-                    <ul className="mt-4 space-y-4">
-                      {[
-                        "Live radar PPI display with real-time tracking",
-                        "Multi-sensor fusion demonstration",
-                        "Graduated response protocol walkthrough",
-                        "Classification accuracy benchmarks",
-                        "Q&A with defense engineers",
-                      ].map((item) => (
-                        <li
-                          key={item}
-                          className="text-[#b9b9b9] text-sm flex items-start gap-3"
-                        >
-                          <span className="text-[#2b5945] mt-1">→</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                    <label
+                      htmlFor="fullName"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      required
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20"
+                      placeholder="Your full name"
+                    />
                   </div>
-                  <div className="border-t border-white/10 pt-8">
-                    <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                      Requirements
-                    </span>
-                    <ul className="mt-4 space-y-3">
-                      {[
-                        "Valid official email address",
-                        "Verification of organizational affiliation",
-                        "ITAR compliance certification",
-                        "Security clearance (for classified briefings)",
-                      ].map((item) => (
-                        <li
-                          key={item}
-                          className="text-[#767676] text-sm flex items-start gap-3"
-                        >
-                          <span className="text-[#555555] mt-0.5">·</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20"
+                      placeholder="your@email.com"
+                    />
                   </div>
                 </div>
-              </ScrollReveal>
-            </div>
-          </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label
+                      htmlFor="organization"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Organization *
+                    </label>
+                    <input
+                      type="text"
+                      id="organization"
+                      name="organization"
+                      required
+                      value={formData.organization}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20"
+                      placeholder="Government agency or organization"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="jobTitle"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Job Title *
+                    </label>
+                    <input
+                      type="text"
+                      id="jobTitle"
+                      name="jobTitle"
+                      required
+                      value={formData.jobTitle}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20"
+                      placeholder="Your position or title"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label
+                      htmlFor="country"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Country *
+                    </label>
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      required
+                      value={formData.country}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20"
+                      placeholder="Country of citizenship"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="classificationLevel"
+                      className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                    >
+                      Classification Level *
+                    </label>
+                    <select
+                      id="classificationLevel"
+                      name="classificationLevel"
+                      required
+                      value={formData.classificationLevel}
+                      onChange={handleChange}
+                      className="w-full bg-black border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors appearance-none cursor-pointer"
+                    >
+                      <option value="" disabled>
+                        Select clearance level
+                      </option>
+                      <option value="unclassified">Unclassified</option>
+                      <option value="cui">CUI (Controlled Unclassified Information)</option>
+                      <option value="secret">Secret</option>
+                      <option value="top-secret">Top Secret</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="interestArea"
+                    className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                  >
+                    Interest Area *
+                  </label>
+                  <select
+                    id="interestArea"
+                    name="interestArea"
+                    required
+                    value={formData.interestArea}
+                    onChange={handleChange}
+                    className="w-full md:w-1/2 bg-black border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled>
+                      Select your area of interest
+                    </option>
+                    <option value="products">Products</option>
+                    <option value="solutions">Solutions</option>
+                    <option value="integration">Integration</option>
+                    <option value="partnership">Partnership</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-[10px] uppercase tracking-[0.15em] text-white/50 mb-3"
+                  >
+                    Additional Information
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border border-[#222] text-white px-4 py-3 text-sm focus:border-white/50 focus:outline-none transition-colors placeholder:text-white/20 resize-none"
+                    placeholder="Describe your operational requirements, specific threats of concern, or any additional context. Do not include classified information."
+                  />
+                </div>
+
+                <div className="pt-4">
+                  <p className="text-[#767676] text-xs leading-relaxed mb-6">
+                    By submitting this form, you confirm that the information
+                    provided is accurate and that you are authorized to receive
+                    information about Aegis defense products and services. All
+                    inquiries are subject to ITAR and EAR verification. Do not
+                    include classified or export-controlled information in this
+                    form. Your data is handled in accordance with our{" "}
+                    <a
+                      href="/legal/privacy"
+                      className="text-white/70 underline hover:text-white transition-colors"
+                    >
+                      Privacy Policy
+                    </a>
+                    .
+                  </p>
+                  <button
+                    type="submit"
+                    className="bg-white text-black px-10 py-4 text-sm font-medium uppercase tracking-[0.15em] hover:bg-[#e0e0e0] transition-all duration-300 cursor-pointer"
+                  >
+                    Submit Demo Request
+                  </button>
+                </div>
+              </form>
+            </ScrollReveal>
+          )}
         </div>
       </section>
+
+      <CTASection
+        title="Prefer a Direct Conversation?"
+        subtitle="Contact our headquarters to speak with a defense solutions specialist immediately."
+        primaryCta="Contact Us"
+        primaryHref="/contact"
+        secondaryCta="View Live Demos"
+        secondaryHref="/demos"
+      />
     </>
   );
 }

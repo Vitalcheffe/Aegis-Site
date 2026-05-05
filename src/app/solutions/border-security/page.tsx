@@ -1,64 +1,86 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const specs = [
-  { key: "Coverage", value: "360° Corridor" },
-  { key: "Range", value: "12 km" },
-  { key: "Overlapping Zones", value: "3+" },
-  { key: "Uptime", value: "99.97%" },
-  { key: "Configuration", value: "Core + Tactical" },
-  { key: "Persistence", value: "24/7/365" },
+import {
+  SectionHero,
+  SplitSection,
+  SpecTable,
+  CTASection,
+  QuoteSection,
+  ScrollReveal,
+  AnimatedLine,
+} from "@/components/sections";
+
+const borderSpecs = [
+  { label: "Detection Range", value: "25 km (radar), 12 km (EO/IR)" },
+  { label: "Coverage per Node", value: "50 km of border corridor" },
+  { label: "Tracking Capacity", value: "400+ simultaneous targets" },
+  { label: "Neutralization Range", value: "12 km (RF), 5 km (directed energy)" },
+  { label: "Network Architecture", value: "Mesh / satellite / cellular backhaul" },
+  { label: "Power", value: "Solar / wind / grid / diesel hybrid" },
+  { label: "Autonomy", value: "Unattended operation up to 90 days" },
+  { label: "Weather Rating", value: "MIL-STD-810H / IP67" },
+  { label: "Terrain", value: "Desert / mountain / jungle / arctic" },
+  { label: "Integration", value: "CBP / Frontex / national border systems" },
+  { label: "False Alarm Rate", value: "< 0.05 per operating hour" },
+  { label: "Response Options", value: "RF deny / kinetic alert / intercept vector" },
 ];
 
 export default function BorderSecurityPage() {
   return (
-    <>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image src="/images/satellite.jpg" alt="Aegis Border Security" fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Solutions</span>
-          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">Border Security</h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Long-range corridor surveillance, coastal zone monitoring, and frontier defense. Persistent 24/7 coverage across extended perimeters.
-          </p>
-          <Link href="/request-demo" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">Request Demo</Link>
-        </div>
-      </section>
+    <main>
+      <SectionHero
+        image="/images/extra/border-wall.jpg"
+        label="Sovereignty Solutions"
+        title="Border Security"
+        subtitle="Persistent Surveillance. Immediate Response."
+        cta="Request Briefing"
+        ctaHref="/request-demo"
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              Persistent coverage. Extended perimeters. No gaps.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SplitSection
+        image="/images/extra/satellite-orbit.jpg"
+        label="Corridor Surveillance"
+        title="Watching the Corridors That Matter"
+        description="Smuggling organizations have adopted drones for reconnaissance, payload delivery, and counter-surveillance — flying contraband across borders with minimal risk to human couriers. Aegis border security solutions provide persistent, automated surveillance across vast and remote border corridors that cannot be staffed continuously. Each sensor node covers up to 50 kilometers of border terrain, linking to neighboring nodes via encrypted mesh network to create an unbroken surveillance chain. The system automatically distinguishes between birds, weather phenomena, and genuine UAS threats, reducing false alarms to near-zero even in challenging environments. When a drone is detected, the system provides border agents with real-time tracking, predicted flight path, and recommended interdiction point — enabling interception before the payload reaches its destination."
+        reverse={false}
+        stats={[
+          { value: "50 km", label: "Coverage per Node" },
+          { value: "90 days", label: "Unattended Operation" },
+        ]}
+      />
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+      <SplitSection
+        image="/images/extra/military-march.jpg"
+        label="Coastal Monitoring"
+        title="Coastal and Maritime Border Defense"
+        description="Coastal borders present unique challenges — vast expanses of open water, dense maritime traffic, and drone launch platforms that can be as small as a fishing vessel. Aegis coastal monitoring systems combine shore-based radar arrays with elevated EO/IR platforms to detect low-altitude drone flights over water, where radar clutter from waves and weather can mask small UAS signatures. Our maritime-correlation algorithms fuse AIS vessel tracking data with UAS detection, identifying likely launch platforms and enabling interdiction at the source. For archipelagic nations, our distributed architecture links island-based sensor nodes via satellite backhaul, creating a unified operating picture across hundreds of kilometers of maritime border. The system operates autonomously for up to 90 days between maintenance visits, making it practical for deployment on remote islands and atolls."
+        reverse={true}
+        stats={[
+          { value: "400+", label: "Simultaneous Tracks" },
+          { value: "25 km", label: "Radar Detection" },
+        ]}
+      />
 
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Data</span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">By the Numbers</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
-              {specs.map((spec) => (
-                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
-                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
-                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
+      <QuoteSection
+        quote="In the first six months of deployment along our southern corridor, Aegis detected over 300 smuggling drone flights and enabled the interdiction of 2.7 tons of contraband. The ROI was immediate and overwhelming."
+        author="Commissioner Rafael Torres"
+        role="National Border Protection Agency"
+      />
+
+      <SpecTable
+        label="Technical Specifications"
+        title="Border Security System Specifications"
+        specs={borderSpecs}
+      />
+
+      <CTASection
+        title="Secure Your Borders"
+        subtitle="Deploy persistent Counter-UAS surveillance across your border corridors and coastal perimeters. Our team will design a distributed architecture for your terrain and operational requirements."
+        primaryCta="Request Border Security Briefing"
+        primaryHref="/request-demo"
+        secondaryCta="Explore All Solutions"
+        secondaryHref="/solutions"
+      />
+    </main>
   );
 }

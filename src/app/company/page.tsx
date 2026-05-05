@@ -1,224 +1,137 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const leaders = [
-  {
-    name: "Dr. Sarah Chen",
-    title: "Chief Executive Officer",
-    description:
-      "Former DARPA program manager. 20+ years in defense technology. PhD Computer Science, MIT.",
-  },
-  {
-    name: "Col. James Miller (Ret.)",
-    title: "Chief Technology Officer",
-    description:
-      "Former U.S. Army Air Defense Artillery. 25+ years C-UAS experience. MSEE, West Point.",
-  },
-  {
-    name: "Dr. Aisha Patel",
-    title: "VP of Engineering",
-    description:
-      "Former Lockheed Martin sensor fusion lead. PhD Electrical Engineering, Stanford.",
-  },
-  {
-    name: "Maj. David Volkov (Ret.)",
-    title: "VP of Operations",
-    description:
-      "Former IDF C-UAS battalion commander. 15+ years operational experience. MBA, INSEAD.",
-  },
-];
-
-const values = [
-  {
-    title: "Mission First",
-    description:
-      "Every decision filtered through the lens of operator safety and mission success. We build systems that work when lives depend on them.",
-  },
-  {
-    title: "Technical Excellence",
-    description:
-      "20ms latency isn't a target — it's a commitment. We hold ourselves to the highest engineering standards in the defense industry.",
-  },
-  {
-    title: "Operational Integrity",
-    description:
-      "ITAR compliance, NATO classification, human-in-the-loop for lethal options. We build responsible systems with appropriate safeguards.",
-  },
-  {
-    title: "Global Partnership",
-    description:
-      "12 nations trust Aegis to protect their critical assets. We honor that trust with transparent communication and reliable performance.",
-  },
-];
-
-const certifications = [
-  "NATO AQAP-2110",
-  "ITAR Registered",
-  "ISO 9001:2015",
-  "MIL-STD-810H",
-  "MIL-STD-461G",
-  "DO-160G",
-  "Cyber Essentials Plus",
-  "SOC 2 Type II",
-];
+import {
+  SectionHero,
+  Callout,
+  StatsSection,
+  FeatureList,
+  ImageBreak,
+  SplitSection,
+  CTASection,
+  AnimatedLine,
+} from "@/components/sections";
 
 export default function CompanyPage() {
   return (
     <>
-      {/* ═══ HERO ═══ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image
-          src="/images/command-center.jpg"
-          alt="Aegis Defense Systems"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-            Company
-          </span>
-          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] md:tracking-[-3.4px] leading-[1.1] text-white">
-            Built to Protect
-          </h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Aegis Defense Systems designs and manufactures the world's most
-            advanced counter-UAS technology. Protecting 12 nations.
-          </p>
-        </div>
-      </section>
+      {/* ── HERO ── */}
+      <SectionHero
+        image="/images/command-center.jpg"
+        label="Company"
+        title="Building the Future of Defense"
+        subtitle="Aegis Defense Systems is the world's leading counter-UAS company — engineering the integrated platforms that detect, track, classify, and neutralize unmanned aerial threats across every domain and every theater of operation."
+        cta="Learn Our Story"
+        ctaHref="/about"
+        gradient="from-black via-black/75 to-black/40"
+        align="center"
+      />
 
-      {/* ═══ MISSION CALLOUT ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              We exist to protect those who protect others. Every system we build
-              must perform flawlessly when lives depend on it.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* ── CALLOUT ── */}
+      <Callout>
+        Aegis Defense Systems was founded on a singular conviction: that the
+        proliferation of unmanned aerial systems demands an entirely new category
+        of defense technology — one built from the ground up for speed,
+        precision, and operational resilience in the most contested environments
+        on Earth.
+      </Callout>
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-        <AnimatedLine />
-      </div>
+      <AnimatedLine />
 
-      {/* ═══ LEADERSHIP ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16 md:mb-24">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Leadership
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                Executive Team
-              </h2>
-            </div>
-          </ScrollReveal>
+      {/* ── STATS ── */}
+      <StatsSection
+        label="By the Numbers"
+        stats={[
+          { value: "800+", label: "Employees" },
+          { value: "12", label: "Nations" },
+          { value: "$2.4B", label: "Valuation" },
+          { value: "240+", label: "Deployed Systems" },
+          { value: "15", label: "Patents" },
+        ]}
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            {leaders.map((leader, i) => (
-              <ScrollReveal key={leader.name} delay={i * 80}>
-                <div className="border-t border-white/10 py-10 md:py-14 md:pr-12">
-                  <div className="flex items-start gap-6">
-                    <div className="w-20 h-20 bg-[#111111] rounded-full flex-shrink-0 flex items-center justify-center text-white text-2xl font-bold">
-                      {leader.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                    <div>
-                      <h3 className="text-white text-xl md:text-2xl font-bold tracking-[-0.02em]">
-                        {leader.name}
-                      </h3>
-                      <div className="text-[#2b5945] text-xs uppercase tracking-[0.15em] mt-1">
-                        {leader.title}
-                      </div>
-                      <p className="text-[#b9b9b9] text-sm leading-relaxed mt-3">
-                        {leader.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── MISSION ── */}
+      <SplitSection
+        image="/images/extra/military-operations.jpg"
+        label="Our Mission"
+        title="Defend the Skies. Protect the Ground."
+        description="Our mission is to ensure that no unmanned aerial threat goes undetected or unneutralized. We build the integrated defense platforms that give military commanders, critical infrastructure operators, and security forces the decisive advantage against the fastest-evolving threat vector of the 21st century. From forward operating bases in active combat zones to civilian airports and government facilities, Aegis systems operate continuously — scanning, analyzing, and responding to threats faster than any human operator could. Every sensor we deploy, every algorithm we train, and every effector we integrate serves a single purpose: closing the kill chain before the adversary can complete theirs. This is not incremental improvement. This is a fundamental re-architecture of how democracies defend their airspace."
+        cta="Explore Our Capabilities"
+        ctaHref="/capabilities"
+        stats={[
+          { value: "<20 ms", label: "Kill Chain" },
+          { value: "98.9%", label: "Accuracy" },
+        ]}
+      />
 
-      {/* ═══ VALUES ═══ */}
-      <section className="py-24 md:py-40 bg-black border-t border-white/10">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16 md:mb-24">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Principles
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                Our Values
-              </h2>
-            </div>
-          </ScrollReveal>
+      {/* ── VISION ── */}
+      <SplitSection
+        image="/images/extra/earth-space.jpg"
+        label="Our Vision"
+        title="A World Where Airspace Is Always Secure"
+        description="We envision a future where every nation, every installation, and every community has the ability to control its airspace with confidence. A future where the proliferation of commercial and military drones no longer represents an existential risk but a managed variable — detected, classified, and neutralized in real time by autonomous systems that operate with surgical precision and full accountability. Our vision extends beyond technology. We are building the institutional frameworks, international standards, and operational doctrines that will define how the world responds to aerial threats for decades to come. Through partnerships with NATO, allied militaries, and research institutions, we are establishing the norms and capabilities that will keep societies safe as the drone revolution accelerates."
+        cta="Meet Our Partners"
+        ctaHref="/about/partners"
+        reverse
+        stats={[
+          { value: "12", label: "Allied Nations" },
+          { value: "24/7", label: "Global Coverage" },
+        ]}
+      />
 
-          <div className="space-y-0">
-            {values.map((v, i) => (
-              <ScrollReveal key={v.title} delay={i * 80}>
-                <div className="border-t border-white/10 py-10 md:py-14">
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
-                    <div className="md:col-span-5">
-                      <h3 className="text-[24px] md:text-[40px] font-bold tracking-[-2px] text-white leading-[1.1]">
-                        {v.title}
-                      </h3>
-                    </div>
-                    <div className="md:col-span-7 md:pt-2">
-                      <p className="text-[#b9b9b9] text-base md:text-lg leading-relaxed">
-                        {v.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-            <div className="border-t border-white/10" />
-          </div>
-        </div>
-      </section>
+      {/* ── IMAGE BREAK ── */}
+      <ImageBreak
+        image="/images/satellite.jpg"
+        height="55vh"
+        overlay="bg-black/40"
+      />
 
-      {/* ═══ CERTIFICATIONS ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Compliance
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                Certifications
-              </h2>
-            </div>
-          </ScrollReveal>
+      {/* ── CORE VALUES ── */}
+      <FeatureList
+        label="Core Values"
+        title="What We Stand For"
+        items={[
+          {
+            title: "Innovation",
+            description:
+              "We reject the status quo. Every system we build, every algorithm we train, and every protocol we establish pushes the boundary of what counter-UAS technology can achieve. Our research division operates at the frontier of sensor fusion, directed energy, and autonomous decision-making — ensuring our customers always hold the technological advantage. Innovation at Aegis is not aspirational; it is operational. We ship capabilities, not concepts.",
+            tag: "Value 01",
+          },
+          {
+            title: "Integrity",
+            description:
+              "In defense technology, integrity is non-negotiable. We build systems that make life-and-death decisions, and we take that responsibility with the utmost seriousness. Our AI classification models are auditable, our engagement rules are transparent, and our audit trails are immutable. We never ship a system we cannot explain, defend, or verify. Integrity also means honest communication with our customers, our partners, and the public — even when the truth is inconvenient.",
+            tag: "Value 02",
+          },
+          {
+            title: "Precision",
+            description:
+              "In the counter-UAS domain, approximation is failure. A near-miss classification can mean the difference between neutralizing a threat and allowing a payload through. Every component of our architecture — from sensor calibration to effector targeting — is engineered for sub-millimeter, sub-millisecond precision. We measure ourselves not against industry benchmarks but against the laws of physics, and we build systems that approach those limits.",
+            tag: "Value 03",
+          },
+          {
+            title: "Resilience",
+            description:
+              "Our systems operate where others fail — in contested electromagnetic environments, under cyber attack, in extreme weather, and in communications-denied scenarios. Resilience is engineered into every layer of the Aegis architecture: redundant sensor paths, fallback communication channels, autonomous local processing, and hardened physical enclosures rated to MIL-STD-810. When the environment turns hostile, Aegis keeps operating.",
+            tag: "Value 04",
+          },
+          {
+            title: "Partnership",
+            description:
+              "No single company can defend the world's airspace alone. We build deep, enduring partnerships with allied militaries, defense agencies, technology companies, and research institutions. Our integration platform is designed for interoperability — connecting seamlessly with NATO STANAG systems, JADC2 architectures, and third-party sensor networks. We succeed when our partners succeed, and we measure our impact by the security of the nations and installations we protect.",
+            tag: "Value 05",
+          },
+        ]}
+      />
 
-          <ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
-              {certifications.map((cert) => (
-                <div
-                  key={cert}
-                  className="border-t border-white/10 pt-6 pb-8 md:pr-4"
-                >
-                  <div className="text-white text-sm md:text-base font-medium">
-                    {cert}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* ── CTA ── */}
+      <CTASection
+        title="Join the Mission"
+        subtitle="Whether you are a defense professional, a technology innovator, or a government decision-maker, Aegis offers the partnership and platform to make airspace security a reality."
+        primaryCta="Request Demo"
+        primaryHref="/request-demo"
+        secondaryCta="View Open Positions"
+        secondaryHref="/careers"
+      />
     </>
   );
 }

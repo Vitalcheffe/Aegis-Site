@@ -1,161 +1,124 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const offerings = [
+import {
+  SectionHero,
+  Callout,
+  StatsSection,
+  CardGrid,
+  CTASection,
+  ScrollReveal,
+  AnimatedLine,
+} from "@/components/sections";
+
+const solutionCards = [
   {
-    prefix: "↳",
     title: "Military",
     description:
-      "Forward operating bases, naval vessels, convoy protection. Combat-proven across 12 nations with full kill chain integration. Configured for the most demanding operational environments.",
+      "Battlefield-proven Counter-UAS systems for forward operating bases, naval vessels, convoys, special operations, and integrated air defense. Trusted by allied forces across every theater of operation.",
+    image: "/images/fob-aerial.jpg",
     href: "/solutions/military",
+    tag: "Defense",
   },
   {
-    prefix: "↳",
-    title: "Critical Infrastructure",
-    description:
-      "Power plants, data centers, government facilities. SCADA integration with zero-false-positive operation. 99.97% uptime protecting assets that cannot fail.",
-    href: "/solutions/critical-infrastructure",
-  },
-  {
-    prefix: "↳",
     title: "Airports",
     description:
-      "ATC-integrated with 99.97% uptime. Zero disruption to civilian air traffic while maintaining full threat coverage. Certified for operational use in controlled airspace.",
+      "Zero-disruption drone detection and mitigation integrated with ATC systems. Protect passengers, runways, and terminal infrastructure without impacting flight operations.",
+    image: "/images/solutions-airport.jpg",
     href: "/solutions/airports",
+    tag: "Aviation",
   },
   {
-    prefix: "↳",
+    title: "Critical Infrastructure",
+    description:
+      "Multi-layered defense for power plants, data centers, water treatment facilities, and telecommunications hubs. Prevent surveillance and kinetic attacks on essential national assets.",
+    image: "/images/extra/server-room.jpg",
+    href: "/solutions/critical-infrastructure",
+    tag: "Infrastructure",
+  },
+  {
     title: "Border Security",
     description:
-      "Long-range corridor surveillance, coastal zone monitoring, and frontier defense. Persistent 24/7 coverage across extended perimeters with overlapping detection zones.",
+      "Persistent surveillance and interdiction across vast land borders and coastal perimeters. Detect smuggling drones, unauthorized crossings, and aerial surveillance threats in real time.",
+    image: "/images/extra/border-wall.jpg",
     href: "/solutions/border-security",
+    tag: "Sovereignty",
   },
   {
-    prefix: "↳",
     title: "VIP Protection",
     description:
-      "Discreet mobile and fixed protection for high-value individuals. Rapid deployment capability with covert operation modes. Integrated with existing security infrastructure.",
+      "Discreet, comprehensive counter-drone security for executives, dignitaries, and high-profile events. Man-packable and vehicle-mounted options with silent neutralization capabilities.",
+    image: "/images/extra/vip-event.jpg",
     href: "/solutions/vip-protection",
+    tag: "Executive",
   },
   {
-    prefix: "↳",
-    title: "Prisons & Corrections",
+    title: "Prisons",
     description:
-      "Contraband drone detection and interdiction for correctional facilities. RF jamming and GPS spoofing to prevent drone-delivered contraband. Compliant with civil spectrum regulations.",
+      "Stop contraband delivery by drone before it reaches inmates. Automated detection and interdiction systems designed for correctional facility perimeters of any size.",
+    image: "/images/extra/prison-facility.jpg",
     href: "/solutions/prisons",
+    tag: "Corrections",
   },
+  {
+    title: "Urban Security",
+    description:
+      "Smart city integration for municipal drone detection and mitigation. Protect public events, government buildings, and dense urban populations from unauthorized and malicious UAS activity.",
+    image: "/images/extra/city-skyline-night.jpg",
+    href: "/solutions/urban-security",
+    tag: "Municipal",
+  },
+  {
+    title: "Maritime",
+    description:
+      "Port security, offshore asset protection, and strategic waterway monitoring. Defend vessels, oil platforms, and naval installations from drone-borne threats at sea.",
+    image: "/images/extra/warship-sea.jpg",
+    href: "/solutions/maritime",
+    tag: "Naval",
+  },
+];
+
+const stats = [
+  { value: "8", label: "Solution Domains" },
+  { value: "47+", label: "Countries Deployed" },
+  { value: "99.7%", label: "Detection Rate" },
+  { value: "2.1s", label: "Avg. Response Time" },
+  { value: "24/7", label: "Always Operational" },
 ];
 
 export default function SolutionsPage() {
   return (
-    <>
-      {/* ═══ HERO ═══ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image
-          src="/images/fob-aerial.jpg"
-          alt="Aegis Solutions"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-            Solutions
-          </span>
-          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] md:tracking-[-3.4px] leading-[1.1] text-white">
-            Mission-Ready
-            <br />
-            Deployments
-          </h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Configured for every operational environment — from forward operating
-            bases to civilian airports.
-          </p>
-        </div>
-      </section>
+    <main>
+      <SectionHero
+        image="/images/extra/earth-space.jpg"
+        label="Aegis Defense Systems"
+        title="Solutions"
+        subtitle="Protecting What Matters Most"
+        cta="Request Briefing"
+        ctaHref="/request-demo"
+      />
 
-      {/* ═══ CALLOUT ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              One architecture. Every mission. Every environment.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <Callout>
+        Every critical asset — military, civilian, or sovereign — faces an
+        evolving aerial threat. Aegis delivers the intelligence and
+        interdiction capabilities to neutralize it before harm is done.
+      </Callout>
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-        <AnimatedLine />
-      </div>
+      <StatsSection stats={stats} label="By the Numbers" />
 
-      {/* ═══ OFFERINGS LIST ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16 md:mb-24">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Sectors
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                Offerings
-              </h2>
-            </div>
-          </ScrollReveal>
+      <CardGrid
+        label="Our Solutions"
+        title="Domain-Specific Defense"
+        cards={solutionCards}
+      />
 
-          <div className="space-y-0">
-            {offerings.map((offering, i) => (
-              <ScrollReveal key={offering.title} delay={i * 80}>
-                <div className="border-t border-white/10 group">
-                  <div className="py-10 md:py-16 flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-12 hover:bg-white/[0.02] transition-colors px-2 md:px-4 -mx-2 md:-mx-4">
-                    <div className="md:flex-1">
-                      <h3 className="text-[36px] md:text-[72px] font-bold tracking-[-3px] text-white group-hover:text-white/90 transition-colors leading-[1]">
-                        <span className="text-[#767676]">{offering.prefix}</span>{" "}
-                        {offering.title}
-                      </h3>
-                    </div>
-                    <div className="md:flex-1 md:pt-3">
-                      <p className="text-[#b9b9b9] text-base md:text-lg leading-relaxed">
-                        {offering.description}
-                      </p>
-                      <Link
-                        href={offering.href}
-                        className="inline-block mt-6 text-[10px] uppercase tracking-[0.15em] text-white border-b border-white/30 pb-1 hover:border-white transition-colors"
-                      >
-                        Learn More →
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-            <div className="border-t border-white/10" />
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ CTA ═══ */}
-      <section className="py-24 md:py-32 bg-black border-t border-white/10">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-[28px] md:text-[48px] font-bold tracking-[-0.03em] text-white">
-              Find Your Solution
-            </h2>
-            <p className="mt-4 text-[#767676] text-lg max-w-xl mx-auto">
-              Our defense engineers will configure Aegis for your specific operational requirements.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block mt-8 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
-            >
-              Contact Us
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
+      <CTASection
+        title="Find Your Solution"
+        subtitle="Our team will design a tailored Counter-UAS architecture for your operational environment."
+        primaryCta="Schedule Consultation"
+        primaryHref="/request-demo"
+        secondaryCta="Explore Technology"
+        secondaryHref="/technology"
+      />
+    </main>
   );
 }

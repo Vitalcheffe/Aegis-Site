@@ -1,205 +1,122 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
+"use client";
 
-const specs = [
-  { key: "Track Capacity", value: "50+" },
-  { key: "Update Rate", value: "10 Hz" },
-  { key: "End-to-End Latency", value: "80 ms" },
-  { key: "Detection Range", value: "4 km" },
-  { key: "Sensor Modality", value: "RF DF" },
-  { key: "Effector Types", value: "2 (Jam + Spoof)" },
-  { key: "Classification Accuracy", value: "94.5%" },
-  { key: "Weight", value: "12 kg" },
-  { key: "Battery Life", value: "8 hours" },
-  { key: "Operators", value: "1" },
-  { key: "RF Band", value: "400MHz–6GHz" },
-  { key: "Operating Temp", value: "-20°C to +55°C" },
-];
-
-const differentiators = [
-  {
-    title: "Man-Packable",
-    description:
-      "At 12 kg, Aegis Mobile is the lightest full-capability C-UAS system in the world. Single-operator deployment in under 2 minutes. No vehicle required.",
-  },
-  {
-    title: "RF Direction Finding",
-    description:
-      "Precision RF direction finding across 400MHz–6GHz. Detects and locates UAS control signals and video downlinks at 4km range with 3° bearing accuracy.",
-  },
-  {
-    title: "8-Hour Battery",
-    description:
-      "Hot-swappable battery packs provide 8 hours of continuous operation. Solar charging option for extended dismounted missions. No external power required.",
-  },
-  {
-    title: "Austere Environment",
-    description:
-      "Rated for -20°C to +55°C. IP67 sealed. Drop-tested to 1.5m. Designed for airborne, amphibious, and arctic operations where other systems cannot operate.",
-  },
-];
+import {
+  ProductHero,
+  Callout,
+  SplitSection,
+  SpecTable,
+  CTASection,
+  ImageBreak,
+  StatsSection,
+} from "@/components/sections";
 
 export default function AegisMobilePage() {
   return (
     <>
-      {/* ═══ HERO ═══ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image
-          src="/images/soldier-jammer.jpg"
-          alt="Aegis Mobile System"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
-          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-            Products
-          </span>
-          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">
-            Aegis Mobile
-          </h1>
-          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
-            Man-packable counter-UAS for dismounted operations. 12 kg. 8-hour
-            battery. RF direction finding and jamming in a single operator package.
-          </p>
-          <Link
-            href="/request-demo"
-            className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
-          >
-            Request Demo
-          </Link>
-        </div>
-      </section>
+      <ProductHero
+        image="/images/soldier-jammer.jpg"
+        label="Man-Packable"
+        title="Aegis Mobile"
+        subtitle="Individual soldier counter-UAS protection — precision RF direction-finding and jamming in a man-packable system operational in under 5 minutes."
+        specs={[
+          { value: "50+", label: "Targets Tracked" },
+          { value: "RF DF", label: "Direction Finding" },
+          { value: "5min", label: "Setup Time" },
+          { value: "4km", label: "Detection Range" },
+        ]}
+      />
 
-      {/* ═══ CALLOUT ═══ */}
-      <section className="py-24 md:py-32 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <p className="text-[22px] md:text-[48px] lg:text-[64px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
-              12 kilograms. One operator. Full counter-UAS.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <Callout>
+        Every soldier deserves protection from the skies. Aegis Mobile puts
+        counter-UAS capability in the hands of the individual warfighter — no
+        vehicle, no base infrastructure, no compromise.
+      </Callout>
 
-      <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-        <AnimatedLine />
-      </div>
+      <SplitSection
+        image="/images/extra/soldier-silhouette.jpg"
+        label="Portability"
+        title="One Soldier. One System."
+        description="Aegis Mobile is the culmination of three generations of miniaturization engineering. The entire system — directional antenna array, RF processing unit, battery pack, and operator interface — weighs 12.4 kg and packs into a standard military assault frame. The carbon-fiber mast deploys to 2.1 meters in under 90 seconds, elevating the antenna array above the operator for optimal signal reception. The system is designed to be carried on foot for up to 25 km alongside standard combat load. No external power, no vehicle required, no compromise on capability. When the patrol stops, Aegis Mobile is operational before the perimeter is set."
+        stats={[
+          { value: "12.4kg", label: "Total Weight" },
+          { value: "90sec", label: "Mast Deploy" },
+          { value: "25km", label: "March Load" },
+        ]}
+      />
 
-      {/* ═══ SPECIFICATIONS ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16 md:mb-24">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Specifications
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                Technical Data
-              </h2>
-            </div>
-          </ScrollReveal>
+      <SplitSection
+        image="/images/extra/drone-surveillance.jpg"
+        label="RF Detection"
+        title="Precision Direction Finding"
+        description="At the core of Aegis Mobile is a 6-element phased array antenna that provides precision RF direction finding across the full UAS communication spectrum — 400 MHz to 6 GHz. The system detects and locates drone command links, video downlinks, and autopilot telemetry with bearing accuracy of ±3° at 4 km range. When a threat is detected, the integrated wideband jammer disrupts the command link and GPS reception simultaneously, forcing the drone to enter failsafe mode. The adaptive jamming algorithm minimizes spectral footprint to avoid disrupting friendly communications, targeting only the specific frequency bands used by the identified threat. For swarm scenarios, the system can cycle jamming across multiple threat frequencies at 100ms intervals."
+        reverse
+        stats={[
+          { value: "±3°", label: "Bearing Accuracy" },
+          { value: "400M–6G", label: "Frequency Range" },
+          { value: "100ms", label: "Swarm Cycling" },
+        ]}
+      />
 
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
-              {specs.map((spec) => (
-                <div
-                  key={spec.key}
-                  className="flex justify-between items-center border-b border-white/10 py-5"
-                >
-                  <span className="text-[#767676] text-sm uppercase tracking-wider">
-                    {spec.key}
-                  </span>
-                  <span className="text-white text-lg font-bold tracking-[-0.02em]">
-                    {spec.value}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SplitSection
+        image="/images/extra/military-formation.jpg"
+        label="Field Operations"
+        title="Built for the Pointy End"
+        description="Aegis Mobile was designed with direct input from infantry and special operations forces across eight nations. Every component has been tested to MIL-STD-810H standards — salt fog, sand and dust, rain, humidity, altitude, and thermal shock. The operator interface uses a ruggedized 5-inch daylight-readable display with glove-compatible touch input. Threat alerts are delivered through haptic feedback on the operator's wrist and through the standard tactical headset. When networked with other Aegis Mobile units or an Aegis Tactical platform, multiple soldier-carried systems triangulate threat positions to provide range estimation in addition to bearing — transforming a patrol into a distributed sensor network."
+        stats={[
+          { value: "810H", label: "MIL-STD Rating" },
+          { value: "6hr", label: "Battery Life" },
+          { value: "Multi", label: "Unit Triangulation" },
+        ]}
+      />
 
-      {/* ═══ FULL-BLEED IMAGE ═══ */}
-      <section className="relative h-[50vh] md:h-[70vh] overflow-hidden">
-        <Image
-          src="/images/drone-threat.jpg"
-          alt="Aegis Mobile Operations"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-      </section>
+      <ImageBreak image="/images/extra/military-march.jpg" height="50vh" />
 
-      {/* ═══ KEY DIFFERENTIATORS ═══ */}
-      <section className="py-24 md:py-40 bg-black">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
-          <ScrollReveal>
-            <div className="mb-16 md:mb-24">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
-                Differentiators
-              </span>
-              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
-                Why Aegis Mobile
-              </h2>
-            </div>
-          </ScrollReveal>
+      <StatsSection
+        label="Mobile Performance"
+        stats={[
+          { value: "50+", label: "Targets Tracked" },
+          { value: "4km", label: "Detection Range" },
+          { value: "12.4kg", label: "System Weight" },
+          { value: "6hr", label: "Battery Endurance" },
+          { value: "5min", label: "Setup Time" },
+        ]}
+      />
 
-          <div className="space-y-0">
-            {differentiators.map((d, i) => (
-              <ScrollReveal key={d.title} delay={i * 80}>
-                <div className="border-t border-white/10 py-10 md:py-14">
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
-                    <div className="md:col-span-5">
-                      <h3 className="text-[24px] md:text-[40px] font-bold tracking-[-2px] text-white leading-[1.1]">
-                        {d.title}
-                      </h3>
-                    </div>
-                    <div className="md:col-span-7 md:pt-2">
-                      <p className="text-[#b9b9b9] text-base md:text-lg leading-relaxed">
-                        {d.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-            <div className="border-t border-white/10" />
-          </div>
-        </div>
-      </section>
+      <SpecTable
+        label="Technical Specifications"
+        title="Aegis Mobile — Full Specification"
+        specs={[
+          { label: "Detection Range", value: "4 km (RF command link)" },
+          { label: "Tracking Capacity", value: "50+ simultaneous targets" },
+          { label: "Direction Finding Accuracy", value: "±3° bearing at 4 km" },
+          { label: "Frequency Range", value: "400 MHz – 6 GHz" },
+          { label: "Jamming Output", value: "20W per band (4 concurrent bands)" },
+          { label: "Jamming Modes", value: "Targeted, sweep, barrage, adaptive" },
+          { label: "Classification Accuracy", value: "95.2% (RF signature only)" },
+          { label: "Classification Latency", value: "<200 ms" },
+          { label: "Setup Time", value: "5 minutes (full operational)" },
+          { label: "System Weight", value: "12.4 kg (complete with battery)" },
+          { label: "Mast Height", value: "2.1 m (carbon fiber, 90 sec deploy)" },
+          { label: "Battery Endurance", value: "6 hours (continuous operation)" },
+          { label: "Battery Type", value: "BB-2590/U (standard military)" },
+          { label: "Operating Temperature", value: "-32°C to +49°C" },
+          { label: "Environmental Rating", value: "MIL-STD-810H, IP67" },
+          { label: "Display", value: "5-inch daylight-readable, glove-compatible" },
+          { label: "Alert Delivery", value: "Haptic + tactical headset + visual" },
+          { label: "Networking", value: "MANET radio, ATAK integration" },
+          { label: "Classification", value: "NATO RESTRICTED / ITAR Controlled" },
+          { label: "MTBF", value: ">5,000 hours" },
+        ]}
+      />
 
-      {/* ═══ CTA ═══ */}
-      <section className="py-24 md:py-32 bg-black border-t border-white/10">
-        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-[28px] md:text-[48px] font-bold tracking-[-0.03em] text-white">
-              Test Aegis Mobile
-            </h2>
-            <p className="mt-4 text-[#767676] text-lg max-w-xl mx-auto">
-              Hands-on evaluation available for qualified defense organizations.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/request-demo"
-                className="bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
-              >
-                Request Demo
-              </Link>
-              <Link
-                href="/products"
-                className="border border-white/20 text-white px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-white/5 transition-colors"
-              >
-                All Products
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <CTASection
+        title="Protect Every Soldier"
+        subtitle="Aegis Mobile is fielded with infantry and special operations units across 6 nations. Evaluate man-packable counter-UAS for your dismounted operations."
+        primaryCta="Request a Briefing"
+        primaryHref="/request-demo"
+        secondaryCta="Explore All Platforms"
+        secondaryHref="/products"
+      />
     </>
   );
 }
