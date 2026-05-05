@@ -107,7 +107,7 @@ export default function HistoryPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/pages/defense-screen.jpg"
+        image="/images/pages/about-engineering.jpg"
         height="55vh"
         overlay="bg-black/40"
       />

@@ -50,7 +50,7 @@ export default function CriticalInfrastructurePage() {
       />
 
       <SplitSection
-        image="/images/pages/defense-screen.jpg"
+        image="/images/pages/infrastructure-power-plant.jpg"
         label="Data Center Security"
         title="Safeguarding the World's Data"
         description="Hyperscale data centers represent concentrations of value that rival any financial institution — and their rooftop cooling infrastructure, fiber optic entry points, and power feeds present attractive targets for drone-borne surveillance and attack. Aegis data center solutions provide multi-layered protection that begins at the outer perimeter and extends through the building envelope. Our systems detect drones conducting ISR overflights, neutralize UAS attempting to deliver electromagnetic pulse devices, and interdict aerial surveillance of fiber optic cable routes and power substations. Integrated with existing physical security infrastructure through PSIM platforms, Aegis provides a unified operating picture that correlates aerial and ground-based threats, enabling coordinated response across all security domains."

@@ -50,7 +50,7 @@ export default function PrisonsPage() {
       />
 
       <SplitSection
-        image="/images/pages/surveillance-cam.jpg"
+        image="/images/pages/prison-facility.jpg"
         label="Perimeter Security"
         title="Integrated Perimeter Defense"
         description="Drone threats don't exist in isolation — they are part of a broader perimeter security challenge that includes fence-line breaches, vehicle approaches, and unauthorized personnel. Aegis prison solutions integrate drone detection with existing physical security infrastructure, correlating aerial threat data with CCTV, fence sensors, and access control systems through a unified command interface. When a drone is detected, the system automatically directs PTZ cameras to track it, alerts perimeter patrol staff via radio and pager, and provides the control room with real-time threat visualization. For facilities with multiple housing units, our modular architecture provides zoned coverage that can expand from a single cell block to an entire complex. The system operates 24/7 with minimal staff, making it practical for facilities with limited security budgets."

@@ -50,7 +50,7 @@ export default function NavalPage() {
       />
 
       <SplitSection
-        image="/images/pages/defense-jet-night.jpg"
+        image="/images/pages/naval-warship.jpg"
         label="Swarm Defense"
         title="Defeating Coordinated Swarm Attacks"
         description="The age of the drone swarm has arrived at sea. Adversaries can now launch dozens of coordinated UAS from shore-based or maritime platforms, overwhelming traditional point-defense systems through sheer numbers and simultaneous attack vectors. Aegis naval systems employ wideband RF denial to disrupt swarm command-and-control links across multiple frequency bands simultaneously. When RF interdiction alone is insufficient, our layered approach transitions to directional energy and kinetic options, prioritizing the highest-threat elements while maintaining coverage against follow-on attacks. The system's autonomous engagement logic can simultaneously neutralize over 75 individual drones in a single swarm event."

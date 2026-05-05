@@ -50,7 +50,7 @@ export default function SpecialOperationsPage() {
       />
 
       <SplitSection
-        image="/images/pages/military-soldier-aim.jpg"
+        image="/images/pages/specialops-night.jpg"
         label="Man-Packable"
         title="One Operator. Total Coverage."
         description="Traditional counter-drone systems require vehicles, power generators, and teams of operators — luxuries that SOF units cannot afford. Aegis man-packable systems are designed around the individual operator, with an intuitive heads-up display that integrates with existing night vision and helmet systems. Threat alerts appear as directional indicators on the operator's HUD, allowing immediate situational awareness without looking down at a separate screen. Engagement is semi-autonomous: the operator authorizes neutralization, and the system handles frequency selection, directional beam steering, and power optimization automatically. For extended operations, the tripod-mounted configuration expands detection range to 8 kilometers while maintaining full stealth capability. Hot-swappable batteries ensure continuous operation through missions lasting 24 hours or more."

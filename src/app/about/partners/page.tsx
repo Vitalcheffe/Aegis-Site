@@ -77,7 +77,7 @@ export default function PartnersPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/pages/surveillance-cam.jpg"
+        image="/images/pages/shield-array.jpg"
         height="55vh"
         overlay="bg-black/50"
       />
@@ -91,42 +91,42 @@ export default function PartnersPage() {
             title: "U.S. Department of Defense",
             description:
               "Our foundational partnership. Aegis holds multiple contracts across the U.S. Army, Navy, Air Force, and Marine Corps, protecting forward operating bases, naval vessels, and critical installations worldwide. The DoD's operational feedback has shaped every major product iteration since v1.0, and our rapid fielding capability has made Aegis the go-to counter-UAS solution for urgent operational needs.",
-            image: "/images/pages/military-soldier-aim.jpg",
+            image: "/images/pages/fob-military.jpg",
             tag: "Government",
           },
           {
             title: "NATO Allied Command",
             description:
               "As the first STANAG 4671-certified counter-UAS platform, Aegis serves as the backbone of NATO's integrated counter-drone architecture. Our systems participate in annual NATO exercises and provide real-time threat data to the Alliance's common operating picture, enabling coordinated multi-national defense against drone threats across the European theater.",
-            image: "/images/pages/defense-screen.jpg",
+            image: "/images/pages/c2-operations.jpg",
             tag: "Alliance",
           },
           {
             title: "Lockheed Martin",
             description:
               "Our partnership with Lockheed Martin enables seamless integration between Aegis counter-UAS capabilities and the broader air defense ecosystem. Joint development of the Aegis-to-Aegis Combat System data bridge allows our counter-UAS tracks to feed directly into shipboard combat management systems, providing naval commanders with a unified air picture that includes the drone threat layer.",
-            image: "/images/pages/defense-jet-night.jpg",
+            image: "/images/pages/airdefense-patriot.jpg",
             tag: "Defense Contractor",
           },
           {
             title: "NVIDIA",
             description:
               "NVIDIA's GPU computing platforms power the Aegis Neural Processing Unit — the custom AI inference engine at the heart of our v3.0 architecture. Our partnership ensures that Aegis benefits from NVIDIA's relentless pace of hardware innovation, with each new GPU generation delivering measurable improvements in classification speed and accuracy that we pass directly to our customers through software updates.",
-            image: "/images/pages/radar-scope.jpg",
+            image: "/images/pages/tech-circuit.jpg",
             tag: "Technology",
           },
           {
             title: "MIT Lincoln Laboratory",
             description:
               "Our longest-standing research partnership. MIT Lincoln Laboratory collaborates with Aegis on next-generation radar signal processing, multi-spectral sensor fusion algorithms, and novel detection techniques for low-observable UAS. The partnership has produced 8 joint patents and 14 peer-reviewed publications, and it ensures that Aegis detection capabilities remain at the absolute frontier of what is physically possible.",
-            image: "/images/pages/defense-antenna.jpg",
+            image: "/images/pages/about-engineering.jpg",
             tag: "Research",
           },
           {
             title: "UK Ministry of Defence",
             description:
               "The United Kingdom was one of the first allied nations to deploy Aegis, and the partnership has deepened significantly over the years. Aegis systems protect Royal Navy vessels, British Army forward operating bases, and critical national infrastructure across the UK. The MoD's rigorous testing and evaluation process has made Aegis systems more resilient, and their operational feedback has directly shaped our naval and urban defense capabilities.",
-            image: "/images/pages/military-chopper.jpg",
+            image: "/images/pages/london-skyline.jpg",
             tag: "Government",
           },
         ]}

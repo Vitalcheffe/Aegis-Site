@@ -80,7 +80,7 @@ export default function CompanyPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/pages/defense-screen.jpg"
+        image="/images/pages/company-office.jpg"
         height="55vh"
         overlay="bg-black/40"
       />

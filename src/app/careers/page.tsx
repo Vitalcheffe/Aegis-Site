@@ -125,7 +125,7 @@ export default function CareersPage() {
             title: "Senior Radar Engineer",
             description:
               "Lead the design and optimization of S-Band and X-Band radar processing pipelines for our next-generation detection system. Requires 8+ years in radar systems engineering with expertise in CFAR algorithms, STAP, and phased array beamforming.",
-            image: "/images/pages/radar-scope.jpg",
+            image: "/images/pages/detection-sensor.jpg",
             href: "/careers/openings",
             tag: "Engineering",
           },
@@ -133,7 +133,7 @@ export default function CareersPage() {
             title: "ML Research Scientist",
             description:
               "Develop novel transformer architectures for real-time multi-spectral threat classification. Work with the largest labeled C-UAS dataset in existence to push accuracy beyond 99.5%. PhD in ML, CV, or signal processing preferred.",
-            image: "/images/pages/defense-screen.jpg",
+            image: "/images/pages/classification-ai.jpg",
             href: "/careers/openings",
             tag: "Research",
           },
@@ -141,7 +141,7 @@ export default function CareersPage() {
             title: "Counter-UAS Analyst",
             description:
               "Analyze evolving drone threat patterns, produce tactical intelligence reports, and inform product requirements based on real-world operational data. Military intelligence background and active TS/SCI clearance required.",
-            image: "/images/pages/defense-antenna.jpg",
+            image: "/images/pages/tracking-screen.jpg",
             href: "/careers/openings",
             tag: "Operations",
           },
@@ -149,7 +149,7 @@ export default function CareersPage() {
             title: "Systems Architect",
             description:
               "Design the distributed systems architecture for Aegis Core v4.0, spanning edge compute nodes, cloud-based analytics, and hardened tactical networks. Experience with real-time distributed systems and defense certifications preferred.",
-            image: "/images/pages/surveillance-cam.jpg",
+            image: "/images/pages/integrator-code.jpg",
             href: "/careers/openings",
             tag: "Engineering",
           },

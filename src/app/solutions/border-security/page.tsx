@@ -50,7 +50,7 @@ export default function BorderSecurityPage() {
       />
 
       <SplitSection
-        image="/images/pages/surveillance-cam.jpg"
+        image="/images/pages/border-patrol.jpg"
         label="Coastal Monitoring"
         title="Coastal and Maritime Border Defense"
         description="Coastal borders present unique challenges — vast expanses of open water, dense maritime traffic, and drone launch platforms that can be as small as a fishing vessel. Aegis coastal monitoring systems combine shore-based radar arrays with elevated EO/IR platforms to detect low-altitude drone flights over water, where radar clutter from waves and weather can mask small UAS signatures. Our maritime-correlation algorithms fuse AIS vessel tracking data with UAS detection, identifying likely launch platforms and enabling interdiction at the source. For archipelagic nations, our distributed architecture links island-based sensor nodes via satellite backhaul, creating a unified operating picture across hundreds of kilometers of maritime border. The system operates autonomously for up to 90 days between maintenance visits, making it practical for deployment on remote islands and atolls."

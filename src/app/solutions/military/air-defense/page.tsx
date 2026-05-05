@@ -50,7 +50,7 @@ export default function AirDefensePage() {
       />
 
       <SplitSection
-        image="/images/pages/radar-scope.jpg"
+        image="/images/pages/airdefense-patriot.jpg"
         label="Low-Altitude Threats"
         title="Engaging the Low-Altitude Gap"
         description="The most dangerous drones fly low and slow — below the coverage envelope of traditional air defense radar, exploiting terrain masking and urban clutter to approach undetected. Aegis systems are specifically optimized for this low-altitude gap, with clutter-rejection algorithms that distinguish drone returns from birds, ground vehicles, and atmospheric noise. When a threat enters the engagement zone, the system automatically selects the optimal neutralization method based on target profile, distance, altitude, and collateral risk assessment. RF denial is the first response for command-guided drones; directed energy options are employed for autonomous threats that cannot be jammed. The entire detect-track-classify-neutralize cycle completes in under three seconds for the highest-priority threats."

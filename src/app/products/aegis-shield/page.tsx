@@ -46,7 +46,7 @@ export default function AegisShieldPage() {
       />
 
       <SplitSection
-        image="/images/pages/aegis-shield-passive.jpg"
+        image="/images/pages/shield-array.jpg"
         label="Stealth Operation"
         title="Defensive Dominance Without Signature"
         description="The strategic value of Aegis Shield lies in its complete electromagnetic silence. In an era where adversarial drones routinely carry RF detection payloads that map defensive positions, Aegis Shield provides counter-UAS awareness without revealing its existence. This makes it uniquely suited for VIP protection details, covert forward operating bases, diplomatic facilities, and any scenario where operational security demands that defensive capabilities remain undetected. The system integrates seamlessly with existing physical security infrastructure — mounted on building perimeters, vehicle convoys, or temporary barriers. When combined with an active Aegis platform through the network backbone, Aegis Shield provides the silent detection layer that hands off classified threat data to kinetic and non-kinetic effectors without ever emitting."
@@ -59,7 +59,7 @@ export default function AegisShieldPage() {
       />
 
       <SplitSection
-        image="/images/pages/aegis-shield-passive.jpg"
+        image="/images/pages/shield-defense.jpg"
         label="Full Coverage"
         title="360° Awareness, Zero Gaps"
         description="Aegis Shield provides complete hemispherical coverage through its distributed sensor architecture. The acoustic array detects and localizes threats across the full 360° azimuth with ±5° bearing accuracy, while the thermal and optical arrays provide overlapping coverage sectors that eliminate detection gaps. The fusion engine correlates acoustic, thermal, and visual detections to maintain continuous track even when individual sensor modalities are degraded — drone motors masked by wind noise are still tracked via thermal signature, and heat-obscured targets are still detected acoustically. This multi-modal redundancy ensures no threat approaches undetected, regardless of environmental conditions or adversarial countermeasures. The system maintains full detection capability while operating alongside sensitive electronics, medical equipment, and communication systems with zero electromagnetic interference."
@@ -70,7 +70,7 @@ export default function AegisShieldPage() {
         ]}
       />
 
-      <ImageBreak image="/images/pages/defense-antenna.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/shield-perimeter.jpg" height="50vh" />
 
       <StatsSection
         label="Shield Performance"

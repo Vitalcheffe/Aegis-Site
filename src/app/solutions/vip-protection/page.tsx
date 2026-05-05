@@ -50,7 +50,7 @@ export default function VIPProtectionPage() {
       />
 
       <SplitSection
-        image="/images/pages/defense-screen.jpg"
+        image="/images/pages/vip-security.jpg"
         label="Event Security"
         title="Securing High-Profile Events"
         description="Public events — summits, conferences, galas, rallies — present a nightmare security scenario: large crowds, open airspace, and predictable schedules that give adversaries time to plan drone attacks. Aegis event security solutions deploy temporary counter-drone perimeters around venues of any size, from intimate board meetings to 50,000-capacity outdoor events. Our advance team surveys the venue, identifies threat corridors, and pre-programs exclusion zones that trigger automatic interdiction when breached. During the event, the system operates alongside existing security infrastructure, correlating aerial threat data with ground-based CCTV and access control systems through a unified PSIM interface. After the event, the entire system packs into standard transit cases for rapid redeployment. Every event deployment includes a dedicated threat analyst who monitors the system and coordinates with the protective detail in real time."

@@ -45,7 +45,7 @@ export default function AegisMobilePage() {
       />
 
       <SplitSection
-        image="/images/pages/aegis-mobile-portable.jpg"
+        image="/images/pages/mobile-field.jpg"
         label="RF Detection"
         title="Precision Direction Finding"
         description="At the core of Aegis Mobile is a 6-element phased array antenna that provides precision RF direction finding across the full UAS communication spectrum — 400 MHz to 6 GHz. The system detects and locates drone command links, video downlinks, and autopilot telemetry with bearing accuracy of ±3° at 4 km range. When a threat is detected, the integrated wideband jammer disrupts the command link and GPS reception simultaneously, forcing the drone to enter failsafe mode. The adaptive jamming algorithm minimizes spectral footprint to avoid disrupting friendly communications, targeting only the specific frequency bands used by the identified threat. For swarm scenarios, the system can cycle jamming across multiple threat frequencies at 100ms intervals."
@@ -58,7 +58,7 @@ export default function AegisMobilePage() {
       />
 
       <SplitSection
-        image="/images/pages/aegis-mobile-portable.jpg"
+        image="/images/pages/mobile-tactical.jpg"
         label="Field Operations"
         title="Built for the Pointy End"
         description="Aegis Mobile was designed with direct input from infantry and special operations forces across eight nations. Every component has been tested to MIL-STD-810H standards — salt fog, sand and dust, rain, humidity, altitude, and thermal shock. The operator interface uses a ruggedized 5-inch daylight-readable display with glove-compatible touch input. Threat alerts are delivered through haptic feedback on the operator's wrist and through the standard tactical headset. When networked with other Aegis Mobile units or an Aegis Tactical platform, multiple soldier-carried systems triangulate threat positions to provide range estimation in addition to bearing — transforming a patrol into a distributed sensor network."
@@ -69,7 +69,7 @@ export default function AegisMobilePage() {
         ]}
       />
 
-      <ImageBreak image="/images/pages/military-soldier-aim.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/mobile-tactical.jpg" height="50vh" />
 
       <StatsSection
         label="Mobile Performance"

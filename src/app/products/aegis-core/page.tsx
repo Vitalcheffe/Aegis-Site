@@ -72,7 +72,7 @@ export default function AegisCorePage() {
         ]}
       />
 
-      <ImageBreak image="/images/pages/defense-screen.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/command-dashboard.jpg" height="50vh" />
 
       <StatsSection
         label="Performance Metrics"
@@ -118,7 +118,7 @@ export default function AegisCorePage() {
         role="Director of Integrated Air & Missile Defense, Allied Joint Force Command"
       />
 
-      <ImageBreak image="/images/pages/radar-scope.jpg" height="40vh" />
+      <ImageBreak image="/images/pages/tracking-screen.jpg" height="40vh" />
 
       <CTASection
         title="Deploy the Standard"

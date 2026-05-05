@@ -50,7 +50,7 @@ export default function AirportsPage() {
       />
 
       <SplitSection
-        image="/images/pages/surveillance-cam.jpg"
+        image="/images/pages/airport-terminal.jpg"
         label="Passenger Safety"
         title="Protecting Passengers Without Disruption"
         description="The ultimate measure of an airport counter-drone system is not just threat neutralization — it's operational continuity. Every minute of runway closure costs airlines and airports hundreds of thousands of dollars; every diversion disrupts thousands of passengers. Aegis systems are designed to neutralize threats while keeping the airport operational. Our selective RF interdiction targets only the specific frequencies used by the offending drone, leaving all other RF traffic — including airport communications, WiFi, and cellular services — completely unaffected. When a threat is detected, the system provides ATC with real-time geofence recommendations that isolate the drone's operating area while keeping adjacent runways and taxiways clear. This surgical approach has enabled Aegis-equipped airports to maintain operations during drone incidents that would have shut down unprotected facilities for hours."

@@ -58,7 +58,7 @@ export default function InvestorsPage() {
 
       {/* ── FINANCIAL PERFORMANCE ── */}
       <SplitSection
-        image="/images/pages/radar-scope.jpg"
+        image="/images/pages/investors-chart.jpg"
         label="Financial Performance"
         title="Sustained Hypergrowth"
         description="Aegis has achieved 180% year-over-year revenue growth driven by three reinforcing dynamics: expanding existing customer deployments (net revenue retention of 162%), winning new nation-level contracts (4 new sovereign customers in 2024), and upselling directed energy and AI capabilities into our installed base. Gross margins have expanded from 58% in 2022 to 71% in 2024 as our software-defined architecture increasingly drives revenue relative to hardware. Annual recurring revenue now represents 64% of total revenue, providing high-visibility forward coverage. The $340M Series D round closed in October 2024 at a $2.4B post-money valuation, providing balance sheet capacity to fund continued R&D investment and geographic expansion without near-term dilution pressure."

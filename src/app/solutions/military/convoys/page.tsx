@@ -50,7 +50,7 @@ export default function ConvoysPage() {
       />
 
       <SplitSection
-        image="/images/pages/military-soldier-aim.jpg"
+        image="/images/pages/convoy-vehicles.jpg"
         label="Route Clearance"
         title="Aerial Route Clearance and Overwatch"
         description="Before a convoy moves, the route must be clear — not just of IEDs on the ground, but of UAS loitering above. Aegis convoy systems provide aerial route clearance by scanning the intended path forward, identifying drones positioned for ambush, and neutralizing them before the column enters the engagement zone. When integrated with our mesh radio network, multiple convoy vehicles form a distributed sensor array that extends detection coverage across the entire column. Each vehicle's sensors share threat data in real time, creating a collective operating picture that no single-node system can match. Route clearance mode can be initiated by the convoy commander or triggered automatically when the system detects pre-positioned UAS along the planned route."

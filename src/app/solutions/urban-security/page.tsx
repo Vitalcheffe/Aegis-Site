@@ -50,7 +50,7 @@ export default function UrbanSecurityPage() {
       />
 
       <SplitSection
-        image="/images/pages/defense-antenna.jpg"
+        image="/images/pages/urban-cityscape.jpg"
         label="Public Events"
         title="Securing Public Gatherings and Events"
         description="Marathons, concerts, sporting events, political rallies — large public gatherings present an irresistible target for drone operators, whether their intent is disruption, surveillance, or attack. Aegis event security solutions deploy rapidly around venues of any size, creating a protective counter-drone umbrella that operates transparently to the public. Our non-kinetic neutralization approach ensures that interdiction is invisible to attendees — drones simply lose command link and execute pre-programmed return-to-home behavior, eliminating the risk of a disabled drone falling into a crowd. For recurring events, the system learns the operational pattern and automatically tunes its detection thresholds, reducing false alarms with each deployment. Post-event analytics provide law enforcement with comprehensive threat reports and forensic data for investigation and prosecution."

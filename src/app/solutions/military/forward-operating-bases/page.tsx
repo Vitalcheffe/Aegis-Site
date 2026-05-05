@@ -50,7 +50,7 @@ export default function ForwardOperatingBasesPage() {
       />
 
       <SplitSection
-        image="/images/pages/radar-scope.jpg"
+        image="/images/pages/fob-military.jpg"
         label="Sensor Integration"
         title="Integrated Sensor Coverage"
         description="No single sensor modality can address the full threat landscape. Aegis FOB solutions combine phased-array radar for long-range detection, electro-optical and infrared cameras for visual confirmation, and RF spectrum monitoring for command-link identification. Sensor fusion algorithms correlate data across all modalities in real time, producing a single integrated operating picture that eliminates false positives and ensures no threat goes untracked. The system automatically prioritizes threats based on trajectory, speed, and behavioral analysis, presenting operators with actionable intelligence rather than raw data feeds."

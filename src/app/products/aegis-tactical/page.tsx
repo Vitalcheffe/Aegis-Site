@@ -59,7 +59,7 @@ export default function AegisTacticalPage() {
       />
 
       <SplitSection
-        image="/images/pages/military-jeep.jpg"
+        image="/images/pages/mobile-vehicle.jpg"
         label="Tactical Operations"
         title="Forward Edge Protection"
         description="Aegis Tactical was purpose-built for the realities of forward operating base defense. The system provides layered protection against the full spectrum of UAS threats — from commercially modified quadcopters conducting ISR to military-grade fixed-wing UAVs delivering precision munitions. The integrated RF detection array identifies drone command links at 8km, while the compact radar provides 3D track data on targets as small as 0.001m² RCS. When threats penetrate the detection layer, the onboard effector suite — RF jamming and GPS spoofing — provides non-kinetic neutralization with zero collateral effects. For high-value threats, Aegis Tactical coordinates with Aegis Core or other networked platforms to assign kinetic effectors through the Aegis Command battle management network."
@@ -70,7 +70,7 @@ export default function AegisTacticalPage() {
         ]}
       />
 
-      <ImageBreak image="/images/pages/military-chopper.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/mobile-vehicle.jpg" height="50vh" />
 
       <StatsSection
         label="Tactical Performance"

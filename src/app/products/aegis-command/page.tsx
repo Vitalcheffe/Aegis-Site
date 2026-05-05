@@ -46,7 +46,7 @@ export default function AegisCommandPage() {
       />
 
       <SplitSection
-        image="/images/pages/aegis-command-battle.jpg"
+        image="/images/pages/command-dashboard.jpg"
         label="Kill Chain Automation"
         title="From Detect to Neutralize in Seconds"
         description="The kill chain automation engine is the operational core of Aegis Command. It implements a configurable decision framework that automates the detect-track-classify-assess-engage cycle according to mission-specific rules of engagement. When a threat is classified, the automation engine assesses it against the ROE matrix — evaluating target type, threat priority, proximity to protected assets, and collateral risk — to determine the appropriate response. For pre-authorized threat categories (e.g., confirmed hostile UAVs within the weapons engagement zone), the system autonomously selects and assigns the optimal effector, executes the engagement, and reports the result. For ambiguous or high-collateral-risk scenarios, the system presents the commander with a threat assessment package and recommended action, awaiting authorization before engagement. The entire automated cycle completes in under 2 seconds — compared to the 15-30 second human-only decision cycle that adversaries exploit."
@@ -59,7 +59,7 @@ export default function AegisCommandPage() {
       />
 
       <SplitSection
-        image="/images/pages/aegis-command-battle.jpg"
+        image="/images/pages/command-operations.jpg"
         label="Multi-Domain Coordination"
         title="Air, Ground, Sea, Cyber — Unified"
         description="Modern UAS threats operate across domain boundaries — launched from land or sea, communicating via satellite links, and coordinated through cyber-enabled command networks. Aegis Command coordinates counter-UAS operations across all relevant domains through its multi-domain integration framework. Air domain sensors provide the primary detection and tracking picture. Ground domain assets — Aegis Mobile units, ground-based radars, MANPADS teams — contribute local sensor data and constitute the inner layer of the defensive array. Maritime domain integration brings ship-based radar and effector data for coastal and littoral operations. Cyber domain intelligence feeds provide advance warning of UAS operations through signals intelligence and network exploitation products. This multi-domain coordination ensures that no threat escapes the defensive net by crossing jurisdictional or domain boundaries."
@@ -70,7 +70,7 @@ export default function AegisCommandPage() {
         ]}
       />
 
-      <ImageBreak image="/images/pages/defense-screen.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/command-decision.jpg" height="50vh" />
 
       <StatsSection
         label="Command Performance"

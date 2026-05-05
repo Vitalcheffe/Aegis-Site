@@ -39,7 +39,7 @@ export default function ProductsPage() {
         ]}
       />
 
-      <ImageBreak image="/images/pages/defense-jet-night.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/products-defense.jpg" height="50vh" />
 
       <div id="platforms">
         <FeatureList
@@ -106,7 +106,7 @@ export default function ProductsPage() {
         />
       </div>
 
-      <ImageBreak image="/images/pages/military-chopper.jpg" height="60vh" />
+      <ImageBreak image="/images/pages/mobile-vehicle.jpg" height="60vh" />
 
       <CTASection
         title="Ready to Deploy"
