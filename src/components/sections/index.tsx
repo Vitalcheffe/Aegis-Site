@@ -1,5 +1,7 @@
 "use client";
 
+export { KillChainDiagram } from "./kill-chain-diagram";
+
 import { useEffect, useRef, ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";

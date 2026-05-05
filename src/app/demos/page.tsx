@@ -168,9 +168,8 @@ function RadarPPICanvas() {
       // Sweep line
       const sweepAngle = angleRef.current;
       const sweepLength = 0.5; // radians of sweep trail
-      const gradient = ctx.createConicalGradient
-        ? null
-        : null;
+      // Sweep gradient (not widely supported, using fallback)
+      const _gradient = null;
 
       // Draw sweep trail (multiple arcs for fade effect)
       for (let i = 0; i < 30; i++) {

@@ -12,6 +12,7 @@ import {
   QuoteSection,
   ScrollReveal,
   AnimatedLine,
+  KillChainDiagram,
 } from "@/components/sections";
 
 export default function HomePage() {
@@ -36,8 +37,6 @@ export default function HomePage() {
         civilian populations worldwide.
       </Callout>
 
-      <AnimatedLine />
-
       {/* ── STATS ── */}
       <StatsSection
         label="By the Numbers"
@@ -50,41 +49,8 @@ export default function HomePage() {
         ]}
       />
 
-      {/* ── COMPLETE KILL CHAIN ── */}
-      <FeatureList
-        label="Complete Kill Chain"
-        title="Four Phases. One System."
-        items={[
-          {
-            title: "Detection",
-            description:
-              "Multi-spectral sensor fusion across S-Band radar, RF direction finding, EO/IR cameras, and acoustic arrays provides 360° coverage with zero blind spots. Detects micro-drones at 15 km and fixed-wing UAVs at 35 km.",
-            href: "/capabilities/detection",
-            tag: "Phase 01",
-          },
-          {
-            title: "Tracking",
-            description:
-              "Iterated Multi-Model Unscented Kalman Filter (IMM-UKF) maintains firm track on 500+ concurrent targets with sub-meter positional accuracy. Automatic track initiation, correlation, and handoff between sensor nodes.",
-            href: "/capabilities/tracking",
-            tag: "Phase 02",
-          },
-          {
-            title: "Classification",
-            description:
-              "Deep learning models trained on 12 million signal signatures classify threats by type, intent, and payload in 20 milliseconds. Distinguishes friendly from hostile, identifies swarm behavior, and predicts trajectory.",
-            href: "/capabilities/classification",
-            tag: "Phase 03",
-          },
-          {
-            title: "Neutralization",
-            description:
-              "Graduated response from RF jamming and GPS spoofing to directed energy and kinetic interceptors. Rules-of-engagement engine ensures proportional, compliant countermeasures with full audit trail.",
-            href: "/capabilities/neutralization",
-            tag: "Phase 04",
-          },
-        ]}
-      />
+      {/* ── INTERACTIVE KILL CHAIN ── */}
+      <KillChainDiagram />
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak

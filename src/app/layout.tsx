@@ -12,11 +12,46 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aegis — Counter-UAS Defense Systems",
+  title: {
+    default: "Aegis — Counter-UAS Defense Systems",
+    template: "%s | Aegis Defense Systems",
+  },
   description:
     "Advanced multi-spectral counter-UAS defense system. Detection, tracking, classification, and neutralization of unmanned aerial threats in 20 milliseconds.",
   icons: {
-    icon: "/logo.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/logo.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://aegisco.vercel.app",
+    siteName: "Aegis Defense Systems",
+    title: "Aegis — Counter-UAS Defense Systems",
+    description:
+      "Advanced multi-spectral counter-UAS defense system. Detection, tracking, classification, and neutralization of unmanned aerial threats in 20 milliseconds.",
+    images: [
+      {
+        url: "/images/hero-radar.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Aegis Counter-UAS Defense System",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aegis — Counter-UAS Defense Systems",
+    description:
+      "Advanced multi-spectral counter-UAS defense system protecting critical assets across 12 nations.",
+    images: ["/images/hero-radar.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
