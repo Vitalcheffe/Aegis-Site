@@ -14,7 +14,7 @@ export default function CertificationsPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/tech-lab.jpg"
+        image="/images/pages/certifications-hero.jpg"
         label="Certifications"
         title="Certified for Mission-Critical Operations"
         subtitle="In defense technology, trust is earned through rigorous evaluation, independent verification, and transparent compliance. Aegis holds the most comprehensive set of certifications in the counter-UAS industry — because the systems that protect lives must be held to the highest possible standard."

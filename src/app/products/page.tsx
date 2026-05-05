@@ -13,7 +13,7 @@ export default function ProductsPage() {
   return (
     <>
       <SectionHero
-        image="/images/drone-threat.jpg"
+        image="/images/pages/products-hero.jpg"
         label="Platforms"
         title="Built for Every Mission"
         subtitle="Eight purpose-engineered counter-UAS platforms. From fixed strategic installations to individual soldier protection — every threat vector covered."
@@ -39,7 +39,7 @@ export default function ProductsPage() {
         ]}
       />
 
-      <ImageBreak image="/images/extra/military-operations.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/defense-jet-night.jpg" height="50vh" />
 
       <div id="platforms">
         <FeatureList
@@ -106,7 +106,7 @@ export default function ProductsPage() {
         />
       </div>
 
-      <ImageBreak image="/images/extra/fighter-jet.jpg" height="60vh" />
+      <ImageBreak image="/images/pages/military-chopper.jpg" height="60vh" />
 
       <CTASection
         title="Ready to Deploy"

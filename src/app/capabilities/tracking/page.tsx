@@ -14,7 +14,7 @@ export default function TrackingPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/satellite-orbit.jpg"
+        image="/images/pages/tracking-hero.jpg"
         label="Tracking"
         title="500 Targets. Zero Escapes."
         subtitle="Iterated Multi-Model Unscented Kalman Filter maintains firm, continuous track on hundreds of concurrent threats with sub-meter accuracy — even through maneuvering, jamming, and sensor handoff."

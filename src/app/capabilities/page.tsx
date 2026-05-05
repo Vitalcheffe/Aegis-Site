@@ -15,7 +15,7 @@ export default function CapabilitiesPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/military-night.jpg"
+        image="/images/pages/capabilities-hero.jpg"
         label="Capabilities"
         title="Full-Spectrum Counter-UAS"
         subtitle="From first detection to final neutralization, Aegis covers every phase of the counter-UAS kill chain with unmatched speed, precision, and reliability."
@@ -86,7 +86,7 @@ export default function CapabilitiesPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/command-center.jpg"
+        image="/images/pages/command-hero.jpg"
         height="50vh"
         overlay="bg-black/50"
       />

@@ -11,7 +11,7 @@ export default function EventsPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/vip-event.jpg"
+        image="/images/pages/events-hero.jpg"
         label="News"
         title="Events"
         subtitle="See Aegis in Action"

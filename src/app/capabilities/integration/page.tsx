@@ -15,7 +15,7 @@ export default function IntegrationPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/network-ops.jpg"
+        image="/images/pages/integration-hero.jpg"
         label="Integration"
         title="Connect Everything. Silo Nothing."
         subtitle="Aegis Integrator bridges every sensor, effector, and command network into a single coherent system — eliminating data silos and enabling joint, multi-domain counter-UAS operations."
@@ -86,7 +86,7 @@ export default function IntegrationPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/extra/tactical-coordination.jpg"
+        image="/images/pages/integration-api.jpg"
         height="50vh"
         overlay="bg-black/50"
       />

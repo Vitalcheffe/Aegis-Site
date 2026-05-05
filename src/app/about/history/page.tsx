@@ -15,7 +15,7 @@ export default function HistoryPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/military-march.jpg"
+        image="/images/pages/history-hero.jpg"
         label="History"
         title="From Vision to Global Deployment"
         subtitle="The complete chronicle of Aegis Defense Systems — from a three-person startup with a radical idea to the most trusted counter-UAS platform in the free world. Every milestone earned, every challenge overcome, every system deployed in service of a single mission: keeping the skies safe."
@@ -107,7 +107,7 @@ export default function HistoryPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/extra/gradient-abstract.jpg"
+        image="/images/pages/defense-screen.jpg"
         height="55vh"
         overlay="bg-black/40"
       />

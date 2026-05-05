@@ -29,7 +29,7 @@ export default function VIPProtectionPage() {
   return (
     <main>
       <SectionHero
-        image="/images/extra/vip-event.jpg"
+        image="/images/pages/vip-hero.jpg"
         label="Executive Solutions"
         title="VIP Protection"
         subtitle="Discreet. Comprehensive. Uncompromising."
@@ -38,7 +38,7 @@ export default function VIPProtectionPage() {
       />
 
       <SplitSection
-        image="/images/extra/business-tech.jpg"
+        image="/images/pages/vip-event.jpg"
         label="Executive Protection"
         title="Invisible Shield for Visible People"
         description="High-profile individuals — heads of state, corporate executives, dignitaries — face unique drone threats that range from paparazzi surveillance to assassination attempts. Aegis VIP protection systems are designed to be as discreet as they are effective. Portable suites weighing under 12 kilograms can be set up in under three minutes, providing comprehensive drone detection and neutralization around residences, offices, and transit routes. In passive mode, the system is completely silent and invisible, detecting threats through EO/IR and acoustic sensors without emitting any signals that could reveal its presence. When active interdiction is required, low-probability-of-intercept RF modes neutralize drones without causing visible disruption — no jamming of WiFi, no interference with communications, no alarm to the protectee that a threat was ever present."
@@ -50,7 +50,7 @@ export default function VIPProtectionPage() {
       />
 
       <SplitSection
-        image="/images/extra/team-meeting.jpg"
+        image="/images/pages/defense-screen.jpg"
         label="Event Security"
         title="Securing High-Profile Events"
         description="Public events — summits, conferences, galas, rallies — present a nightmare security scenario: large crowds, open airspace, and predictable schedules that give adversaries time to plan drone attacks. Aegis event security solutions deploy temporary counter-drone perimeters around venues of any size, from intimate board meetings to 50,000-capacity outdoor events. Our advance team surveys the venue, identifies threat corridors, and pre-programs exclusion zones that trigger automatic interdiction when breached. During the event, the system operates alongside existing security infrastructure, correlating aerial threat data with ground-based CCTV and access control systems through a unified PSIM interface. After the event, the entire system packs into standard transit cases for rapid redeployment. Every event deployment includes a dedicated threat analyst who monitors the system and coordinates with the protective detail in real time."

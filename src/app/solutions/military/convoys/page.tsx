@@ -29,7 +29,7 @@ export default function ConvoysPage() {
   return (
     <main>
       <SectionHero
-        image="/images/extra/military-operations.jpg"
+        image="/images/pages/convoy-hero.jpg"
         label="Military Solutions"
         title="Convoy Protection"
         subtitle="On the Move. Always Protected."
@@ -38,7 +38,7 @@ export default function ConvoysPage() {
       />
 
       <SplitSection
-        image="/images/extra/military-formation.jpg"
+        image="/images/pages/convoy-mobile.jpg"
         label="Mobile Defense"
         title="Continuous Protection While Moving"
         description="Convoys are most vulnerable when they're predictable — and enemy drone operators know it. IED-laden UAS, ISR platforms tracking route patterns, and loitering munitions that strike at chokepoints represent an existential threat to mobile columns. Aegis convoy protection systems are designed to operate at speed, with vehicle-mounted sensor suites that maintain full hemispherical coverage while the convoy is in motion. Adaptive RF jamming blankets deny enemy command links across the convoy's path, while intelligent frequency management ensures friendly communications remain unimpeded. The system automatically transitions between mobile and halted configurations, expanding its detection envelope when the convoy stops for resupply or overnight positions."
@@ -50,7 +50,7 @@ export default function ConvoysPage() {
       />
 
       <SplitSection
-        image="/images/extra/tactical-coordination.jpg"
+        image="/images/pages/military-soldier-aim.jpg"
         label="Route Clearance"
         title="Aerial Route Clearance and Overwatch"
         description="Before a convoy moves, the route must be clear — not just of IEDs on the ground, but of UAS loitering above. Aegis convoy systems provide aerial route clearance by scanning the intended path forward, identifying drones positioned for ambush, and neutralizing them before the column enters the engagement zone. When integrated with our mesh radio network, multiple convoy vehicles form a distributed sensor array that extends detection coverage across the entire column. Each vehicle's sensors share threat data in real time, creating a collective operating picture that no single-node system can match. Route clearance mode can be initiated by the convoy commander or triggered automatically when the system detects pre-positioned UAS along the planned route."

@@ -61,7 +61,7 @@ export default function MilitaryPage() {
   return (
     <main>
       <SectionHero
-        image="/images/fob-aerial.jpg"
+        image="/images/pages/military-hero.jpg"
         label="Military Solutions"
         title="Military"
         subtitle="Battlefield-Proven Counter-UAS"
@@ -76,7 +76,7 @@ export default function MilitaryPage() {
         drones repurposed for attack to sophisticated military-grade UAS.
       </Callout>
 
-      <ImageBreak image="/images/extra/military-formation.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/military-chopper.jpg" height="50vh" />
 
       <StatsSection stats={militaryStats} label="Military Performance" />
 

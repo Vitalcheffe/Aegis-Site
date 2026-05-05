@@ -29,7 +29,7 @@ export default function BorderSecurityPage() {
   return (
     <main>
       <SectionHero
-        image="/images/extra/border-wall.jpg"
+        image="/images/pages/border-hero.jpg"
         label="Sovereignty Solutions"
         title="Border Security"
         subtitle="Persistent Surveillance. Immediate Response."
@@ -38,7 +38,7 @@ export default function BorderSecurityPage() {
       />
 
       <SplitSection
-        image="/images/extra/satellite-orbit.jpg"
+        image="/images/pages/border-coastal.jpg"
         label="Corridor Surveillance"
         title="Watching the Corridors That Matter"
         description="Smuggling organizations have adopted drones for reconnaissance, payload delivery, and counter-surveillance — flying contraband across borders with minimal risk to human couriers. Aegis border security solutions provide persistent, automated surveillance across vast and remote border corridors that cannot be staffed continuously. Each sensor node covers up to 50 kilometers of border terrain, linking to neighboring nodes via encrypted mesh network to create an unbroken surveillance chain. The system automatically distinguishes between birds, weather phenomena, and genuine UAS threats, reducing false alarms to near-zero even in challenging environments. When a drone is detected, the system provides border agents with real-time tracking, predicted flight path, and recommended interdiction point — enabling interception before the payload reaches its destination."
@@ -50,7 +50,7 @@ export default function BorderSecurityPage() {
       />
 
       <SplitSection
-        image="/images/extra/military-march.jpg"
+        image="/images/pages/surveillance-cam.jpg"
         label="Coastal Monitoring"
         title="Coastal and Maritime Border Defense"
         description="Coastal borders present unique challenges — vast expanses of open water, dense maritime traffic, and drone launch platforms that can be as small as a fishing vessel. Aegis coastal monitoring systems combine shore-based radar arrays with elevated EO/IR platforms to detect low-altitude drone flights over water, where radar clutter from waves and weather can mask small UAS signatures. Our maritime-correlation algorithms fuse AIS vessel tracking data with UAS detection, identifying likely launch platforms and enabling interdiction at the source. For archipelagic nations, our distributed architecture links island-based sensor nodes via satellite backhaul, creating a unified operating picture across hundreds of kilometers of maritime border. The system operates autonomously for up to 90 days between maintenance visits, making it practical for deployment on remote islands and atolls."

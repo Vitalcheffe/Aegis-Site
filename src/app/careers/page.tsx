@@ -15,7 +15,7 @@ export default function CareersPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/tech-workspace.jpg"
+        image="/images/pages/careers-hero.jpg"
         label="Aegis Defense Systems"
         title="Careers"
         subtitle="Build the Future of Defense"
@@ -93,7 +93,7 @@ export default function CareersPage() {
 
       {/* ── CULTURE SPLIT ── */}
       <SplitSection
-        image="/images/extra/team-meeting.jpg"
+        image="/images/pages/careers-culture.jpg"
         label="Culture"
         title="Mission-Driven. People-First."
         description="At Aegis, we believe that the strongest defense starts with the strongest team. Our culture blends the discipline and purpose of military service with the velocity and innovation of a technology startup. Every project has direct operational impact — the code you write, the systems you design, and the analysis you produce are protecting real people in real places, right now. We hire for mission alignment as much as technical excellence, and we invest in our people through continuous learning, leadership development, and industry-leading benefits."
@@ -103,7 +103,7 @@ export default function CareersPage() {
 
       {/* ── BENEFITS SPLIT ── */}
       <SplitSection
-        image="/images/extra/tech-lab.jpg"
+        image="/images/pages/careers-benefits.jpg"
         label="Benefits"
         title="Invested in Your Success"
         description="Aegis offers comprehensive benefits designed for the unique demands of defense work. Competitive equity packages with four-year vesting give every employee ownership in our mission. Unlimited PTO is matched with mandatory minimums to prevent burnout. Relocation support, security clearance sponsorship, and professional development budgets ensure that nothing stands between you and your best work. For our veteran employees, we provide transition support, skill credentialing, and a community that values your service."
@@ -125,7 +125,7 @@ export default function CareersPage() {
             title: "Senior Radar Engineer",
             description:
               "Lead the design and optimization of S-Band and X-Band radar processing pipelines for our next-generation detection system. Requires 8+ years in radar systems engineering with expertise in CFAR algorithms, STAP, and phased array beamforming.",
-            image: "/images/detection-radar.jpg",
+            image: "/images/pages/radar-scope.jpg",
             href: "/careers/openings",
             tag: "Engineering",
           },
@@ -133,7 +133,7 @@ export default function CareersPage() {
             title: "ML Research Scientist",
             description:
               "Develop novel transformer architectures for real-time multi-spectral threat classification. Work with the largest labeled C-UAS dataset in existence to push accuracy beyond 99.5%. PhD in ML, CV, or signal processing preferred.",
-            image: "/images/extra/ai-technology.jpg",
+            image: "/images/pages/defense-screen.jpg",
             href: "/careers/openings",
             tag: "Research",
           },
@@ -141,7 +141,7 @@ export default function CareersPage() {
             title: "Counter-UAS Analyst",
             description:
               "Analyze evolving drone threat patterns, produce tactical intelligence reports, and inform product requirements based on real-world operational data. Military intelligence background and active TS/SCI clearance required.",
-            image: "/images/command-center.jpg",
+            image: "/images/pages/defense-antenna.jpg",
             href: "/careers/openings",
             tag: "Operations",
           },
@@ -149,7 +149,7 @@ export default function CareersPage() {
             title: "Systems Architect",
             description:
               "Design the distributed systems architecture for Aegis Core v4.0, spanning edge compute nodes, cloud-based analytics, and hardened tactical networks. Experience with real-time distributed systems and defense certifications preferred.",
-            image: "/images/extra/server-room.jpg",
+            image: "/images/pages/surveillance-cam.jpg",
             href: "/careers/openings",
             tag: "Engineering",
           },

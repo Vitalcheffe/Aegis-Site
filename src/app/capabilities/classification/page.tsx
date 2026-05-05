@@ -14,7 +14,7 @@ export default function ClassificationPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/data-visualization.jpg"
+        image="/images/pages/classification-hero.jpg"
         label="Classification"
         title="Know the Threat in 20ms"
         subtitle="Deep learning models trained on 12 million signal signatures classify threats by type, manufacturer, intent, and payload — giving operators decision-quality intelligence before the drone reaches its target."

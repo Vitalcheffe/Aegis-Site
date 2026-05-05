@@ -11,7 +11,7 @@ export default function CareersOpeningsPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/modern-office.jpg"
+        image="/images/pages/openings-hero.jpg"
         label="Careers"
         title="Open Positions"
         subtitle="Find Your Role"

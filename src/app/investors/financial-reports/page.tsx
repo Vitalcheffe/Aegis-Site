@@ -11,7 +11,7 @@ export default function FinancialReportsPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/data-dashboard.jpg"
+        image="/images/pages/financial-hero.jpg"
         label="Investors"
         title="Financial Reports"
         subtitle="Transparency and Accountability"

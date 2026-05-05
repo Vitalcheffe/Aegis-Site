@@ -14,7 +14,7 @@ export default function CommandControlPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/command-center.jpg"
+        image="/images/pages/command-hero.jpg"
         label="Command & Control"
         title="One Picture. Complete Control."
         subtitle="A unified common operating picture fuses every sensor, every track, and every effector into a single decision-quality display — giving commanders the situational awareness to act with speed and confidence."

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Advanced multi-spectral counter-UAS defense system. Detection, tracking, classification, and neutralization of unmanned aerial threats in 20 milliseconds.",
     images: [
       {
-        url: "/images/hero-radar.jpg",
+        url: "/images/pages/homepage-hero.jpg",
         width: 1200,
         height: 630,
         alt: "Aegis Counter-UAS Defense System",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Aegis — Counter-UAS Defense Systems",
     description:
       "Advanced multi-spectral counter-UAS defense system protecting critical assets across 12 nations.",
-    images: ["/images/hero-radar.jpg"],
+    images: ["/images/pages/homepage-hero.jpg"],
   },
   robots: {
     index: true,

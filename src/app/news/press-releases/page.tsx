@@ -11,7 +11,7 @@ export default function PressReleasesPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/military-operations.jpg"
+        image="/images/pages/press-hero.jpg"
         label="News"
         title="Press Releases"
         subtitle="Official Announcements"

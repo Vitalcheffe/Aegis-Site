@@ -14,7 +14,7 @@ export default function AegisSkyWatchPage() {
   return (
     <>
       <ProductHero
-        image="/images/extra/satellite-orbit.jpg"
+        image="/images/pages/aegis-skywatch-hero.jpg"
         label="Air Surveillance"
         title="Aegis SkyWatch"
         subtitle="Long-range persistent air surveillance extending the counter-UAS defensive perimeter to 50 km — strategic air sovereignty for nations and critical national infrastructure."
@@ -34,7 +34,7 @@ export default function AegisSkyWatchPage() {
       </Callout>
 
       <SplitSection
-        image="/images/satellite.jpg"
+        image="/images/pages/defense-antenna.jpg"
         label="Long-Range Detection"
         title="See Further. React Sooner."
         description="Aegis SkyWatch deploys elevated sensor arrays — mast-mounted, aerostat-borne, or tower-integrated — that extend the UAS detection horizon far beyond ground-level limitations. The primary surveillance radar provides 3D track data on targets with RCS as low as 0.005m² at 50 km range, enabling detection of small quadcopters and nano-UAS well before they enter the engagement zone of shorter-range systems. The secondary AESA radar supplements coverage in the lower altitude band where terrain masking degrades primary radar performance. Electro-optical and infrared cameras on stabilized platforms provide visual confirmation and classification at extended ranges, while the RF surveillance suite detects and geolocates drone command links and telemetry transmissions at distances exceeding 70 km. This layered sensor architecture ensures no approach vector goes unmonitored."
@@ -46,7 +46,7 @@ export default function AegisSkyWatchPage() {
       />
 
       <SplitSection
-        image="/images/extra/earth-space.jpg"
+        image="/images/pages/defense-antenna.jpg"
         label="Persistent Coverage"
         title="Unblinking Watch"
         description="Aegis SkyWatch is engineered for continuous, unattended operation across months of persistent deployment. The system architecture eliminates single points of failure — dual-redundant processing chains, hot-swappable sensor modules, and automated fault detection ensure the surveillance picture is never interrupted. The operational concept supports 24/7 autonomous surveillance with human-in-the-loop oversight for threat confirmation and engagement authorization. Automated health monitoring predicts component degradation before failure occurs, triggering maintenance alerts with 72-hour advance notice. The system has demonstrated 99.97% operational availability across 18 months of continuous deployed operation — providing the persistent air picture that strategic defense demands."
@@ -59,7 +59,7 @@ export default function AegisSkyWatchPage() {
       />
 
       <SplitSection
-        image="/images/extra/aerial-photography.jpg"
+        image="/images/pages/defense-antenna.jpg"
         label="Multi-Domain Awareness"
         title="Beyond the Air Picture"
         description="Aegis SkyWatch integrates air surveillance data with ground and maritime domain awareness to provide a comprehensive multi-domain operational picture. The system correlates UAS tracks with ground movement patterns to identify launch and recovery sites, enabling offensive counter-UAS operations against adversary drone infrastructure. Maritime surface tracks from coastal radar installations are fused with low-altitude UAS detections to identify seaborne drone launch platforms. The integrated intelligence picture feeds directly into Aegis Command for battle management, and through Aegis Integrator to third-party C2 systems and coalition networks. SkyWatch also supports civil air traffic integration — Mode S/ADS-B receivers correlate commercial and general aviation tracks with the UAS surveillance picture, enabling immediate discrimination between legitimate air traffic and hostile drones."
@@ -70,7 +70,7 @@ export default function AegisSkyWatchPage() {
         ]}
       />
 
-      <ImageBreak image="/images/extra/warship-sea.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/military-jeep.jpg" height="50vh" />
 
       <StatsSection
         label="SkyWatch Performance"

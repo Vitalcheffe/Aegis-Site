@@ -16,7 +16,7 @@ export default function AegisCorePage() {
   return (
     <>
       <ProductHero
-        image="/images/hero-radar.jpg"
+        image="/images/pages/aegis-core-hero.jpg"
         label="Flagship Platform"
         title="Aegis Core"
         subtitle="The world's most capable Counter-UAS platform — simultaneously tracking, classifying, and neutralizing 500+ unmanned aerial threats with 20-millisecond response latency."
@@ -36,7 +36,7 @@ export default function AegisCorePage() {
       </Callout>
 
       <SplitSection
-        image="/images/detection-radar.jpg"
+        image="/images/pages/aegis-core-fusion.jpg"
         label="Sensor Architecture"
         title="Multi-Spectral Sensor Fusion"
         description="Aegis Core simultaneously ingests data from radar, electro-optical, infrared, acoustic, and RF sensor arrays — fusing disparate signal modalities into a single coherent operational picture. The fusion engine processes over 2.4 million data points per second, correlating tracks across spectral domains to eliminate false positives and maintain positive identification even in dense electronic warfare environments. Each sensor modality reinforces the others: radar provides range and velocity, EO/IR delivers visual confirmation, acoustic arrays detect low-RCS drones, and RF sensors identify command links and autopilot signatures."
@@ -48,7 +48,7 @@ export default function AegisCorePage() {
       />
 
       <SplitSection
-        image="/images/extra/data-visualization.jpg"
+        image="/images/pages/aegis-core-ai.jpg"
         label="AI Engine"
         title="AI-Driven Classification"
         description="At the heart of Aegis Core lies a purpose-built neural architecture trained on over 14 million flight hours of UAS signature data spanning 2,800+ drone models from 47 countries. The classification engine delivers positive identification in under 20 milliseconds — distinguishing between commercial quadcopters, fixed-wing military UAVs, swarm components, and friendly assets with 99.4% accuracy. Continuous learning from operational deployments ensures the system evolves with the threat landscape, automatically updating classification models through encrypted over-the-air updates without operational downtime."
@@ -61,7 +61,7 @@ export default function AegisCorePage() {
       />
 
       <SplitSection
-        image="/images/neutralization-rf.jpg"
+        image="/images/pages/aegis-core-effector.jpg"
         label="Effector Suite"
         title="Integrated Effector Management"
         description="Aegis Core coordinates the full spectrum of kinetic and non-kinetic effectors through a unified engagement management system. RF jamming disrupts command and control links, GPS spoofing diverts hostile drones to safe corridors, directed energy systems neutralize high-value targets, and kinetic interceptors provide the final layer of defense. The effector selection algorithm autonomously determines the optimal neutralization method based on target classification, threat priority, collateral risk assessment, and rules of engagement — ensuring proportionate and precise response to every classified threat."
@@ -72,7 +72,7 @@ export default function AegisCorePage() {
         ]}
       />
 
-      <ImageBreak image="/images/extra/radar-display.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/defense-screen.jpg" height="50vh" />
 
       <StatsSection
         label="Performance Metrics"
@@ -118,7 +118,7 @@ export default function AegisCorePage() {
         role="Director of Integrated Air & Missile Defense, Allied Joint Force Command"
       />
 
-      <ImageBreak image="/images/extra/military-night.jpg" height="40vh" />
+      <ImageBreak image="/images/pages/radar-scope.jpg" height="40vh" />
 
       <CTASection
         title="Deploy the Standard"

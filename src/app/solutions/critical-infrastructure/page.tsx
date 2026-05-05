@@ -29,7 +29,7 @@ export default function CriticalInfrastructurePage() {
   return (
     <main>
       <SectionHero
-        image="/images/extra/server-room.jpg"
+        image="/images/pages/infrastructure-hero.jpg"
         label="Infrastructure Solutions"
         title="Critical Infrastructure"
         subtitle="Protecting the Backbone of Nations"
@@ -38,7 +38,7 @@ export default function CriticalInfrastructurePage() {
       />
 
       <SplitSection
-        image="/images/extra/abstract-tech.jpg"
+        image="/images/pages/infrastructure-power.jpg"
         label="Power Grid Protection"
         title="Defending the Grid from Aerial Attack"
         description="The electrical grid is the lifeline of modern civilization — and it is acutely vulnerable to drone-borne attacks. A single UAS carrying a conductive payload can short-circuit a high-voltage substation; a coordinated swarm could disable an entire regional grid. Aegis critical infrastructure solutions provide 24/7 autonomous surveillance and interdiction for power generation facilities, substations, and transmission corridors. Our systems integrate directly with SCADA networks, enabling automatic protective relay actions when drone threats approach critical equipment. For nuclear facilities, our NRC-compliant configurations provide defense-in-depth with radiation-hardened sensor options and containment-area exclusion zones that trigger immediate interdiction upon any unauthorized aerial incursion."
@@ -50,7 +50,7 @@ export default function CriticalInfrastructurePage() {
       />
 
       <SplitSection
-        image="/images/extra/data-dashboard.jpg"
+        image="/images/pages/defense-screen.jpg"
         label="Data Center Security"
         title="Safeguarding the World's Data"
         description="Hyperscale data centers represent concentrations of value that rival any financial institution — and their rooftop cooling infrastructure, fiber optic entry points, and power feeds present attractive targets for drone-borne surveillance and attack. Aegis data center solutions provide multi-layered protection that begins at the outer perimeter and extends through the building envelope. Our systems detect drones conducting ISR overflights, neutralize UAS attempting to deliver electromagnetic pulse devices, and interdict aerial surveillance of fiber optic cable routes and power substations. Integrated with existing physical security infrastructure through PSIM platforms, Aegis provides a unified operating picture that correlates aerial and ground-based threats, enabling coordinated response across all security domains."

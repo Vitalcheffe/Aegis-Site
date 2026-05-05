@@ -13,7 +13,7 @@ export default function CareersCulturePage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/team-meeting.jpg"
+        image="/images/pages/careers-culture.jpg"
         label="Careers"
         title="Culture"
         subtitle="Mission-Driven. People-First."
@@ -32,7 +32,7 @@ export default function CareersCulturePage() {
 
       {/* ── VALUES SPLIT ── */}
       <SplitSection
-        image="/images/extra/military-formation.jpg"
+        image="/images/pages/military-soldier-aim.jpg"
         label="Our Values"
         title="Principles That Guide Us"
         description="Our values are not aspirational — they are operational. Mission First means every product decision, engineering trade-off, and customer interaction is measured against one standard: does it make our operators safer and more effective? Radical Transparency means no silos, no hidden agendas, and open access to information across teams — because in defense, information asymmetry kills. Relentless Excellence means we don't ship anything that hasn't been tested beyond the breaking point, because our customers operate beyond the breaking point every day. And Shared Ownership means every employee, from intern to C-suite, has equity in the company and a voice in our direction."
@@ -47,7 +47,7 @@ export default function CareersCulturePage() {
 
       {/* ── VETERAN SUPPORT SPLIT ── */}
       <SplitSection
-        image="/images/extra/military-night.jpg"
+        image="/images/pages/military-chopper.jpg"
         label="Veteran Community"
         title="Those Who Served Lead the Way"
         description="Forty percent of Aegis employees are military veterans — and that's not by accident. We actively recruit from the services because no one understands the operational reality of counter-UAS defense better than those who have faced drone threats in the field. Our Veteran Transition Program provides dedicated onboarding, skill credentialing that translates military expertise into civilian career growth, and a peer mentorship network that connects new veteran hires with those who have successfully navigated the transition. We sponsor security clearances, honor military leave obligations, and maintain relationships with veteran service organizations worldwide. At Aegis, your service is not just respected — it's the foundation of our competitive advantage."

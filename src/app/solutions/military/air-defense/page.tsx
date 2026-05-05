@@ -29,7 +29,7 @@ export default function AirDefensePage() {
   return (
     <main>
       <SectionHero
-        image="/images/extra/fighter-jet.jpg"
+        image="/images/pages/airdefense-hero.jpg"
         label="Military Solutions"
         title="Air Defense"
         subtitle="Layered Airspace Protection"
@@ -38,7 +38,7 @@ export default function AirDefensePage() {
       />
 
       <SplitSection
-        image="/images/extra/military-aircraft.jpg"
+        image="/images/pages/airdefense-radar.jpg"
         label="Integrated Defense"
         title="Integrated Air and Missile Defense"
         description="Conventional air defense systems were designed for aircraft and missiles — not for the small, slow, low-flying drones that now dominate the threat landscape. Aegis air defense solutions bridge the gap between strategic SAM coverage and the tactical drone threat, providing layered protection from 10 meters above ground level to 20,000 meters altitude. Our active phased-array radar delivers 360° coverage with instantaneous beam steering, while multi-modal sensor fusion ensures that even stealth-enhanced UAS are detected and tracked. Integrated with NATO ACCS, JADC2, and IBCS networks, Aegis systems provide seamless handoff to existing air defense assets and deconflict the airspace to prevent blue-on-blue engagements."
@@ -50,7 +50,7 @@ export default function AirDefensePage() {
       />
 
       <SplitSection
-        image="/images/extra/radar-display.jpg"
+        image="/images/pages/radar-scope.jpg"
         label="Low-Altitude Threats"
         title="Engaging the Low-Altitude Gap"
         description="The most dangerous drones fly low and slow — below the coverage envelope of traditional air defense radar, exploiting terrain masking and urban clutter to approach undetected. Aegis systems are specifically optimized for this low-altitude gap, with clutter-rejection algorithms that distinguish drone returns from birds, ground vehicles, and atmospheric noise. When a threat enters the engagement zone, the system automatically selects the optimal neutralization method based on target profile, distance, altitude, and collateral risk assessment. RF denial is the first response for command-guided drones; directed energy options are employed for autonomous threats that cannot be jammed. The entire detect-track-classify-neutralize cycle completes in under three seconds for the highest-priority threats."

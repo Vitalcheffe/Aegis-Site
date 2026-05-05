@@ -12,7 +12,7 @@ export default function CompliancePage() {
   return (
     <>
       <SectionHero
-        image="/images/extra/tech-lab.jpg"
+        image="/images/pages/legal-compliance.jpg"
         label="Legal"
         title="Compliance"
         subtitle="Regulatory Excellence"

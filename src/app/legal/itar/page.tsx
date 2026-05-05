@@ -12,7 +12,7 @@ export default function ITARCompliancePage() {
   return (
     <>
       <SectionHero
-        image="/images/extra/military-night.jpg"
+        image="/images/pages/legal-itar.jpg"
         label="Legal"
         title="ITAR Compliance"
         subtitle="International Traffic in Arms Regulations"

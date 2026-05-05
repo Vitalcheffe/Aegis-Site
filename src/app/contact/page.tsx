@@ -36,7 +36,7 @@ export default function ContactPage() {
   return (
     <>
       <SectionHero
-        image="/images/command-center.jpg"
+        image="/images/pages/contact-hero.jpg"
         label="Connect"
         title="Contact"
         subtitle="Get in Touch"
@@ -214,7 +214,7 @@ export default function ContactPage() {
 
       {/* Office Locations */}
       <SplitSection
-        image="/images/extra/city-skyline-night.jpg"
+        image="/images/pages/defense-antenna.jpg"
         label="Global Presence"
         title="Washington DC Headquarters"
         description="Our primary headquarters and operations center, located in the heart of the national security corridor. The Washington DC office houses our executive leadership, program management, trade compliance, and government relations teams. This facility maintains SCIF accreditation for processing classified information up to the Top Secret level."
@@ -227,7 +227,7 @@ export default function ContactPage() {
       />
 
       <SplitSection
-        image="/images/extra/business-tech.jpg"
+        image="/images/pages/military-chopper.jpg"
         label="EMEA Region"
         title="London Office"
         description="Our European, Middle East, and Africa regional headquarters in London supports NATO member states, Five Eyes partners, and allied nations across the EMEA region. The London team provides localized support for system deployments, training, and maintenance, as well as coordination with UK Ministry of Defence and allied defense procurement agencies."
@@ -240,7 +240,7 @@ export default function ContactPage() {
       />
 
       <SplitSection
-        image="/images/extra/vip-event.jpg"
+        image="/images/pages/military-jeep.jpg"
         label="Middle East"
         title="Abu Dhabi Office"
         description="Our Abu Dhabi office serves as the regional hub for the Gulf Cooperation Council (GCC) nations and broader Middle East region. This office supports Foreign Military Sales cases, direct commercial sales, and system deployments for critical infrastructure protection across the region. The team coordinates closely with UAE armed forces and regional defense partners."
@@ -253,7 +253,7 @@ export default function ContactPage() {
       />
 
       <SplitSection
-        image="/images/extra/modern-office.jpg"
+        image="/images/pages/radar-scope.jpg"
         label="Asia Pacific"
         title="Singapore Office"
         description="Our Asia-Pacific regional office in Singapore supports defense partnerships across the Indo-Pacific theater. The Singapore team works with allied and partner nations to address the growing UAS threat in the region, supporting both government and critical infrastructure protection programs throughout Southeast Asia and Oceania."

@@ -11,7 +11,7 @@ export default function TermsOfServicePage() {
   return (
     <>
       <SectionHero
-        image="/images/extra/abstract-tech.jpg"
+        image="/images/pages/legal-terms.jpg"
         label="Legal"
         title="Terms of Service"
         subtitle="Legal Agreement"

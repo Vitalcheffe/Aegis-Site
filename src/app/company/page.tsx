@@ -16,7 +16,7 @@ export default function CompanyPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/command-center.jpg"
+        image="/images/pages/company-hero.jpg"
         label="Company"
         title="Building the Future of Defense"
         subtitle="Aegis Defense Systems is the world's leading counter-UAS company — engineering the integrated platforms that detect, track, classify, and neutralize unmanned aerial threats across every domain and every theater of operation."
@@ -51,7 +51,7 @@ export default function CompanyPage() {
 
       {/* ── MISSION ── */}
       <SplitSection
-        image="/images/extra/military-operations.jpg"
+        image="/images/pages/company-mission.jpg"
         label="Our Mission"
         title="Defend the Skies. Protect the Ground."
         description="Our mission is to ensure that no unmanned aerial threat goes undetected or unneutralized. We build the integrated defense platforms that give military commanders, critical infrastructure operators, and security forces the decisive advantage against the fastest-evolving threat vector of the 21st century. From forward operating bases in active combat zones to civilian airports and government facilities, Aegis systems operate continuously — scanning, analyzing, and responding to threats faster than any human operator could. Every sensor we deploy, every algorithm we train, and every effector we integrate serves a single purpose: closing the kill chain before the adversary can complete theirs. This is not incremental improvement. This is a fundamental re-architecture of how democracies defend their airspace."
@@ -65,7 +65,7 @@ export default function CompanyPage() {
 
       {/* ── VISION ── */}
       <SplitSection
-        image="/images/extra/earth-space.jpg"
+        image="/images/pages/company-vision.jpg"
         label="Our Vision"
         title="A World Where Airspace Is Always Secure"
         description="We envision a future where every nation, every installation, and every community has the ability to control its airspace with confidence. A future where the proliferation of commercial and military drones no longer represents an existential risk but a managed variable — detected, classified, and neutralized in real time by autonomous systems that operate with surgical precision and full accountability. Our vision extends beyond technology. We are building the institutional frameworks, international standards, and operational doctrines that will define how the world responds to aerial threats for decades to come. Through partnerships with NATO, allied militaries, and research institutions, we are establishing the norms and capabilities that will keep societies safe as the drone revolution accelerates."
@@ -80,7 +80,7 @@ export default function CompanyPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/satellite.jpg"
+        image="/images/pages/defense-screen.jpg"
         height="55vh"
         overlay="bg-black/40"
       />

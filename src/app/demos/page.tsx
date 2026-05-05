@@ -409,7 +409,7 @@ export default function DemosPage() {
   return (
     <>
       <SectionHero
-        image="/images/detection-radar.jpg"
+        image="/images/pages/demo-hero.jpg"
         label="Interactive"
         title="Live Demos"
         subtitle="Experience Aegis"

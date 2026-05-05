@@ -12,7 +12,7 @@ export default function InvestorsGovernancePage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/modern-office.jpg"
+        image="/images/pages/governance-hero.jpg"
         label="Investors"
         title="Governance"
         subtitle="Committed to the Highest Standards"

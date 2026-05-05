@@ -14,7 +14,7 @@ export default function DetectionPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/detection-radar.jpg"
+        image="/images/pages/detection-hero.jpg"
         label="Detection"
         title="See Everything. Miss Nothing."
         subtitle="Multi-spectral sensor fusion provides 360° coverage across radar, RF, electro-optical, infrared, and acoustic domains — ensuring no threat enters your airspace undetected."
@@ -36,7 +36,7 @@ export default function DetectionPage() {
 
       {/* ── S-BAND RADAR ── */}
       <SplitSection
-        image="/images/extra/radar-display.jpg"
+        image="/images/pages/detection-radar.jpg"
         label="Sensor Modality 01"
         title="S-Band Radar"
         description="The primary detection sensor. Aegis S-Band radar delivers 360° azimuth coverage with electronically steered beams, detecting micro-drones with 0.01 m² RCS at 15 km and fixed-wing UAVs with 0.1 m² RCS at 35 km. Advanced clutter suppression algorithms filter birds, weather, and ground returns — reducing false alarms by 95% compared to legacy systems. Simultaneous multi-beam operation enables detection of low, slow, and small threats in complex terrain including urban canyons and mountainous regions."
@@ -50,7 +50,7 @@ export default function DetectionPage() {
 
       {/* ── RF DIRECTION FINDING ── */}
       <SplitSection
-        image="/images/extra/drone-surveillance.jpg"
+        image="/images/pages/detection-rf.jpg"
         label="Sensor Modality 02"
         title="RF Direction Finding"
         description="Passive RF sensors detect, locate, and classify drone command-and-control links up to 25 km away — before the aircraft enters radar range. Multi-channel digital receivers scan the full 300 MHz to 6 GHz spectrum, identifying over 200 commercial and military drone protocols including encrypted and frequency-hopping links. Angle-of-arrival triangulation from distributed nodes provides emitter geolocation with CEP under 50 meters, enabling proactive threat warning and pre-emptive classification based on signal fingerprinting."
@@ -65,7 +65,7 @@ export default function DetectionPage() {
 
       {/* ── EO/IR SENSORS ── */}
       <SplitSection
-        image="/images/extra/military-aircraft.jpg"
+        image="/images/pages/detection-eoir.jpg"
         label="Sensor Modality 03"
         title="EO/IR Sensors"
         description="High-resolution electro-optical and infrared cameras provide visual confirmation and forensic-grade imagery for threat identification and evidentiary documentation. Dual-band sensors operate across visible and mid-wave infrared spectra, maintaining target acquisition in daylight, darkness, fog, and smoke. Automated slew-to-cue from radar and RF detection enables visual lock within 1.2 seconds of initial sensor alert. Continuous optical tracking supplements radar during ECM scenarios and provides the visual feed necessary for rules-of-engagement compliance verification."
@@ -79,7 +79,7 @@ export default function DetectionPage() {
 
       {/* ── ACOUSTIC ARRAYS ── */}
       <SplitSection
-        image="/images/extra/tech-lab.jpg"
+        image="/images/pages/detection-acoustic.jpg"
         label="Sensor Modality 04"
         title="Acoustic Arrays"
         description="Distributed microphone arrays detect and classify drone acoustic signatures at ranges up to 5 km, providing a critical last-line detection layer that operates independently of electromagnetic spectrum availability. Deep acoustic fingerprinting models trained on 4 million flight hours distinguish drone motor harmonics from background noise — including urban environments, highways, and industrial facilities. Acoustic detection is immune to RF jamming and radar cross-section reduction, making it the only sensor modality effective against stealth-configured UAVs."

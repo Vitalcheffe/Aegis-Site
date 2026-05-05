@@ -29,7 +29,7 @@ export default function ForwardOperatingBasesPage() {
   return (
     <main>
       <SectionHero
-        image="/images/fob-aerial.jpg"
+        image="/images/pages/fob-hero.jpg"
         label="Military Solutions"
         title="Forward Operating Bases"
         subtitle="360° Protection for Forward Positions"
@@ -38,7 +38,7 @@ export default function ForwardOperatingBasesPage() {
       />
 
       <SplitSection
-        image="/images/extra/military-night.jpg"
+        image="/images/pages/fob-perimeter.jpg"
         label="Perimeter Defense"
         title="Layered Perimeter Protection"
         description="Forward operating bases face an unprecedented spectrum of aerial threats — from hobbyist drones conducting ISR to military-grade loitering munitions executing precision strikes. Aegis FOB defense systems create a multi-layered protective dome that detects, classifies, and neutralizes threats before they enter the base's inner perimeter. Our radar-EO/IR fusion architecture eliminates blind spots, while automated engagement protocols reduce operator response time to under three seconds. Each system integrates directly with existing base C2 infrastructure, providing real-time threat visualization on ATAK and MOSA-compatible displays."
@@ -50,7 +50,7 @@ export default function ForwardOperatingBasesPage() {
       />
 
       <SplitSection
-        image="/images/detection-radar.jpg"
+        image="/images/pages/radar-scope.jpg"
         label="Sensor Integration"
         title="Integrated Sensor Coverage"
         description="No single sensor modality can address the full threat landscape. Aegis FOB solutions combine phased-array radar for long-range detection, electro-optical and infrared cameras for visual confirmation, and RF spectrum monitoring for command-link identification. Sensor fusion algorithms correlate data across all modalities in real time, producing a single integrated operating picture that eliminates false positives and ensures no threat goes untracked. The system automatically prioritizes threats based on trajectory, speed, and behavioral analysis, presenting operators with actionable intelligence rather than raw data feeds."

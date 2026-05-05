@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <SectionHero
-        image="/images/extra/cybersecurity.jpg"
+        image="/images/pages/legal-privacy.jpg"
         label="Legal"
         title="Privacy Policy"
         subtitle="Your Privacy Matters"

@@ -12,7 +12,7 @@ export default function ExportControlPage() {
   return (
     <>
       <SectionHero
-        image="/images/extra/radar-display.jpg"
+        image="/images/pages/legal-export.jpg"
         label="Legal"
         title="Export Control"
         subtitle="Strict Adherence to International Law"

@@ -16,7 +16,7 @@ export default function AboutPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/extra/military-formation.jpg"
+        image="/images/pages/about-hero.jpg"
         label="About"
         title="The Story of Aegis"
         subtitle="From a garage in Northern Virginia to the most deployed counter-UAS platform in the free world — a decade of relentless engineering, operational feedback, and an unwavering commitment to keeping the skies safe."
@@ -108,14 +108,14 @@ export default function AboutPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/extra/night-ops.jpg"
+        image="/images/pages/about-origin.jpg"
         height="55vh"
         overlay="bg-black/50"
       />
 
       {/* ── OUR APPROACH ── */}
       <SplitSection
-        image="/images/extra/network-ops.jpg"
+        image="/images/pages/surveillance-cam.jpg"
         label="Our Approach"
         title="Engineering-First. Operator-Centered."
         description="Our approach to building defense technology is fundamentally different from the legacy defense industry. We start with the operator — the soldier at the forward operating base, the security officer at the airport, the naval commander on the bridge — and design backwards from their operational reality. This means systems that work in electromagnetic-contested environments, that degrade gracefully rather than fail catastrophically, and that require minimal training to operate under stress. We deploy our engineers to operational sites alongside our customers. Every feature in the Aegis platform was requested, tested, and validated by the men and women who use it daily. Our rapid iteration cycles — measured in weeks, not years — ensure that the system evolves at the pace of the threat, not the pace of the procurement cycle. We believe that the best defense technology is the technology that actually gets used, and we engineer every aspect of Aegis to make it the most intuitive, most reliable, and most effective counter-UAS platform in the world."

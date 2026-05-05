@@ -15,7 +15,7 @@ export default function NeutralizationPage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/neutralization-rf.jpg"
+        image="/images/pages/neutralization-hero.jpg"
         label="Neutralization"
         title="Graduated Response. Decisive Action."
         subtitle="From non-kinetic RF disruption to directed energy and kinetic interceptors — Aegis delivers proportionate, compliant, and effective countermeasures across the full engagement spectrum."
@@ -38,7 +38,7 @@ export default function NeutralizationPage() {
 
       {/* ── RF JAMMING ── */}
       <SplitSection
-        image="/images/soldier-jammer.jpg"
+        image="/images/pages/neutralization-jamming.jpg"
         label="Effect Mode 01"
         title="RF Jamming"
         description="Precision directional jamming disrupts drone command-and-control links and GPS navigation with surgical selectivity — neutralizing the threat while minimizing collateral interference to friendly communications and civilian infrastructure. Cognitive jamming algorithms adapt in real-time to frequency-hopping and spread-spectrum protocols, maintaining disruption effectiveness against even the most sophisticated anti-jam receivers. Power management ensures that jamming energy is focused on the target with spillover reduced by 40 dB, enabling safe operation near airports and populated areas."
@@ -52,7 +52,7 @@ export default function NeutralizationPage() {
 
       {/* ── DIRECTED ENERGY ── */}
       <SplitSection
-        image="/images/neutralization-laser.jpg"
+        image="/images/pages/neutralization-laser.jpg"
         label="Effect Mode 02"
         title="Directed Energy"
         description="High-energy laser systems deliver decisive kinetic-grade neutralization without projectile expenditure or fragmentation risk. The Aegis DEW module engages targets at ranges up to 3 km with continuous-wave and pulsed modes optimized for different airframe materials — melting plastic housings, detonating explosive payloads, or disabling control surfaces with surgical precision. Adaptive optics compensate for atmospheric turbulence in real-time, maintaining beam quality and spot size across the full engagement envelope."
@@ -67,14 +67,14 @@ export default function NeutralizationPage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/extra/fighter-jet.jpg"
+        image="/images/pages/neutralization-kinetic.jpg"
         height="50vh"
         overlay="bg-black/50"
       />
 
       {/* ── KINETIC OPTIONS ── */}
       <SplitSection
-        image="/images/extra/military-helicopter.jpg"
+        image="/images/pages/neutralization-hero.jpg"
         label="Effect Mode 03"
         title="Kinetic Options"
         description="For high-value or armored threats that resist non-kinetic countermeasures, Aegis integrates with kinetic interceptor systems including guided missiles, programmable airburst munitions, and net capture devices. The fire control solution leverages the same tracking and classification data that drives the kill chain, ensuring first-round hit probability above 97%. Integration supports both gun-based and missile-based interceptors with automatic ballistic computation, wind compensation, and lead angle optimization."

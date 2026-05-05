@@ -38,7 +38,7 @@ export default function RequestDemoPage() {
   return (
     <>
       <SectionHero
-        image="/images/hero-radar.jpg"
+        image="/images/pages/request-demo.jpg"
         label="Experience"
         title="Request a Demo"
         subtitle="See Aegis in Action"

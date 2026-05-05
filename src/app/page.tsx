@@ -20,7 +20,7 @@ export default function HomePage() {
     <>
       {/* ── HERO ── */}
       <SectionHero
-        image="/images/hero-radar.jpg"
+        image="/images/pages/homepage-hero.jpg"
         label="Aegis Defense Systems"
         title="The Future of Counter-UAS Defense"
         subtitle="Multi-spectral detection, AI-driven classification, and precision neutralization — a single integrated platform that closes the kill chain in under 20 milliseconds."
@@ -54,14 +54,14 @@ export default function HomePage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/extra/military-night.jpg"
+        image="/images/pages/homepage-callout.jpg"
         height="60vh"
         overlay="bg-black/50"
       />
 
       {/* ── SOLUTIONS: MILITARY ── */}
       <SplitSection
-        image="/images/extra/military-operations.jpg"
+        image="/images/pages/military-hero.jpg"
         label="Solutions"
         title="Military & Defense"
         description="Forward operating bases, convoy protection, and naval deployments demand a counter-UAS solution that operates in contested electromagnetic environments. Aegis provides hardened, NATO-interoperable systems with STANAG 4671 compliance, automatic threat prioritization, and seamless integration with existing C2 infrastructure including ATAK and JADC2."
@@ -75,7 +75,7 @@ export default function HomePage() {
 
       {/* ── SOLUTIONS: CRITICAL INFRASTRUCTURE ── */}
       <SplitSection
-        image="/images/extra/server-room.jpg"
+        image="/images/pages/infrastructure-hero.jpg"
         label="Solutions"
         title="Critical Infrastructure"
         description="Power plants, data centers, and government facilities face persistent drone surveillance and attack risks. Aegis provides persistent 24/7 surveillance with automated alert escalation, geofenced exclusion zones, and graduated response that scales from warning to neutralization — all while maintaining compliance with civilian airspace regulations and minimizing collateral interference."
@@ -90,14 +90,14 @@ export default function HomePage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/fob-aerial.jpg"
+        image="/images/pages/airdefense-hero.jpg"
         height="50vh"
         overlay="bg-black/40"
       />
 
       {/* ── SOLUTIONS: AIRPORTS ── */}
       <SplitSection
-        image="/images/solutions-airport.jpg"
+        image="/images/pages/airports-hero.jpg"
         label="Solutions"
         title="Airport Security"
         description="Drone incursions at airports have caused thousands of flight cancellations and millions in economic damage. Aegis delivers spectrum-safe detection and non-kinetic neutralization that protects runways and terminals without interfering with ATC communications, navigation aids, or passenger Wi-Fi systems. Fully compliant with ICAO and FAA requirements."
@@ -111,7 +111,7 @@ export default function HomePage() {
 
       {/* ── SOLUTIONS: BORDER SECURITY ── */}
       <SplitSection
-        image="/images/extra/border-wall.jpg"
+        image="/images/pages/border-hero.jpg"
         label="Solutions"
         title="Border Security"
         description="Cartels and smugglers increasingly use drones for surveillance, payload delivery, and tunnel mapping. Aegis deploys along extended border perimeters with distributed sensor networks, long-range RF detection, and coordinated multi-node neutralization that covers hundreds of kilometers of terrain with centralized command visibility."
@@ -126,7 +126,7 @@ export default function HomePage() {
 
       {/* ── IMAGE BREAK ── */}
       <ImageBreak
-        image="/images/extra/warship-sea.jpg"
+        image="/images/pages/maritime-hero.jpg"
         height="55vh"
         overlay="bg-black/50"
       />

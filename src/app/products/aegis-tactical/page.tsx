@@ -14,7 +14,7 @@ export default function AegisTacticalPage() {
   return (
     <>
       <ProductHero
-        image="/images/products-aegis-tactical.jpg"
+        image="/images/pages/aegis-tactical-hero.jpg"
         label="Mobile Platform"
         title="Aegis Tactical"
         subtitle="Rapid-deploy counter-UAS capability for forward operating bases and expeditionary operations — full operational capability in under 30 minutes from arrival on station."
@@ -34,7 +34,7 @@ export default function AegisTacticalPage() {
       </Callout>
 
       <SplitSection
-        image="/images/extra/military-helicopter.jpg"
+        image="/images/pages/aegis-tactical-mobile.jpg"
         label="Mobility"
         title="Born to Deploy"
         description="Aegis Tactical is engineered from the ground up for mobile operations. The complete system — sensors, processors, effectors, and communications — is integrated into a single vehicle-mountable platform that can be airlifted by C-130, CH-47 Chinook, or standard military flatbed. Upon arrival at a forward operating position, the hydraulic mast elevates the sensor suite to operational height while automated calibration routines bring all systems online. No external power infrastructure required — the onboard generator provides 72 hours of continuous operation on a single fuel load. The entire system is designed to pack down and redeploy in under 20 minutes when the tactical situation demands."
@@ -46,7 +46,7 @@ export default function AegisTacticalPage() {
       />
 
       <SplitSection
-        image="/images/extra/tactical-coordination.jpg"
+        image="/images/pages/aegis-tactical-deploy.jpg"
         label="Rapid Setup"
         title="Operational in Minutes, Not Days"
         description="Traditional fixed-site C-UAS installations require weeks of site preparation, sensor calibration, and network integration. Aegis Tactical eliminates that timeline entirely. Automated self-survey and GPS-denied positioning algorithms establish the sensor baseline within 8 minutes of mast elevation. Pre-loaded terrain databases and digital elevation models enable immediate clutter filtering, while the AI classification engine arrives pre-trained with the theater-specific threat library. Operators connect via ruggedized tablets with an intuitive touch interface — no specialized C-UAS training required for basic operations. Advanced operators can access the full mission planning suite through the integrated battle management workstation."
@@ -59,7 +59,7 @@ export default function AegisTacticalPage() {
       />
 
       <SplitSection
-        image="/images/fob-aerial.jpg"
+        image="/images/pages/military-jeep.jpg"
         label="Tactical Operations"
         title="Forward Edge Protection"
         description="Aegis Tactical was purpose-built for the realities of forward operating base defense. The system provides layered protection against the full spectrum of UAS threats — from commercially modified quadcopters conducting ISR to military-grade fixed-wing UAVs delivering precision munitions. The integrated RF detection array identifies drone command links at 8km, while the compact radar provides 3D track data on targets as small as 0.001m² RCS. When threats penetrate the detection layer, the onboard effector suite — RF jamming and GPS spoofing — provides non-kinetic neutralization with zero collateral effects. For high-value threats, Aegis Tactical coordinates with Aegis Core or other networked platforms to assign kinetic effectors through the Aegis Command battle management network."
@@ -70,7 +70,7 @@ export default function AegisTacticalPage() {
         ]}
       />
 
-      <ImageBreak image="/images/extra/night-ops.jpg" height="50vh" />
+      <ImageBreak image="/images/pages/military-chopper.jpg" height="50vh" />
 
       <StatsSection
         label="Tactical Performance"

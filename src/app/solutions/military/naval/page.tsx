@@ -29,7 +29,7 @@ export default function NavalPage() {
   return (
     <main>
       <SectionHero
-        image="/images/extra/navy-ship.jpg"
+        image="/images/pages/naval-hero.jpg"
         label="Military Solutions"
         title="Naval"
         subtitle="Maritime Counter-UAS Defense"
@@ -38,7 +38,7 @@ export default function NavalPage() {
       />
 
       <SplitSection
-        image="/images/extra/warship-sea.jpg"
+        image="/images/pages/naval-ship.jpg"
         label="Shipboard Defense"
         title="Protecting the Fleet at Sea"
         description="Modern naval vessels face a rapidly evolving drone threat — from explosive-laden surface drones to aerial UAS conducting targeting for anti-ship missiles. Aegis naval Counter-UAS systems are purpose-built for the maritime environment, with gyro-stabilized sensor platforms that maintain track accuracy through heavy rolls and pitch. Our phased-array radar and EO/IR suites cut through sea clutter to identify low-flying threats that conventional naval radar misses. Integrated directly with shipboard combat management systems, Aegis provides automated threat handoff and engagement authorization, keeping the crew focused on the broader maritime fight while counter-drone operations run semi-autonomously."
@@ -50,7 +50,7 @@ export default function NavalPage() {
       />
 
       <SplitSection
-        image="/images/extra/military-helicopter.jpg"
+        image="/images/pages/defense-jet-night.jpg"
         label="Swarm Defense"
         title="Defeating Coordinated Swarm Attacks"
         description="The age of the drone swarm has arrived at sea. Adversaries can now launch dozens of coordinated UAS from shore-based or maritime platforms, overwhelming traditional point-defense systems through sheer numbers and simultaneous attack vectors. Aegis naval systems employ wideband RF denial to disrupt swarm command-and-control links across multiple frequency bands simultaneously. When RF interdiction alone is insufficient, our layered approach transitions to directional energy and kinetic options, prioritizing the highest-threat elements while maintaining coverage against follow-on attacks. The system's autonomous engagement logic can simultaneously neutralize over 75 individual drones in a single swarm event."
