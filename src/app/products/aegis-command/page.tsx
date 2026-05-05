@@ -85,28 +85,38 @@ export default function AegisCommandPage() {
 
       <SpecTable
         label="Technical Specifications"
-        title="Aegis Command — Full Specification"
+        title="Aegis Command Specifications"
         specs={[
-          { label: "Track Management", value: "1,000+ simultaneous tracks" },
+          { category: "Performance" },
+          { label: "Track Management", value: "1,000+ concurrent tracks" },
           { label: "Kill Chain Cycle (Automated)", value: "<2 seconds" },
           { label: "Kill Chain Cycle (Human-Auth)", value: "<8 seconds" },
           { label: "Concurrent Engagements", value: "Up to 24 managed" },
-          { label: "Platform Integration", value: "All Aegis platforms + third-party" },
+          { label: "System Availability", value: "99.9%" },
+          { label: "COP Latency", value: "<50 ms (track-to-display)" },
           { label: "Domain Coverage", value: "Air, Ground, Maritime, Cyber" },
+          { category: "Sensors" },
+          { label: "AI Processing", value: "300 TOPS (server cluster)" },
+          { label: "Threat Library", value: "2,800+ UAS models, 47 countries" },
+          { label: "Platform Integration", value: "All Aegis platforms + third-party" },
           { label: "ROE Engine", value: "Configurable, role-based, automated" },
-          { label: "COP Display", value: "Geospatial, multi-resolution, multi-level" },
+          { label: "Cyber Integration", value: "SIGINT feeds, network Intel, I&W" },
+          { category: "Physical" },
+          { label: "Power Consumption", value: "12 kW (server), 200W per workstation" },
           { label: "Operator Workstations", value: "1–16 concurrent operators" },
           { label: "Architecture", value: "Client-server, distributed, redundant" },
-          { label: "Interoperability", value: "STANAG 4586, Link 16, NATO C2, JADC2" },
-          { label: "Cyber Integration", value: "SIGINT feeds, network Intel, I&W" },
-          { label: "Recording & Replay", value: "Full mission recording, after-action review" },
-          { label: "Power Requirements", value: "12 kW (server), 200W per workstation" },
           { label: "Deployment", value: "Fixed site, mobile shelter, cloud-hosted" },
+          { label: "COP Display", value: "Geospatial, multi-resolution, multi-level" },
+          { category: "Environmental" },
           { label: "Operating Temperature", value: "-20°C to +50°C (sheltered)" },
-          { label: "Communications", value: "Fiber, SATCOM, tactical radio, VPN" },
-          { label: "Classification", value: "NATO SECRET / ITAR Controlled" },
-          { label: "Security", value: "MLS, cross-domain solution, Type 1 encryption" },
+          { label: "MIL-STD Compliance", value: "810H (shelter), 461G (EMI)" },
+          { label: "Recording & Replay", value: "Full mission recording, after-action review" },
           { label: "MTBF", value: ">20,000 hours (server cluster)" },
+          { category: "Connectivity" },
+          { label: "Network Interfaces", value: "Fiber, SATCOM, tactical radio, VPN" },
+          { label: "Interoperability", value: "STANAG 4586, Link 16, NATO C2, JADC2" },
+          { label: "Security", value: "MLS, cross-domain solution, Type 1 encryption" },
+          { label: "Classification", value: "NATO SECRET / ITAR Controlled" },
         ]}
       />
 

@@ -22,9 +22,9 @@ export default function AegisCorePage() {
         subtitle="The world's most capable Counter-UAS platform — simultaneously tracking, classifying, and neutralizing 500+ unmanned aerial threats with 20-millisecond response latency."
         specs={[
           { value: "500+", label: "Simultaneous Targets" },
-          { value: "50Hz", label: "Update Rate" },
-          { value: "20ms", label: "Classification" },
-          { value: "12km", label: "Detection Range" },
+          { value: "35km", label: "Radar Detection" },
+          { value: "50km", label: "RF Detection" },
+          { value: "<20ms", label: "Kill Chain Closure" },
         ]}
       />
 
@@ -78,37 +78,48 @@ export default function AegisCorePage() {
         label="Performance Metrics"
         stats={[
           { value: "500+", label: "Simultaneous Targets" },
-          { value: "50Hz", label: "Track Update Rate" },
-          { value: "20ms", label: "Classification Latency" },
-          { value: "12km", label: "Detection Range" },
+          { value: "35km", label: "Radar Detection" },
+          { value: "50km", label: "RF Detection" },
           { value: "99.4%", label: "Classification Accuracy" },
+          { value: "<20ms", label: "Kill Chain Closure" },
         ]}
       />
 
       <SpecTable
         label="Technical Specifications"
-        title="Aegis Core — Full Specification"
+        title="Aegis Core Specifications"
         specs={[
-          { label: "Detection Range", value: "12 km (small UAS Class I)" },
-          { label: "Tracking Capacity", value: "500+ simultaneous targets" },
-          { label: "Update Rate", value: "50 Hz" },
+          { category: "Performance" },
+          { label: "Detection Range (Radar)", value: "35 km" },
+          { label: "Detection Range (RF)", value: "50 km" },
+          { label: "Tracking Capacity", value: "500+ concurrent targets" },
           { label: "Classification Accuracy", value: "99.4%" },
-          { label: "Classification Latency", value: "<20 ms" },
+          { label: "Kill Chain Closure", value: "<20 ms" },
+          { label: "Update Rate", value: "50 Hz" },
           { label: "False Alarm Rate", value: "<0.01 per hour" },
-          { label: "Sensor Modalities", value: "Radar, EO/IR, Acoustic, RF, LIDAR" },
-          { label: "Effector Types", value: "RF Jamming, GPS Spoofing, DEW, Kinetic" },
-          { label: "Engagement Time", value: "<3 seconds (detect-to-neutralize)" },
           { label: "Simultaneous Engagements", value: "Up to 24 concurrent" },
           { label: "Coverage", value: "360° azimuth, -10° to +85° elevation" },
-          { label: "Power Requirements", value: "45 kW (operational), 15 kW (standby)" },
-          { label: "Weight (System Total)", value: "8,200 kg" },
+          { category: "Sensors" },
+          { label: "AI Processing", value: "175 TOPS" },
+          { label: "Radar Bands", value: "X-band, Ku-band" },
+          { label: "RF Sensing Range", value: "70 MHz – 6 GHz" },
+          { label: "Sensor Modalities", value: "Radar, EO/IR, Acoustic, RF, LIDAR" },
+          { label: "Neutralization Methods", value: "RF Jamming, GPS Spoofing, Kinetic Direction" },
+          { category: "Physical" },
+          { label: "Power Consumption", value: "2.4 kW (typical), 3.1 kW (peak)" },
+          { label: "Weight", value: "850 kg (full system)" },
+          { label: "Form Factor", value: '19" rack, 22U' },
+          { label: "Crew Requirement", value: "3 operators (1 in autonomous mode)" },
+          { category: "Environmental" },
           { label: "Operating Temperature", value: "-40°C to +55°C" },
+          { label: "MIL-STD Compliance", value: "810H, 461G" },
           { label: "Wind Survival", value: "Up to 150 km/h" },
-          { label: "Setup Time", value: "4 hours (full operational capability)" },
-          { label: "Crew Requirement", value: "3 operators (reduced to 1 in autonomous mode)" },
-          { label: "Communications", value: "STANAG 4586, NATO C2, Link 16" },
-          { label: "Classification", value: "NATO SECRET / ITAR Controlled" },
           { label: "MTBF", value: ">12,000 hours" },
+          { category: "Connectivity" },
+          { label: "Network Interfaces", value: "JADC2, SATCOM, Ethernet, Fiber" },
+          { label: "Interoperability", value: "STANAG 4586, NATO C2, Link 16" },
+          { label: "Deployment Time", value: "4 hours (full operational capability)" },
+          { label: "Classification", value: "NATO SECRET / ITAR Controlled" },
         ]}
       />
 

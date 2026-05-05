@@ -542,6 +542,10 @@ export function ImageBreak({
    SPEC TABLE — Technical specifications grid
    ════════════════════════════════════════════════════════════════ */
 
+export type SpecItem =
+  | { label: string; value: string; category?: undefined }
+  | { category: string; label?: undefined; value?: undefined };
+
 export function SpecTable({
   label,
   title,
@@ -549,7 +553,7 @@ export function SpecTable({
 }: {
   label?: string;
   title?: string;
-  specs: { label: string; value: string }[];
+  specs: SpecItem[];
 }) {
   return (
     <section className="py-20 md:py-32 bg-black border-t border-white/10">
@@ -570,17 +574,37 @@ export function SpecTable({
             </div>
           </ScrollRevealComponent>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
-          {specs.map((spec, i) => (
-            <ScrollRevealComponent key={spec.label} delay={i * 40}>
-              <div className="flex justify-between items-baseline border-b border-white/10 py-5">
-                <span className="text-[#767676] text-sm">{spec.label}</span>
-                <span className="text-white font-medium text-sm md:text-base">
-                  {spec.value}
-                </span>
-              </div>
-            </ScrollRevealComponent>
-          ))}
+        <div className="space-y-0">
+          {specs.map((spec, i) => {
+            if ("category" in spec && spec.category) {
+              return (
+                <ScrollRevealComponent key={`cat-${spec.category}`} delay={i * 40}>
+                  <div className="border-t border-b border-[#333] bg-[#0a0a0a] -mx-2 md:-mx-4 px-2 md:px-4 py-3 mt-8 first:mt-0">
+                    <span className="text-[11px] uppercase tracking-[0.2em] text-white/60 font-medium">
+                      {spec.category}
+                    </span>
+                  </div>
+                </ScrollRevealComponent>
+              );
+            }
+            return (
+              <ScrollRevealComponent key={spec.label!} delay={i * 40}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+                  <div className="flex justify-between items-baseline border-b border-white/10 py-4 md:py-5">
+                    <span className="text-[#767676] text-sm">{spec.label}</span>
+                    <span className="text-white font-medium text-sm md:text-base md:hidden">
+                      {spec.value}
+                    </span>
+                  </div>
+                  <div className="hidden md:flex justify-end items-baseline border-b border-white/10 py-4 md:py-5">
+                    <span className="text-white font-medium text-sm md:text-base">
+                      {spec.value}
+                    </span>
+                  </div>
+                </div>
+              </ScrollRevealComponent>
+            );
+          })}
         </div>
       </div>
     </section>

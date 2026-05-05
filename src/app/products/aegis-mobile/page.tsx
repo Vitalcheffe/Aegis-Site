@@ -84,28 +84,40 @@ export default function AegisMobilePage() {
 
       <SpecTable
         label="Technical Specifications"
-        title="Aegis Mobile — Full Specification"
+        title="Aegis Mobile Specifications"
         specs={[
-          { label: "Detection Range", value: "4 km (RF command link)" },
-          { label: "Tracking Capacity", value: "50+ simultaneous targets" },
+          { category: "Performance" },
+          { label: "Detection Range (RF)", value: "4 km (command link)" },
+          { label: "Tracking Capacity", value: "50+ concurrent targets" },
           { label: "Direction Finding Accuracy", value: "±3° bearing at 4 km" },
-          { label: "Frequency Range", value: "400 MHz – 6 GHz" },
+          { label: "Classification Accuracy", value: "95.2% (RF signature only)" },
+          { label: "Kill Chain Closure", value: "<200 ms" },
+          { label: "Swarm Cycling Rate", value: "100 ms (multi-frequency)" },
+          { label: "Coverage", value: "360° azimuth, -5° to +75° elevation" },
+          { category: "Sensors" },
+          { label: "AI Processing", value: "22 TOPS" },
+          { label: "Antenna Array", value: "6-element phased array" },
+          { label: "RF Sensing Range", value: "400 MHz – 6 GHz" },
           { label: "Jamming Output", value: "20W per band (4 concurrent bands)" },
           { label: "Jamming Modes", value: "Targeted, sweep, barrage, adaptive" },
-          { label: "Classification Accuracy", value: "95.2% (RF signature only)" },
-          { label: "Classification Latency", value: "<200 ms" },
-          { label: "Setup Time", value: "5 minutes (full operational)" },
+          { label: "Sensor Modality", value: "RF direction-finding + wideband jamming" },
+          { category: "Physical" },
           { label: "System Weight", value: "12.4 kg (complete with battery)" },
           { label: "Mast Height", value: "2.1 m (carbon fiber, 90 sec deploy)" },
           { label: "Battery Endurance", value: "6 hours (continuous operation)" },
           { label: "Battery Type", value: "BB-2590/U (standard military)" },
-          { label: "Operating Temperature", value: "-32°C to +49°C" },
-          { label: "Environmental Rating", value: "MIL-STD-810H, IP67" },
-          { label: "Display", value: "5-inch daylight-readable, glove-compatible" },
+          { label: "Display", value: '5" daylight-readable, glove-compatible' },
           { label: "Alert Delivery", value: "Haptic + tactical headset + visual" },
-          { label: "Networking", value: "MANET radio, ATAK integration" },
-          { label: "Classification", value: "NATO RESTRICTED / ITAR Controlled" },
+          { label: "Setup Time", value: "5 minutes (full operational)" },
+          { category: "Environmental" },
+          { label: "Operating Temperature", value: "-32°C to +49°C" },
+          { label: "MIL-STD Compliance", value: "810H, IP67" },
+          { label: "March Load", value: "25 km with standard combat load" },
           { label: "MTBF", value: ">5,000 hours" },
+          { category: "Connectivity" },
+          { label: "Networking", value: "MANET radio, ATAK integration" },
+          { label: "Multi-Unit Triangulation", value: "Range + bearing via 3+ unit mesh" },
+          { label: "Classification", value: "NATO RESTRICTED / ITAR Controlled" },
         ]}
       />
 

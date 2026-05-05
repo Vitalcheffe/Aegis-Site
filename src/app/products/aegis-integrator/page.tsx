@@ -84,28 +84,38 @@ export default function AegisIntegratorPage() {
 
       <SpecTable
         label="Technical Specifications"
-        title="Aegis Integrator — Full Specification"
+        title="Aegis Integrator Specifications"
         specs={[
-          { label: "Architecture", value: "API-first, microservices, event-driven" },
-          { label: "API Protocols", value: "REST, gRPC, WebSocket, MQTT" },
-          { label: "Stream Latency", value: "<100 ms (publish-subscribe)" },
+          { category: "Performance" },
           { label: "Pre-Built Adapters", value: "50+ systems from 18 manufacturers" },
+          { label: "Stream Latency", value: "<100 ms (publish-subscribe)" },
+          { label: "API Request Throughput", value: "50,000+ req/sec (cluster)" },
+          { label: "Temporal Synchronization", value: "NTP/PTP, <1 ms accuracy" },
+          { label: "System Availability", value: "99.99% (clustered deployment)" },
+          { label: "Coordinate Alignment", value: "Automatic (WGS84, local grid, MGRS)" },
+          { category: "Sensors" },
+          { label: "AI Processing", value: "N/A (integration middleware)" },
+          { label: "API Protocols", value: "REST, gRPC, WebSocket, MQTT" },
           { label: "SDK Languages", value: "Python, C++, Java, JavaScript" },
+          { label: "Data Model", value: "Aegis Common Data Model (extensible)" },
           { label: "Integration Framework", value: "Low-code adapter development environment" },
           { label: "Legacy Interfaces", value: "RS-232/422, MIL-STD-1553, Link 11/16" },
-          { label: "Interoperability Standards", value: "STANAG 4586, STANAG 4609, NATO C2" },
-          { label: "JADC2 Compatibility", value: "Full (ABMS integration tested)" },
-          { label: "Data Model", value: "Aegis Common Data Model (extensible)" },
-          { label: "Coordinate Alignment", value: "Automatic (WGS84, local grid, MGRS)" },
-          { label: "Temporal Sync", value: "NTP/PTP, <1ms accuracy" },
-          { label: "Security", value: "Type 1 encryption, MLS, zero-trust" },
+          { category: "Physical" },
+          { label: "Power Consumption", value: "4.5 kW (server cluster), 200W per gateway" },
           { label: "Deployment", value: "On-premise, cloud (AWS/Azure/GOV), hybrid" },
           { label: "Scalability", value: "Horizontal, auto-scaling, containerized" },
           { label: "Monitoring", value: "Full observability, alerting, analytics" },
           { label: "API Versioning", value: "Semantic versioning, backward compatible" },
+          { category: "Environmental" },
+          { label: "Operating Temperature", value: "-20°C to +50°C (sheltered)" },
+          { label: "MIL-STD Compliance", value: "810H (shelter), 461G (EMI)" },
           { label: "Developer Portal", value: "Interactive docs, sandbox, test tools" },
-          { label: "Classification", value: "NATO SECRET / ITAR Controlled" },
           { label: "MTBF", value: ">25,000 hours (cluster)" },
+          { category: "Connectivity" },
+          { label: "Interoperability Standards", value: "STANAG 4586, STANAG 4609, NATO C2" },
+          { label: "JADC2 Compatibility", value: "Full (ABMS integration tested)" },
+          { label: "Security", value: "Type 1 encryption, MLS, zero-trust" },
+          { label: "Classification", value: "NATO SECRET / ITAR Controlled" },
         ]}
       />
 

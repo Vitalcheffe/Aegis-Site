@@ -85,28 +85,40 @@ export default function AegisShieldPage() {
 
       <SpecTable
         label="Technical Specifications"
-        title="Aegis Shield — Full Specification"
+        title="Aegis Shield Specifications"
         specs={[
+          { category: "Performance" },
           { label: "Detection Range (Acoustic)", value: "6 km (rotor drone), 4 km (fixed-wing)" },
           { label: "Detection Range (Thermal)", value: "3.5 km (small UAS), 5 km (medium UAS)" },
           { label: "Detection Range (Optical)", value: "2.5 km (day), 1.5 km (night, aided)" },
-          { label: "Tracking Capacity", value: "100+ simultaneous targets" },
+          { label: "Tracking Capacity", value: "100+ concurrent targets" },
           { label: "Bearing Accuracy (Acoustic)", value: "±5° at 6 km" },
-          { label: "Coverage", value: "360° azimuth, -10° to +85° elevation" },
-          { label: "Sensor Modalities", value: "Acoustic, Thermal (LWIR), Optical" },
-          { label: "Acoustic Array", value: "64-element MEMS distributed aperture" },
-          { label: "Thermal Resolution", value: "640×512, 12μm pixel pitch" },
-          { label: "Optical Resolution", value: "4K, 30fps, AI-enhanced" },
           { label: "Classification Accuracy", value: "96.8% (multi-modal fusion)" },
-          { label: "Classification Latency", value: "<500 ms" },
+          { label: "Kill Chain Closure", value: "<500 ms (detect-to-alert)" },
+          { label: "Coverage", value: "360° azimuth, -10° to +85° elevation" },
           { label: "EM Emissions", value: "Zero (fully passive)" },
-          { label: "Power Requirements", value: "800W (operational), 200W (standby)" },
-          { label: "Weight (System Total)", value: "1,800 kg" },
-          { label: "Operating Temperature", value: "-40°C to +55°C" },
+          { category: "Sensors" },
+          { label: "AI Processing", value: "45 TOPS" },
+          { label: "Acoustic Array", value: "64-element MEMS distributed aperture" },
+          { label: "Thermal Resolution", value: "640×512, 12μm pixel pitch (LWIR)" },
+          { label: "Optical Resolution", value: "4K, 30fps, AI-enhanced" },
+          { label: "Sensor Modalities", value: "Acoustic, Thermal (LWIR), Optical" },
+          { category: "Physical" },
+          { label: "Power Consumption", value: "800W (operational), 200W (standby)" },
+          { label: "Weight", value: "1,800 kg (system total)" },
+          { label: "Mounting Options", value: "Perimeter wall, vehicle, tripod, building" },
           { label: "Setup Time", value: "2 hours (full operational)" },
           { label: "Crew Requirement", value: "1 operator" },
-          { label: "Classification", value: "NATO RESTRICTED / ITAR Controlled" },
+          { category: "Environmental" },
+          { label: "Operating Temperature", value: "-40°C to +55°C" },
+          { label: "MIL-STD Compliance", value: "810H, 461G" },
+          { label: "Weather Resistance", value: "IP65 (outdoor sensor units)" },
           { label: "MTBF", value: ">15,000 hours" },
+          { category: "Connectivity" },
+          { label: "Network Interfaces", value: "Ethernet, fiber, tactical radio" },
+          { label: "Interoperability", value: "STANAG 4586, Aegis Command handoff" },
+          { label: "Alert Outputs", value: "SNMP, REST API, relay contacts" },
+          { label: "Classification", value: "NATO RESTRICTED / ITAR Controlled" },
         ]}
       />
 
