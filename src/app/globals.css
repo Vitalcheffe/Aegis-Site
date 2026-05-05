@@ -6,7 +6,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -43,32 +43,35 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* === AEGIS DEFENSE SYSTEMS — Palantir-Quality Design System === */
 :root {
   --radius: 0.625rem;
+
+  /* Core Palette */
   --background: #000000;
   --foreground: #ffffff;
-  --card: #0A0A0A;
+  --card: #0a0a0a;
   --card-foreground: #ffffff;
-  --popover: #0A0A0A;
+  --popover: #0a0a0a;
   --popover-foreground: #ffffff;
   --primary: #ffffff;
   --primary-foreground: #000000;
   --secondary: #111111;
   --secondary-foreground: #ffffff;
   --muted: #111111;
-  --muted-foreground: #888888;
-  --accent: #111111;
+  --muted-foreground: #767676;
+  --accent: #2b5945;
   --accent-foreground: #ffffff;
   --destructive: #ff4444;
   --border: #222222;
   --input: #222222;
-  --ring: #333333;
+  --ring: #2b5945;
   --chart-1: #ffffff;
   --chart-2: #888888;
   --chart-3: #555555;
   --chart-4: #333333;
   --chart-5: #222222;
-  --sidebar: #0A0A0A;
+  --sidebar: #0a0a0a;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #ffffff;
   --sidebar-primary-foreground: #000000;
@@ -87,32 +90,92 @@
   }
 }
 
-/* Custom scrollbar */
+/* === Custom Scrollbar === */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: #000000;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #333333;
   border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #555555;
 }
-
-/* Firefox scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: #333333 #000000;
 }
 
-/* Smooth scrolling */
+/* === Smooth Scrolling === */
 html {
   scroll-behavior: smooth;
+}
+
+/* === Animated Line — slides in from left === */
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* === Fade In Up — reveals content on scroll === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Fade In — simple opacity reveal === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === Scale In — subtle scale reveal === */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-line {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* === Scroll-triggered animation states === */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-line {
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-out;
+}
+.scroll-reveal-line.revealed {
+  transform: translateX(0);
+}
+
+/* === Selection === */
+::selection {
+  background: rgba(43, 89, 69, 0.3);
+  color: #ffffff;
 }

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { SectionHeading } from "@/components/sections/section-heading";
+import Image from "next/image";
+import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
 
 interface Target {
   x: number;
@@ -31,7 +32,6 @@ export function RadarPPI() {
     const cy = size / 2;
     const maxR = size / 2 - 20;
 
-    // Initialize some targets
     for (let i = 0; i < 8; i++) {
       const angle = Math.random() * Math.PI * 2;
       const dist = 0.3 + Math.random() * 0.6;
@@ -47,11 +47,9 @@ export function RadarPPI() {
     function draw() {
       if (!ctx) return;
 
-      // Fade effect
       ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
       ctx.fillRect(0, 0, size, size);
 
-      // Range rings
       ctx.strokeStyle = "#1a1a1a";
       ctx.lineWidth = 0.5;
       for (let i = 1; i <= 4; i++) {
@@ -60,7 +58,6 @@ export function RadarPPI() {
         ctx.stroke();
       }
 
-      // Cross hairs
       ctx.strokeStyle = "#1a1a1a";
       ctx.lineWidth = 0.5;
       ctx.beginPath();
@@ -70,15 +67,9 @@ export function RadarPPI() {
       ctx.lineTo(cx + maxR, cy);
       ctx.stroke();
 
-      // Sweep line
       sweepRef.current += 0.02;
       if (sweepRef.current > Math.PI * 2) sweepRef.current -= Math.PI * 2;
 
-      const sweepGrad = ctx.createConicalGradient
-        ? null
-        : null;
-
-      // Sweep line
       ctx.strokeStyle = "#333333";
       ctx.lineWidth = 2;
       ctx.beginPath();
@@ -89,9 +80,8 @@ export function RadarPPI() {
       );
       ctx.stroke();
 
-      // Sweep trail
       for (let i = 0; i < 30; i++) {
-        const angle = sweepRef.current - (i * 0.02);
+        const angle = sweepRef.current - i * 0.02;
         const alpha = 0.03 * (1 - i / 30);
         ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
         ctx.lineWidth = 1;
@@ -104,7 +94,6 @@ export function RadarPPI() {
         ctx.stroke();
       }
 
-      // Update and draw targets
       const targets = targetsRef.current;
       for (let i = 0; i < targets.length; i++) {
         const t = targets[i];
@@ -112,7 +101,6 @@ export function RadarPPI() {
         t.y += Math.sin(t.bearing) * t.speed;
         t.age++;
 
-        // Wrap around
         if (Math.abs(t.x) > 0.9 || Math.abs(t.y) > 0.9) {
           const angle = Math.random() * Math.PI * 2;
           const dist = 0.3 + Math.random() * 0.5;
@@ -124,10 +112,11 @@ export function RadarPPI() {
         const tx = cx + t.x * maxR;
         const ty = cy + t.y * maxR;
 
-        // Target blip
         const targetAngle = Math.atan2(t.y, t.x);
-        const sweepDelta = ((sweepRef.current - targetAngle) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
-        
+        const sweepDelta =
+          ((sweepRef.current - targetAngle) % (Math.PI * 2) + Math.PI * 2) %
+          (Math.PI * 2);
+
         if (sweepDelta < 0.5) {
           const brightness = Math.max(0.2, 1 - sweepDelta / 0.5);
           ctx.fillStyle = `rgba(255, 255, 255, ${brightness})`;
@@ -135,7 +124,6 @@ export function RadarPPI() {
           ctx.arc(tx, ty, 3, 0, Math.PI * 2);
           ctx.fill();
 
-          // Target trail
           ctx.fillStyle = `rgba(255, 255, 255, ${brightness * 0.3})`;
           ctx.beginPath();
           ctx.arc(tx, ty, 6, 0, Math.PI * 2);
@@ -143,7 +131,6 @@ export function RadarPPI() {
         }
       }
 
-      // Occasionally add new targets
       frameRef.current++;
       if (frameRef.current % 300 === 0 && targets.length < 15) {
         const angle = Math.random() * Math.PI * 2;
@@ -157,23 +144,19 @@ export function RadarPPI() {
         });
       }
 
-      // Center dot
       ctx.fillStyle = "#555555";
       ctx.beginPath();
       ctx.arc(cx, cy, 2, 0, Math.PI * 2);
       ctx.fill();
 
-      // Range labels
       ctx.fillStyle = "#444444";
       ctx.font = "10px monospace";
       ctx.textAlign = "center";
       for (let i = 1; i <= 4; i++) {
         ctx.fillText(`${i * 3}km`, cx + 2, cy - (maxR / 4) * i + 12);
       }
-
     }
 
-    // Initial clear
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, size, size);
 
@@ -185,11 +168,13 @@ export function RadarPPI() {
     }
     requestAnimationFrame(loop);
 
-    return () => { running = false; };
+    return () => {
+      running = false;
+    };
   }, []);
 
   return (
-    <div className="border border-[#222222] overflow-hidden">
+    <div className="border border-white/10 overflow-hidden bg-black">
       <canvas
         ref={canvasRef}
         className="w-full max-w-[600px] aspect-square mx-auto block"
@@ -198,20 +183,23 @@ export function RadarPPI() {
   );
 }
 
-const demoCards = [
+const demoLinks = [
   {
-    title: "Detection Demo",
-    description: "Multi-spectral sensor fusion detects UAS at 12km. Four sensor modalities operating in concert with Bayesian correlation.",
+    title: "Detection",
+    description:
+      "Multi-spectral sensor fusion detects UAS at 12km. Four sensor modalities operating in concert with Bayesian correlation.",
     href: "/detection",
   },
   {
-    title: "Tracking Demo",
-    description: "IMM-UKF algorithms maintain 500+ simultaneous tracks at 50Hz. Elastic mesh for swarm management.",
+    title: "Tracking",
+    description:
+      "IMM-UKF algorithms maintain 500+ simultaneous tracks at 50Hz. Elastic mesh for swarm management.",
     href: "/tracking",
   },
   {
-    title: "Neutralization Demo",
-    description: "Graduated response from RF jamming to directed energy. Five effector modalities with human authorization.",
+    title: "Neutralization",
+    description:
+      "Graduated response from RF jamming to directed energy. Five effector modalities with human authorization.",
     href: "/neutralization",
   },
 ];
@@ -219,38 +207,82 @@ const demoCards = [
 export default function DemosPage() {
   return (
     <>
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="Interactive Demo"
-            title="Radar PPI Display"
-            subtitle="Real-time plan position indicator display showing detection, tracking, and classification of UAS threats."
-          />
+      {/* ═══ HERO ═══ */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <Image
+          src="/images/detection-radar.jpg"
+          alt="Aegis Demos"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
+        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
+          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
+            Interactive
+          </span>
+          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] md:tracking-[-3.4px] leading-[1.1] text-white">
+            Live Demo
+          </h1>
+          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
+            Real-time plan position indicator display showing detection,
+            tracking, and classification of UAS threats.
+          </p>
         </div>
       </section>
 
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RadarPPI />
+      {/* ═══ RADAR PPI ═══ */}
+      <section className="py-16 md:py-24 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <RadarPPI />
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {demoCards.map((demo) => (
-              <Link
-                key={demo.title}
-                href={demo.href}
-                className="border border-[#222222] p-8 hover:bg-[#0A0A0A] transition-colors group"
-              >
-                <h3 className="text-white text-xl font-bold mb-3">{demo.title}</h3>
-                <p className="text-[#888888] text-sm leading-relaxed">{demo.description}</p>
-                <div className="mt-4 text-[#888888] text-xs uppercase tracking-wider group-hover:text-white transition-colors">
-                  Explore →
-                </div>
-              </Link>
+      <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+        <AnimatedLine />
+      </div>
+
+      {/* ═══ DEMO LINKS ═══ */}
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
+                Explore
+              </span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
+                Capabilities
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="space-y-0">
+            {demoLinks.map((demo, i) => (
+              <ScrollReveal key={demo.title} delay={i * 80}>
+                <Link
+                  href={demo.href}
+                  className="block border-t border-white/10 group"
+                >
+                  <div className="py-10 md:py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-4 hover:bg-white/[0.02] transition-colors px-2 md:px-4 -mx-2 md:-mx-4">
+                    <h3 className="text-[28px] md:text-[48px] font-bold tracking-[-2px] text-white group-hover:text-white/90 transition-colors leading-[1]">
+                      {demo.title}
+                    </h3>
+                    <div className="md:flex-1 md:px-12">
+                      <p className="text-[#b9b9b9] text-base leading-relaxed">
+                        {demo.description}
+                      </p>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-[0.15em] text-white border-b border-white/30 pb-1 group-hover:border-white transition-colors self-start md:self-auto">
+                      Explore →
+                    </span>
+                  </div>
+                </Link>
+              </ScrollReveal>
             ))}
+            <div className="border-t border-white/10" />
           </div>
         </div>
       </section>

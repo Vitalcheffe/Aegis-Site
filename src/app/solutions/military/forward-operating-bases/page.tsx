@@ -1,66 +1,64 @@
-import type { Metadata } from "next";
-import { CapabilityHero } from "@/components/sections/capability-hero";
-import { SectionHeading } from "@/components/sections/section-heading";
-import { SpecTable } from "@/components/sections/spec-table";
-import { CtaSection } from "@/components/sections/cta-section";
-import { FeatureCard } from "@/components/sections/feature-card";
-import { Shield, Clock, Eye, Zap } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
 
-export const metadata: Metadata = {
-  title: "Forward Operating Bases — Aegis",
-  description: "360° perimeter counter-UAS defense for forward operating bases. 12km, 500+ targets, 24/7.",
-};
+const specs = [
+  { key: "Perimeter Coverage", value: "360°" },
+  { key: "Detection Range", value: "12 km" },
+  { key: "Configuration", value: "Aegis Core" },
+  { key: "Personnel", value: "4–8 Operators" },
+  { key: "Integration", value: "BMS + SIGINT" },
+  { key: "Hardening", value: "MIL-STD-810" },
+];
 
-export default function FOBPage() {
+export default function ForwardOperatingBasesPage() {
   return (
     <>
-      <CapabilityHero
-        image="/images/fob-aerial.jpg"
-        title="Forward Operating Bases"
-        subtitle="360° perimeter defense. 12km detection. 24/7 autonomous operation."
-      />
-
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="FOB Protection"
-            title="Full Perimeter Coverage"
-            subtitle="Aegis Core provides 360° counter-UAS coverage for forward operating bases. 12km detection range, 500+ simultaneous targets, and 24/7 autonomous operation with human authorization for lethal engagement."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
-            <FeatureCard icon={Eye} title="360° Coverage" description="Full perimeter detection with no gaps" />
-            <FeatureCard icon={Shield} title="500+ Targets" description="Simultaneous tracking and engagement" />
-            <FeatureCard icon={Clock} title="24/7 Operation" description="Autonomous with human override" />
-            <FeatureCard icon={Zap} title="20ms Response" description="Detection to engagement in seconds" />
-          </div>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <Image src="/images/fob-aerial.jpg" alt="Aegis FOB Protection" fill className="object-cover" priority sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
+        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
+          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Military · FOBs</span>
+          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">Forward Operating Bases</h1>
+          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
+            Full-spectrum C-UAS protection for forward operating bases. 360° coverage with BMS and SIGINT integration. MIL-STD-810 hardened for austere environments.
+          </p>
+          <Link href="/request-demo" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">Request Demo</Link>
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading badge="Specifications" title="FOB Configuration" />
-          <div className="mt-16 max-w-2xl">
-            <SpecTable
-              specs={[
-                { key: "System", value: "Aegis Core" },
-                { key: "Detection Range", value: "12km" },
-                { key: "Coverage", value: "360°" },
-                { key: "Max Targets", value: "500+" },
-                { key: "Update Rate", value: "50Hz" },
-                { key: "Response Time", value: "≤ 20ms" },
-                { key: "Operation", value: "24/7 autonomous" },
-                { key: "Lethal Authorization", value: "Human-in-the-loop" },
-                { key: "Sensors", value: "S-band + RF + EO/IR + Acoustic" },
-                { key: "Effectors", value: "RF + GPS + Protocol + Kinetic + DE" },
-                { key: "Power", value: "2.4kW" },
-                { key: "MTBF", value: "10,000 hours" },
-              ]}
-            />
-          </div>
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
+          <ScrollReveal>
+            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
+              360° protection. 12km range. Combat-proven.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      <CtaSection heading="Request FOB Briefing" description="See how Aegis protects forward operating bases in your theater." />
+      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Data</span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">By the Numbers</h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
+              {specs.map((spec) => (
+                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
+                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
+                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
   );
 }

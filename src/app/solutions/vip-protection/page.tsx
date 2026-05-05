@@ -1,66 +1,64 @@
-import type { Metadata } from "next";
-import { CapabilityHero } from "@/components/sections/capability-hero";
-import { SectionHeading } from "@/components/sections/section-heading";
-import { SpecTable } from "@/components/sections/spec-table";
-import { CtaSection } from "@/components/sections/cta-section";
-import { FeatureCard } from "@/components/sections/feature-card";
-import { UserCheck, Monitor, Zap, Shield } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
 
-export const metadata: Metadata = {
-  title: "VIP Protection — Aegis",
-  description: "Counter-UAS for VIP protection. Mobile + fixed systems, common operating picture.",
-};
+const specs = [
+  { key: "Deployment", value: "Covert" },
+  { key: "Configuration", value: "Tactical + Mobile" },
+  { key: "Operators", value: "1–3" },
+  { key: "Deploy Time", value: "<5 min" },
+  { key: "Integration", value: "Existing Security" },
+  { key: "Mode", value: "Silent / Active" },
+];
 
-export default function VIPProtectionPage() {
+export default function VipProtectionPage() {
   return (
     <>
-      <CapabilityHero
-        image="/images/soldier-jammer.jpg"
-        title="VIP Protection"
-        subtitle="Mobile and fixed systems. Common operating picture. Rapid deployment."
-      />
-
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="VIP Protection"
-            title="Personal Security"
-            subtitle="Aegis provides mobile and fixed counter-UAS protection for VIPs and high-value individuals. Common operating picture across all deployed systems. Rapid deployment for temporary venues and events."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
-            <FeatureCard icon={UserCheck} title="Mobile + Fixed" description="Comprehensive coverage" />
-            <FeatureCard icon={Monitor} title="Common Operating Picture" description="Unified situational awareness" />
-            <FeatureCard icon={Zap} title="Rapid Deployment" description="Temporary venues and events" />
-            <FeatureCard icon={Shield} title="Non-Kinetic Priority" description="Discreet engagement options" />
-          </div>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <Image src="/images/soldier-jammer.jpg" alt="Aegis VIP Protection" fill className="object-cover" priority sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
+        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
+          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Solutions</span>
+          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">VIP Protection</h1>
+          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
+            Discreet mobile and fixed protection for high-value individuals. Rapid deployment with covert operation modes.
+          </p>
+          <Link href="/request-demo" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">Request Demo</Link>
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading badge="Specifications" title="VIP Configuration" />
-          <div className="mt-16 max-w-2xl">
-            <SpecTable
-              specs={[
-                { key: "System", value: "Aegis Tactical + Mobile" },
-                { key: "Fixed Coverage", value: "12km (Aegis Core)" },
-                { key: "Mobile Coverage", value: "8km (Aegis Tactical)" },
-                { key: "Man-Portable", value: "3km (Aegis Mobile)" },
-                { key: "Operating Picture", value: "Unified COP" },
-                { key: "Deploy Time", value: "< 30min / < 2min" },
-                { key: "Preferred Effectors", value: "RF + GPS (non-kinetic)" },
-                { key: "Alert System", value: "Mobile + desktop + wearable" },
-                { key: "Event Mode", value: "Temporary venue coverage" },
-                { key: "Convoy Mode", value: "On-the-move protection" },
-                { key: "Residence Mode", value: "Permanent fixed-site" },
-                { key: "Staff Training", value: "Included with deployment" },
-              ]}
-            />
-          </div>
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
+          <ScrollReveal>
+            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
+              Discreet. Rapid. Covert protection.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      <CtaSection heading="Request VIP Protection Briefing" description="Protect principals with Aegis counter-UAS technology." />
+      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Data</span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">By the Numbers</h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
+              {specs.map((spec) => (
+                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
+                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
+                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
   );
 }

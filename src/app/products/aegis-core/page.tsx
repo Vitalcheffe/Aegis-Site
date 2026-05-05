@@ -1,113 +1,207 @@
-import type { Metadata } from "next";
-import { CapabilityHero } from "@/components/sections/capability-hero";
-import { SectionHeading } from "@/components/sections/section-heading";
-import { SpecTable } from "@/components/sections/spec-table";
-import { CtaSection } from "@/components/sections/cta-section";
-import { FeatureCard } from "@/components/sections/feature-card";
-import { Radar, Radio, Eye, Ear, Wifi, Satellite, Crosshair, Zap } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
 
-export const metadata: Metadata = {
-  title: "Aegis Core — Fixed-Site System",
-  description: "Full-spectrum counter-UAS fixed-site system. 500+ targets, 50Hz, 20ms response.",
-};
+const specs = [
+  { key: "Track Capacity", value: "500+" },
+  { key: "Update Rate", value: "50 Hz" },
+  { key: "End-to-End Latency", value: "20 ms" },
+  { key: "Detection Range", value: "12 km" },
+  { key: "Sensor Modalities", value: "4" },
+  { key: "Effector Types", value: "5" },
+  { key: "Classification Accuracy", value: "98.9%" },
+  { key: "Uptime", value: "99.97%" },
+  { key: "False Positive Rate", value: "<0.1%" },
+  { key: "Threat Database", value: "200+ Signatures" },
+  { key: "Concurrent Engagements", value: "24+" },
+  { key: "Operator Stations", value: "1–8" },
+];
+
+const differentiators = [
+  {
+    title: "Full Kill Chain Integration",
+    description:
+      "Single architecture from sensor to effector. No middleware, no integration gaps. Every component designed to work together from day one.",
+  },
+  {
+    title: "500+ Track Capacity",
+    description:
+      "The highest track count in the industry. Handles swarm scenarios that overwhelm competing systems. IMM-UKF with autonomous track association.",
+  },
+  {
+    title: "20ms End-to-End",
+    description:
+      "From first radar return to effector activation in 20 milliseconds. The fastest kill chain in counter-UAS defense. No human delay in the loop for non-kinetic response.",
+  },
+  {
+    title: "99.97% Uptime",
+    description:
+      "Distributed processing with hot-standby redundancy. Automatic failover in under 100ms. Designed for 24/7/365 operation in austere environments.",
+  },
+];
 
 export default function AegisCorePage() {
   return (
     <>
-      <CapabilityHero
-        image="/images/hero-radar.jpg"
-        title="Aegis Core"
-        subtitle="Fixed-Site Counter-UAS System — Full Spectrum"
-      />
+      {/* ═══ HERO ═══ */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <Image
+          src="/images/command-center.jpg"
+          alt="Aegis Core Command System"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
+        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
+          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
+            Products
+          </span>
+          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">
+            Aegis Core
+          </h1>
+          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
+            Full-spectrum counter-UAS command system for fixed installations.
+            500+ tracks. 50Hz. 20ms. The most capable C-UAS platform ever built.
+          </p>
+          <Link
+            href="/request-demo"
+            className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
+          >
+            Request Demo
+          </Link>
+        </div>
+      </section>
 
-      {/* Overview */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-            <div>
-              <SectionHeading
-                badge="Fixed-Site System"
-                title="360° Protection"
-                subtitle="The flagship Aegis system. Permanent installation with full-spectrum detection and neutralization. 12km detection range, 500+ simultaneous tracks, 5 effector modalities."
-              />
+      {/* ═══ CALLOUT ═══ */}
+      <section className="py-24 md:py-32 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
+          <ScrollReveal>
+            <p className="text-[22px] md:text-[48px] lg:text-[64px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
+              500 targets. 50 updates per second.
+              <br />
+              20 milliseconds to respond.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+        <AnimatedLine />
+      </div>
+
+      {/* ═══ SPECIFICATIONS ═══ */}
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16 md:mb-24">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
+                Specifications
+              </span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
+                Technical Data
+              </h2>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <StatBlock value="500+" label="Max Targets" />
-              <StatBlock value="50Hz" label="Update Rate" />
-              <StatBlock value="20ms" label="Response" />
-              <StatBlock value="12km" label="Detection Range" />
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
+              {specs.map((spec) => (
+                <div
+                  key={spec.key}
+                  className="flex justify-between items-center border-b border-white/10 py-5"
+                >
+                  <span className="text-[#767676] text-sm uppercase tracking-wider">
+                    {spec.key}
+                  </span>
+                  <span className="text-white text-lg font-bold tracking-[-0.02em]">
+                    {spec.value}
+                  </span>
+                </div>
+              ))}
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ═══ FULL-BLEED IMAGE ═══ */}
+      <section className="relative h-[50vh] md:h-[70vh] overflow-hidden">
+        <Image
+          src="/images/hero-radar.jpg"
+          alt="Aegis Core Radar"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+      </section>
+
+      {/* ═══ KEY DIFFERENTIATORS ═══ */}
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16 md:mb-24">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
+                Differentiators
+              </span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
+                Why Aegis Core
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="space-y-0">
+            {differentiators.map((d, i) => (
+              <ScrollReveal key={d.title} delay={i * 80}>
+                <div className="border-t border-white/10 py-10 md:py-14">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+                    <div className="md:col-span-5">
+                      <h3 className="text-[24px] md:text-[40px] font-bold tracking-[-2px] text-white leading-[1.1]">
+                        {d.title}
+                      </h3>
+                    </div>
+                    <div className="md:col-span-7 md:pt-2">
+                      <p className="text-[#b9b9b9] text-base md:text-lg leading-relaxed">
+                        {d.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+            <div className="border-t border-white/10" />
           </div>
         </div>
       </section>
 
-      {/* Sensors */}
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading badge="Sensors" title="Five Modalities" subtitle="Overlapping sensor coverage eliminates blind spots and false positives." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
-            <FeatureCard icon={Radar} title="S-Band Radar" description="12km range, 0.01m² RCS minimum, 360° scan, all-weather operation" />
-            <FeatureCard icon={Radio} title="RF Direction Finding" description="400MHz–6GHz coverage, multi-band simultaneous, TDOA/AOA geolocation" />
-            <FeatureCard icon={Eye} title="EO/IR Cameras" description="Dual-band thermal + visible, AI-enhanced imagery, auto-tracking" />
-            <FeatureCard icon={Ear} title="Acoustic Arrays" description="Passive 5km detection, 200+ drone signature library, low-RCS complement" />
-            <FeatureCard icon={Wifi} title="Protocol Analysis" description="WiFi/Bluetooth sniffing, command channel identification, operator geolocation" />
-          </div>
+      {/* ═══ CTA ═══ */}
+      <section className="py-24 md:py-32 bg-black border-t border-white/10">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
+          <ScrollReveal>
+            <h2 className="text-[28px] md:text-[48px] font-bold tracking-[-0.03em] text-white">
+              See Aegis Core in Action
+            </h2>
+            <p className="mt-4 text-[#767676] text-lg max-w-xl mx-auto">
+              Schedule a live demonstration with our defense engineering team.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/request-demo"
+                className="bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
+              >
+                Request Demo
+              </Link>
+              <Link
+                href="/products"
+                className="border border-white/20 text-white px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-white/5 transition-colors"
+              >
+                All Products
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
-
-      {/* Effectors */}
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading badge="Effectors" title="Five Neutralization Modes" subtitle="Graduated response from non-kinetic to lethal, always with human authorization." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
-            <FeatureCard icon={Radio} title="RF Jamming" description="Broadband and targeted jamming, 400MHz–6GHz, directional and omnidirectional" />
-            <FeatureCard icon={Satellite} title="GPS Spoofing" description="Selective GPS/GNSS denial, geo-fence enforcement, safe landing protocols" />
-            <FeatureCard icon={Wifi} title="Protocol Manipulation" description="Command injection, forced landing, operator takeover capability" />
-            <FeatureCard icon={Crosshair} title="Kinetic Interceptors" description="C-UAS missile integration, net launcher compatible, interceptor management" />
-            <FeatureCard icon={Zap} title="Directed Energy" description="High-power microwave and laser options, hard-kill capability, precision engagement" />
-          </div>
-        </div>
-      </section>
-
-      {/* Specifications */}
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading badge="Specifications" title="Technical Parameters" />
-          <div className="mt-16 max-w-2xl">
-            <SpecTable
-              specs={[
-                { key: "System Type", value: "Fixed-Site" },
-                { key: "Max Targets", value: "500+" },
-                { key: "Update Rate", value: "50Hz" },
-                { key: "Response Time", value: "≤ 20ms" },
-                { key: "Detection Range", value: "12km" },
-                { key: "Classification Range", value: "8km" },
-                { key: "Sensors", value: "S-band + RF + EO/IR + Acoustic + Protocol" },
-                { key: "Effectors", value: "RF + GPS + Protocol + Kinetic + DE" },
-                { key: "Classification Accuracy", value: "98.9%" },
-                { key: "False Positive Rate", value: "< 0.1%" },
-                { key: "Ingress Protection", value: "IP67" },
-                { key: "Weight", value: "180kg (sensor head)" },
-                { key: "Power", value: "2.4kW" },
-                { key: "Operating Temperature", value: "-40°C to +55°C" },
-                { key: "MTBF", value: "10,000 hours" },
-                { key: "System Uptime", value: "99.97%" },
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
-      <CtaSection heading="Request Core System Briefing" description="Schedule a classified technical briefing for your fixed-site requirements." />
     </>
-  );
-}
-
-function StatBlock({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="border border-[#222222] p-6 text-center">
-      <div className="text-3xl md:text-4xl font-bold text-white">{value}</div>
-      <div className="text-[#888888] text-xs uppercase tracking-wider mt-2">{label}</div>
-    </div>
   );
 }

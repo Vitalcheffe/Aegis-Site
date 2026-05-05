@@ -1,66 +1,76 @@
-import type { Metadata } from "next";
-import { CapabilityHero } from "@/components/sections/capability-hero";
-import { SectionHeading } from "@/components/sections/section-heading";
-import { SpecTable } from "@/components/sections/spec-table";
-import { CtaSection } from "@/components/sections/cta-section";
-import { FeatureCard } from "@/components/sections/feature-card";
-import { Building2, Shield, BarChart3, Link2 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
 
-export const metadata: Metadata = {
-  title: "Critical Infrastructure — Aegis",
-  description: "Counter-UAS for critical infrastructure. 99.97% uptime, SCADA integration.",
-};
+const specs = [
+  { key: "Integration", value: "SCADA Compatible" },
+  { key: "False Positive Rate", value: "<0.01%" },
+  { key: "Uptime", value: "99.97%" },
+  { key: "Sites Protected", value: "40+" },
+  { key: "Configuration", value: "Aegis Core" },
+  { key: "Monitoring", value: "24/7/365" },
+];
 
 export default function CriticalInfrastructurePage() {
   return (
     <>
-      <CapabilityHero
-        image="/images/command-center.jpg"
-        title="Critical Infrastructure"
-        subtitle="99.97% uptime. SCADA integrated. Uninterrupted protection."
-      />
-
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="Critical Infrastructure"
-            title="Uninterrupted Protection"
-            subtitle="Aegis protects power plants, data centers, government facilities, and other critical infrastructure with 99.97% system uptime. Full SCADA integration enables seamless operation with existing security infrastructure."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
-            <FeatureCard icon={Shield} title="99.97% Uptime" description="Continuous protection guaranteed" />
-            <FeatureCard icon={Link2} title="SCADA Integration" description="Seamless security infrastructure" />
-            <FeatureCard icon={Building2} title="Multi-Site Management" description="Centralized command" />
-            <FeatureCard icon={BarChart3} title="Low False Positive" description="< 0.1% — no unnecessary disruptions" />
-          </div>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <Image
+          src="/images/command-center.jpg"
+          alt="Aegis Critical Infrastructure"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
+        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
+          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Solutions</span>
+          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">
+            Critical Infrastructure
+          </h1>
+          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
+            Power plants, data centers, government facilities. Zero-false-positive
+            operation with SCADA integration. Protecting assets that cannot fail.
+          </p>
+          <Link href="/request-demo" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">
+            Request Demo
+          </Link>
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading badge="Specifications" title="Infrastructure Configuration" />
-          <div className="mt-16 max-w-2xl">
-            <SpecTable
-              specs={[
-                { key: "System", value: "Aegis Core (Infrastructure)" },
-                { key: "System Uptime", value: "99.97%" },
-                { key: "SCADA Integration", value: "Full interface" },
-                { key: "Detection Range", value: "12km" },
-                { key: "Coverage", value: "360°" },
-                { key: "Max Targets", value: "500+" },
-                { key: "False Positive Rate", value: "< 0.1%" },
-                { key: "Site Types", value: "Power, data, government" },
-                { key: "Multi-Site", value: "Centralized management" },
-                { key: "Installation", value: "Permanent, fixed-site" },
-                { key: "Redundancy", value: "Dual-redundant architecture" },
-                { key: "Monitoring", value: "24/7 SOC integration" },
-              ]}
-            />
-          </div>
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
+          <ScrollReveal>
+            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
+              Zero false positives. 99.97% uptime. Assets that cannot fail.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      <CtaSection heading="Request Infrastructure Briefing" description="Protect your critical assets with Aegis counter-UAS technology." />
+      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Data</span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">By the Numbers</h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
+              {specs.map((spec) => (
+                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
+                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
+                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,63 +1,50 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Terms of Service — Aegis",
-  description: "Aegis Defense Systems terms of service including ITAR provisions.",
-};
+import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
 
 export default function TermsPage() {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-12">Terms of Service</h1>
-
-        <div className="space-y-12 text-[#888888] text-sm leading-relaxed">
-          <div>
-            <h2 className="text-white text-xl font-bold mb-4">1. Acceptance of Terms</h2>
-            <p>By accessing or using Aegis Defense Systems products, services, or website, you agree to be bound by these Terms of Service. If you do not agree, do not use our services.</p>
-          </div>
-
-          <div>
-            <h2 className="text-white text-xl font-bold mb-4">2. Eligibility</h2>
-            <p>Our products and services are available only to U.S. persons as defined by the International Traffic in Arms Regulations (ITAR), 22 CFR §120.15. By using our services, you represent and warrant that you are a U.S. person and are not prohibited from receiving defense articles or defense services under any applicable law.</p>
-          </div>
-
-          <div>
-            <h2 className="text-white text-xl font-bold mb-4">3. Export Controls</h2>
-            <p className="mb-4">All Aegis products and technical data are controlled under ITAR and may not be:</p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Exported, re-exported, or transferred without prior authorization</li>
-              <li>Disclosed to foreign persons without State Department approval</li>
-              <li>Used in violation of U.S. export control laws</li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="text-white text-xl font-bold mb-4">4. Intellectual Property</h2>
-            <p>All content, software, technical data, and documentation are the exclusive property of Aegis Defense Systems. No license or right is granted except as expressly provided in a separate written agreement.</p>
-          </div>
-
-          <div>
-            <h2 className="text-white text-xl font-bold mb-4">5. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by law, Aegis Defense Systems shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or services.</p>
-          </div>
-
-          <div>
-            <h2 className="text-white text-xl font-bold mb-4">6. ITAR-Specific Terms</h2>
-            <p className="mb-4">In addition to the general terms above, the following ITAR-specific provisions apply:</p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>All technical data is classified under USML Category XII</li>
-              <li>Foreign person access requires prior State Department authorization</li>
-              <li>Violation of ITAR may result in criminal penalties under 22 U.S.C. §2778</li>
-              <li>All demo and briefing access is logged and audited</li>
-            </ul>
-          </div>
-
-          <div className="border-t border-[#222222] pt-8 text-xs text-[#555555]">
-            Last updated: January 2026
-          </div>
+    <>
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Legal</span>
+          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] leading-[1.1] text-white">Terms of Service</h1>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+
+      <section className="py-16 md:py-24 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="max-w-3xl space-y-8 text-[#b9b9b9] text-base leading-relaxed">
+              <p><span className="text-white font-medium">Last Updated:</span> January 2025</p>
+
+              <h2 className="text-white text-2xl font-bold tracking-[-0.02em] pt-4">1. Acceptance of Terms</h2>
+              <p>By accessing the Aegis Defense Systems website and services, you agree to be bound by these Terms of Service. If you do not agree, do not use our services.</p>
+
+              <h2 className="text-white text-2xl font-bold tracking-[-0.02em] pt-4">2. ITAR Restrictions</h2>
+              <p>This website contains information subject to the International Traffic in Arms Regulations (ITAR). Access to certain technical data is restricted to U.S. persons as defined by ITAR (22 CFR §120.15). Non-U.S. persons may not access ITAR-controlled technical data without prior authorization from the U.S. Department of State.</p>
+
+              <h2 className="text-white text-2xl font-bold tracking-[-0.02em] pt-4">3. Export Control</h2>
+              <p>The products and technical data described on this website are subject to U.S. export controls. No part of this website or its contents may be exported, re-exported, or transferred in violation of U.S. export laws and regulations.</p>
+
+              <h2 className="text-white text-2xl font-bold tracking-[-0.02em] pt-4">4. Intellectual Property</h2>
+              <p>All content, trademarks, and intellectual property on this website are owned by Aegis Defense Systems, Inc. Unauthorized use, reproduction, or distribution is prohibited.</p>
+
+              <h2 className="text-white text-2xl font-bold tracking-[-0.02em] pt-4">5. Disclaimer</h2>
+              <p>Performance specifications listed on this website are representative and subject to configuration and environmental conditions. Actual performance may vary. Aegis makes no warranty, express or implied, regarding the accuracy of specifications for any particular application.</p>
+
+              <h2 className="text-white text-2xl font-bold tracking-[-0.02em] pt-4">6. Limitation of Liability</h2>
+              <p>To the maximum extent permitted by law, Aegis Defense Systems shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this website or its contents.</p>
+
+              <h2 className="text-white text-2xl font-bold tracking-[-0.02em] pt-4">7. Governing Law</h2>
+              <p>These terms are governed by the laws of the Commonwealth of Virginia, United States of America.</p>
+
+              <h2 className="text-white text-2xl font-bold tracking-[-0.02em] pt-4">8. Contact</h2>
+              <p>For legal inquiries, contact:<br />Aegis Defense Systems, Inc.<br />Legal Department<br />1200 Defense Corridor, Arlington, VA 22202<br />legal@aegissystems.com</p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </>
   );
 }

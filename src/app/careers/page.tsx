@@ -1,105 +1,117 @@
-import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/sections/section-heading";
+import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
 
-export const metadata: Metadata = {
-  title: "Careers — Aegis",
-  description: "Join Aegis Defense Systems. Career opportunities in defense technology.",
-};
-
-const positions = [
+const openings = [
   {
-    title: "Senior Radar Engineer",
-    location: "Arlington, VA",
-    type: "Full-Time",
-    clearance: "TS/SCI",
-    description: "Design and optimize S-band and X-band radar systems for counter-UAS detection. Lead signal processing algorithm development. Requires 8+ years radar engineering experience.",
+    title: "Senior Sensor Fusion Engineer",
+    department: "Engineering",
+    location: "Washington, DC",
   },
   {
-    title: "ML Classification Engineer",
-    location: "Arlington, VA",
-    type: "Full-Time",
-    clearance: "Secret",
-    description: "Develop machine learning models for UAS classification and threat assessment. Build and maintain training pipelines for 200+ drone signature library. Requires 5+ years ML/AI experience.",
+    title: "RF Systems Engineer",
+    department: "Engineering",
+    location: "Washington, DC",
+  },
+  {
+    title: "Machine Learning Engineer — Classification",
+    department: "AI/ML",
+    location: "Washington, DC / Remote",
   },
   {
     title: "Embedded Systems Engineer",
-    location: "Arlington, VA",
-    type: "Full-Time",
-    clearance: "Secret",
-    description: "Design real-time embedded systems for sensor fusion and effector control. RTOS development for 50Hz tracking loops. Requires 5+ years embedded systems experience with defense applications.",
+    department: "Engineering",
+    location: "Washington, DC",
   },
   {
-    title: "Field Service Engineer",
-    location: "Multiple Locations",
-    type: "Full-Time",
-    clearance: "Secret",
-    description: "Deploy, install, and maintain Aegis systems worldwide. Provide operator training and technical support. Requires 3+ years field service experience. Travel up to 60%.",
+    title: "Field Service Engineer — EMEA",
+    department: "Operations",
+    location: "London, UK",
   },
   {
-    title: "Business Development Manager",
-    location: "Arlington, VA",
-    type: "Full-Time",
-    clearance: "Secret",
-    description: "Drive growth in defense and critical infrastructure markets. Manage government contract pursuits. Requires 7+ years defense BD experience with existing relationships.",
+    title: "Business Development Manager — APAC",
+    department: "Business Development",
+    location: "Singapore",
+  },
+  {
+    title: "Security Clearance Administrator",
+    department: "Security",
+    location: "Washington, DC",
+  },
+  {
+    title: "Technical Writer — Defense Systems",
+    department: "Documentation",
+    location: "Remote",
   },
 ];
 
 export default function CareersPage() {
   return (
     <>
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="Careers"
-            title="Protect What Matters"
-            subtitle="Join the team building the world's most advanced counter-UAS technology. Mission-driven work. World-class colleagues. Meaningful impact."
-          />
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-4">
-            {positions.map((position) => (
-              <div key={position.title} className="border border-[#222222] p-6 md:p-8 hover:bg-[#0A0A0A] transition-colors">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                  <div className="flex-1">
-                    <h3 className="text-white text-xl font-bold mb-2">{position.title}</h3>
-                    <div className="flex flex-wrap gap-4 text-[#888888] text-sm mb-4">
-                      <span>{position.location}</span>
-                      <span>•</span>
-                      <span>{position.type}</span>
-                      <span>•</span>
-                      <span>Clearance: {position.clearance}</span>
-                    </div>
-                    <p className="text-[#888888] text-sm leading-relaxed">{position.description}</p>
-                  </div>
-                  <Link
-                    href="/contact"
-                    className="shrink-0 border border-[#333333] text-white px-6 py-3 text-sm font-medium hover:border-white transition-colors text-center"
-                  >
-                    Apply
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Don&apos;t See Your Role?</h2>
-          <p className="text-[#888888] text-lg max-w-2xl mx-auto mb-8">
-            We&apos;re always looking for exceptional talent. Send your resume and tell us how you can contribute to the mission.
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <Image src="/images/fob-aerial.jpg" alt="Aegis Careers" fill className="object-cover" priority sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
+        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
+          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Careers</span>
+          <h1 className="mt-4 text-[36px] md:text-[60px] lg:text-[80px] font-bold tracking-[-3px] md:tracking-[-3.4px] leading-[1.1] text-white">
+            Build Technology
+            <br />
+            That Protects
+          </h1>
+          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
+            Join the team building the world's most advanced counter-UAS defense
+            systems. Every line of code, every circuit, every algorithm protects
+            lives.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-black px-8 py-4 text-sm font-medium hover:bg-[#e0e0e0] transition-colors"
-          >
-            Get in Touch
+          <Link href="/contact" className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors">
+            Apply Now
           </Link>
+        </div>
+      </section>
+
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
+          <ScrollReveal>
+            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
+              The threats evolve. So must we. Join the mission.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="max-w-[80rem] mx-auto px-5 md:px-8"><AnimatedLine /></div>
+
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16 md:mb-24">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">Open Positions</span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">Current Openings</h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="space-y-0">
+            {openings.map((job, i) => (
+              <ScrollReveal key={job.title} delay={i * 60}>
+                <div className="border-t border-white/10 py-6 md:py-8 hover:bg-white/[0.02] transition-colors px-2 md:px-4 -mx-2 md:-mx-4">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                      <h3 className="text-white text-lg md:text-xl font-medium">{job.title}</h3>
+                      <div className="flex items-center gap-4 mt-1">
+                        <span className="text-[#767676] text-xs uppercase tracking-wider">{job.department}</span>
+                        <span className="text-[#555555]">·</span>
+                        <span className="text-[#767676] text-xs uppercase tracking-wider">{job.location}</span>
+                      </div>
+                    </div>
+                    <Link href="/contact" className="text-[10px] uppercase tracking-[0.15em] text-white border-b border-white/30 pb-1 hover:border-white transition-colors self-start md:self-auto">
+                      Apply →
+                    </Link>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+            <div className="border-t border-white/10" />
+          </div>
         </div>
       </section>
     </>

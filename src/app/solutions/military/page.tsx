@@ -1,71 +1,129 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import { SectionHeading } from "@/components/sections/section-heading";
-import { CtaSection } from "@/components/sections/cta-section";
-
-export const metadata: Metadata = {
-  title: "Military Solutions — Aegis",
-  description: "Counter-UAS for military: FOBs, naval vessels, and convoy protection.",
-};
+import Link from "next/link";
+import { ScrollReveal, AnimatedLine } from "@/components/sections/scroll-reveal";
 
 const subSolutions = [
-  {
-    title: "Forward Operating Bases",
-    description: "360° perimeter defense. 12km detection. 500+ simultaneous targets. 24/7 autonomous operation with human authorization for lethal engagement.",
-    image: "/images/fob-aerial.jpg",
-    href: "/solutions/military/forward-operating-bases",
-  },
-  {
-    title: "Naval",
-    description: "Shipborne counter-UAS rated to sea state 5. MIL-STD-901D shock qualified. Multi-axis stabilization for vessel motion compensation.",
-    image: "/images/palantir-submarine.png",
-    href: "/solutions/military/naval",
-  },
-  {
-    title: "Convoys",
-    description: "Vehicle-mounted tactical systems. 200+ target tracking. Operational in under 30 minutes. On-the-move detection and jamming capability.",
-    image: "/images/products-aegis-tactical.jpg",
-    href: "/solutions/military/convoys",
-  },
+  { title: "Forward Operating Bases", href: "/solutions/military/forward-operating-bases" },
+  { title: "Convoys", href: "/solutions/military/convoys" },
+  { title: "Naval Vessels", href: "/solutions/military/naval" },
 ];
 
-export default function MilitarySolutionsPage() {
+const specs = [
+  { key: "Deployment", value: "12 Nations" },
+  { key: "Systems Active", value: "180+" },
+  { key: "Threats Neutralized", value: "350+" },
+  { key: "Uptime", value: "99.97%" },
+  { key: "Configuration", value: "Core + Tactical" },
+  { key: "Response Time", value: "<20 ms" },
+];
+
+export default function MilitaryPage() {
   return (
     <>
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="Military"
-            title="Defense Operations"
-            subtitle="Counter-UAS solutions for every military environment — from fixed bases to mobile convoys and naval vessels."
-          />
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <Image
+          src="/images/fob-aerial.jpg"
+          alt="Aegis Military Solutions"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
+        <div className="relative z-10 max-w-[80rem] mx-auto px-5 md:px-8 pt-32 pb-20">
+          <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
+            Solutions
+          </span>
+          <h1 className="mt-4 text-[48px] md:text-[80px] lg:text-[120px] font-bold tracking-[-3px] md:tracking-[-4px] leading-[0.9] text-white">
+            Military
+          </h1>
+          <p className="mt-6 text-[#b9b9b9] text-lg md:text-xl max-w-2xl leading-relaxed">
+            Combat-proven across 12 nations. Forward operating bases, naval vessels,
+            and convoy protection with full kill chain integration.
+          </p>
+          <Link
+            href="/request-demo"
+            className="inline-block mt-10 bg-white text-black px-8 py-4 text-sm font-medium uppercase tracking-wider hover:bg-[#e0e0e0] transition-colors"
+          >
+            Request Demo
+          </Link>
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-[#222222]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-          {subSolutions.map((sub, i) => (
-            <div key={sub.title} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className={`${i % 2 === 1 ? "md:order-2" : ""} relative aspect-[4/3] overflow-hidden`}>
-                <Image src={sub.image} alt={sub.title} fill className="object-cover" />
-              </div>
-              <div className={i % 2 === 1 ? "md:order-1" : ""}>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{sub.title}</h2>
-                <p className="text-[#888888] text-lg leading-relaxed mb-6">{sub.description}</p>
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16 md:mb-24">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
+                Sub-Solutions
+              </span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
+                Configurations
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="space-y-0">
+            {subSolutions.map((sub, i) => (
+              <ScrollReveal key={sub.title} delay={i * 80}>
                 <Link
                   href={sub.href}
-                  className="inline-block border border-[#333333] text-white px-6 py-3 text-sm font-medium hover:border-white transition-colors"
+                  className="block border-t border-white/10 group"
                 >
-                  Learn More
+                  <div className="py-10 md:py-16 flex items-center justify-between hover:bg-white/[0.02] transition-colors px-2 md:px-4 -mx-2 md:-mx-4">
+                    <h3 className="text-[28px] md:text-[56px] font-bold tracking-[-2px] text-white group-hover:text-white/90 transition-colors leading-[1]">
+                      {sub.title}
+                    </h3>
+                    <span className="text-[10px] uppercase tracking-[0.15em] text-white border-b border-white/30 pb-1 group-hover:border-white transition-colors">
+                      Learn More →
+                    </span>
+                  </div>
                 </Link>
-              </div>
-            </div>
-          ))}
+              </ScrollReveal>
+            ))}
+            <div className="border-t border-white/10" />
+          </div>
         </div>
       </section>
 
-      <CtaSection heading="Request Military Briefing" description="Schedule a classified briefing for your defense operations." />
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8 text-center">
+          <ScrollReveal>
+            <p className="text-[22px] md:text-[48px] lg:text-[68px] font-bold tracking-[-0.04em] leading-[1.1] text-white">
+              Combat-proven. 12 nations. Full spectrum.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+        <AnimatedLine />
+      </div>
+
+      <section className="py-24 md:py-40 bg-black">
+        <div className="max-w-[80rem] mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="mb-16">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#767676]">
+                Data
+              </span>
+              <h2 className="mt-4 text-[36px] md:text-[60px] font-bold tracking-[-3px] leading-[1] text-white">
+                By the Numbers
+              </h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
+              {specs.map((spec) => (
+                <div key={spec.key} className="flex justify-between items-center border-b border-white/10 py-5">
+                  <span className="text-[#767676] text-sm uppercase tracking-wider">{spec.key}</span>
+                  <span className="text-white text-lg font-bold tracking-[-0.02em]">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
   );
 }
